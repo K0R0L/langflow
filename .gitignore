@@ -1,0 +1,30 @@
+# Python-generated files
+__pycache__/
+*.py[oc]
+build/
+dist/
+wheels/
+*.egg-info
+pyproject.toml
+lib
+__init__.py
+# Virtual environments
+.venv
+ruff.toml
+uv.lock
+
+# IDE-specific files
+.ruff_cache/
+.vscode/
+.github/
+
+# Project-specific files
+.env
+office_vacation/
+scripts/result.docx
+pytest.ini
+.pytest_cache/
+remove-backup.py
+/scripts
+source/
+tests/
