@@ -49,7 +49,10 @@ class FilterDataComponent(Component):
     ]
 
     def update_build_config(
-        self, build_config: dotdict, field_value: Any, field_name: str | None = None
+        self,
+        build_config: dotdict,
+        field_value: Any,
+        field_name: str | None = None,
     ):
         """Update the build configuration based on the selected operation."""
         if field_name == "type_of_operation":
@@ -145,7 +148,9 @@ class FilterDataComponent(Component):
             )
         else:
             if not dates:
-                raise ValueError("Comparison operation requires at least 1 date")
+                raise ValueError(
+                    "Comparison operation requires at least 1 date"
+                )
             return (datetime.strptime(dates[0], "%d-%m-%Y"),)
 
     def _should_include_person(
@@ -155,18 +160,28 @@ class FilterDataComponent(Component):
         try:
             if operation == "Insert":
                 start_date, end_date = parsed_dates
-                vacation_start = datetime.strptime(person["start_date"], "%d-%m-%Y")
-                vacation_end = datetime.strptime(person["end_date"], "%d-%m-%Y")
-                return (vacation_start <= end_date) and (vacation_end >= start_date)
+                vacation_start = datetime.strptime(
+                    person["start_date"], "%d-%m-%Y"
+                )
+                vacation_end = datetime.strptime(
+                    person["end_date"], "%d-%m-%Y"
+                )
+                return (vacation_start <= end_date) and (
+                    vacation_end >= start_date
+                )
 
             elif operation == "<":
                 compare_date = parsed_dates[0]
-                vacation_end = datetime.strptime(person["end_date"], "%d-%m-%Y")
+                vacation_end = datetime.strptime(
+                    person["end_date"], "%d-%m-%Y"
+                )
                 return vacation_end < compare_date
 
             elif operation == ">":
                 compare_date = parsed_dates[0]
-                vacation_start = datetime.strptime(person["start_date"], "%d-%m-%Y")
+                vacation_start = datetime.strptime(
+                    person["start_date"], "%d-%m-%Y"
+                )
                 return vacation_start > compare_date
 
         except ValueError as e:
@@ -202,7 +217,9 @@ class FilterDataComponent(Component):
             return [int(amounts[0]), int(amounts[1])]
         else:
             if not amounts:
-                raise ValueError("Comparison operation requires at least 1 amount")
+                raise ValueError(
+                    "Comparison operation requires at least 1 amount"
+                )
             return [int(amounts[0])]
 
     def _should_include_item(
@@ -236,12 +253,20 @@ class FilterDataComponent(Component):
         fields = self.get_field_names()
         if self.type_of_input == "date":
             dates_to_pass = (
-                fields[:2] if self.type_of_operation == "Insert" else fields[:1]
+                fields[:2]
+                if self.type_of_operation == "Insert"
+                else fields[:1]
             )
-            filtered_dict_list = self.filter_vacation_data(dict_list, *dates_to_pass)
+            filtered_dict_list = self.filter_vacation_data(
+                dict_list, *dates_to_pass
+            )
         elif self.type_of_input == "money":
             money_to_pass = (
-                fields[:2] if self.type_of_operation == "Insert" else fields[:1]
+                fields[:2]
+                if self.type_of_operation == "Insert"
+                else fields[:1]
             )
-            filtered_dict_list = self.filter_money_data(dict_list, *money_to_pass)
+            filtered_dict_list = self.filter_money_data(
+                dict_list, *money_to_pass
+            )
         return self.get_text_from_processed_data(filtered_dict_list)

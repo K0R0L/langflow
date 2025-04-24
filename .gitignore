@@ -28,3 +28,5 @@ remove-backup.py
 /scripts
 source/
 tests/
+office_vacation_form/
+task/

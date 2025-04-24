@@ -12,10 +12,10 @@ from langflow.schema.dotdict import dotdict
 from langflow.docbuilder import docbuilder
 
 
-class UpdateDataComponent(Component):
+class FormsFiller(Component):
     display_name: str = "File Field Extraction"
     description: str = "Get data from files by fields"
-    name: str = "UpdateData"
+    name: str = "FormsFiller"
     MAX_FIELDS = 15
     icon = "FolderSync"
 
