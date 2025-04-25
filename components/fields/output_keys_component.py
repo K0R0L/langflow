@@ -6,10 +6,12 @@ from langflow.field_typing.range_spec import RangeSpec
 from langflow.schema.dotdict import dotdict
 
 
-class OutputComponent(Component):
-    display_name = "Output keys"
+class OutputKeysComponent(Component):
+    display_name = "Output Keys"
     name = "output"
     MAX_FIELDS = 15
+    description: str = "Specifies the keys to be displayed."
+    icon = "table"
     inputs = [
         IntInput(
             name="number_of_fields",
@@ -55,9 +57,9 @@ class OutputComponent(Component):
                     build_config[key] = field
                 else:
                     field = MessageTextInput(
-                        display_name=f"Field {i} Name",
+                        display_name=f"Key {i} Name",
                         name=key,
-                        info=f"Name of field {i}.",
+                        info=f"Name of key {i} that you want to output.",
                     )
                     build_config[field.name] = field.to_dict()
             build_config["number_of_fields"]["value"] = field_value_int

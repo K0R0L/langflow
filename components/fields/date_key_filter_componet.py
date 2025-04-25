@@ -8,12 +8,13 @@ from langflow.io import (
 from langflow.schema import Data
 
 
-class DataFieldFilter(Component):
-    display_name: str = "Data Filter Component"
-    description: str = "filter data"
-    name: str = "data_field_filter"
+class DateKeyFilter(Component):
+    display_name: str = "Date Filter"
+    description: str = "Returns the date range, along with the corresponding keys."
+    name: str = "date_field_filter"
     MAX_FIELDS = 15
-    icon = "filter"
+
+    icon = "clock"
 
     inputs = [
         MessageTextInput(
@@ -23,7 +24,7 @@ class DataFieldFilter(Component):
         ),
         MessageTextInput(
             name="field_2_name",
-            display_name="Value:1",
+            display_name="from",
             info="Value of form for key:1.",
         ),
         MessageTextInput(
@@ -33,7 +34,7 @@ class DataFieldFilter(Component):
         ),
         MessageTextInput(
             name="field_4_name",
-            display_name="Value:2",
+            display_name="to",
             info="Value of form for key:2.",
         ),
     ]

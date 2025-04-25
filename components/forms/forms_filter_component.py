@@ -14,11 +14,11 @@ STANDARD_ENCODE_FORMAT = (
 )
 
 
-class FromFilter(Component):
+class FromFilterComponent(Component):
     display_name: str = "From Filter"
-    description: str = "Get data from files by fields"
+    description: str = "Filters the specified forms based on the specified criteria."
     name: str = "FromFilter"
-    icon = "FolderSync"
+    icon = "filter"
     MAX_FIELDS = 15
     inputs = [
         DataInput(
@@ -30,7 +30,7 @@ class FromFilter(Component):
         ),
         DataInput(
             name="fields",
-            display_name="Fields",
+            display_name="Criteria",
             info="List of fields to extract from the files.",
             input_types=["Data"],
             value=None,
@@ -38,7 +38,7 @@ class FromFilter(Component):
         ),
         DataInput(
             name="output_keys",
-            display_name="Fields",
+            display_name="Output keys",
             info="List of fields to extract from the files.",
             input_types=["Data"],
             value=None,

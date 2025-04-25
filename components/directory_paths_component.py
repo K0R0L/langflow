@@ -9,8 +9,8 @@ from langflow.template import Output
 
 
 class DirectoryPathComponent(Component):
-    display_name = "Directory Path"
-    description = "Load paths from a directory."
+    display_name = "Directory Paths"
+    description = "Retrieve paths from a folder."
     icon = "folder"
     name = "DirectoryPath"
 

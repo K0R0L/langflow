@@ -6,9 +6,10 @@ from langflow.field_typing.range_spec import RangeSpec
 from langflow.schema.dotdict import dotdict
 
 
-class CheckBox(Component):
-    display_name = "Check box"
+class CheckBoxComponent(Component):
+    display_name = "Checkbox Filter"
     name = "check_box"
+    description: str = "This determines which checkboxes from the list have been checked."
     MAX_FIELDS = 15
     inputs = [
         IntInput(
@@ -56,9 +57,9 @@ class CheckBox(Component):
                     build_config[key] = field
                 else:
                     field = MessageTextInput(
-                        display_name=f"Field {i} Name",
+                        display_name=f"Key {i} Name",
                         name=key,
-                        info=f"Name of field {i}.",
+                        info=f"Name of checkboxs key.",
                     )
                     build_config[field.name] = field.to_dict()
             build_config["number_of_fields"]["value"] = field_value_int

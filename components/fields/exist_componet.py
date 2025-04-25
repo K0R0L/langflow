@@ -6,10 +6,12 @@ from langflow.field_typing.range_spec import RangeSpec
 from langflow.schema.dotdict import dotdict
 
 
-class Exist(Component):
-    display_name = "Exist Field Filter"
+class ExistComponent(Component):
+    display_name = "Exist Key Filter"
     name = "Exist"
     MAX_FIELDS = 15
+    icon = "table"
+    description: str = "This defines the keys that will be checked for availability."
     inputs = [
         IntInput(
             name="number_of_fields",
@@ -56,9 +58,9 @@ class Exist(Component):
                     build_config[key] = field
                 else:
                     field = MessageTextInput(
-                        display_name=f"Field {i} Name",
+                        display_name=f"Key {i} Name",
                         name=key,
-                        info=f"Name of field {i}.",
+                        info=f"Name of key {i}.",
                     )
                     build_config[field.name] = field.to_dict()
             build_config["number_of_fields"]["value"] = field_value_int

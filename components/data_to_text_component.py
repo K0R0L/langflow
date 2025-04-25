@@ -3,9 +3,11 @@ from langflow.io import Output, DataInput
 from langflow.schema import Data
 from typing import List, Dict, Any
 
-class DataToText(Component):
+class DataToTextComponent(Component):
     display_name = "Data To Text"
     name = "DataToText"
+    icon = "braces"
+    description: str = "Converts data into text."
     inputs = [
         DataInput(
             name="dict_list",
@@ -28,6 +30,8 @@ class DataToText(Component):
         return "\n".join(text_lines)
          
     def build_output(self) -> Data:
+        #msg = f"{self.dict_list}"
+        #raise ValueError(msg)
         fields = self.dict_list.data["items"]
         text = f"{self.get_text_from_processed_data(fields)}"
         return text
