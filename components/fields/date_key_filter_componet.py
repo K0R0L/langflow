@@ -24,7 +24,8 @@ class DateKeyFilter(Component):
         ),
         MessageTextInput(
             name="field_2_name",
-            display_name="from",
+            display_name="From",
+            placeholder = "DD/MM/YYYY",
             info="Value of form for key:1.",
         ),
         MessageTextInput(
@@ -34,7 +35,8 @@ class DateKeyFilter(Component):
         ),
         MessageTextInput(
             name="field_4_name",
-            display_name="to",
+            display_name="To",
+            placeholder = "DD/MM/YYYY",
             info="Value of form for key:2.",
         ),
     ]
