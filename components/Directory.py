@@ -8,11 +8,11 @@ from langflow.schema import Data
 from langflow.template import Output
 
 
-class DirectoryComponent(Component):
-    display_name = "Directory"
-    description = "Recursively load files from a directory."
+class DirectoryPathComponent(Component):
+    display_name = "Directory Path"
+    description = "Load paths from a directory."
     icon = "folder"
-    name = "Directory"
+    name = "DirectoryPath"
 
     inputs = [
         MessageTextInput(

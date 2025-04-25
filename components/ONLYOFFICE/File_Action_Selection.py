@@ -1,4 +1,3 @@
-# from langflow.field_typing import Data
 from langflow.custom import Component
 from langflow.io import Output, HandleInput, MultiselectInput
 from langflow.schema import Data
@@ -7,7 +6,9 @@ from langflow.schema import Data
 class CustomComponent(Component):
     display_name = "File Action Selection"
     description = "Use as a template to create your own component."
-    documentation: str = "https://docs.langflow.org/components-custom-components"
+    documentation: str = (
+        "https://docs.langflow.org/components-custom-components"
+    )
     icon = "split"
     name = "File Action Selector"
 

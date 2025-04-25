@@ -13,90 +13,53 @@ from langflow.docbuilder import docbuilder
 
 
 class FormsFiller(Component):
-    display_name: str = "File Field Extraction"
-    description: str = "Get data from files by fields"
+    display_name: str = "Forms Filler"
+    description: str = "Fill forms with data from files."
     name: str = "FormsFiller"
     MAX_FIELDS = 15
     icon = "FolderSync"
 
     inputs = [
-        DataInput(
-            name="paths",
-            display_name="File Paths",
-            info="List of file paths to process.",
-            is_list=True,
-            required=True,
+        MessageTextInput(
+            name="name",
+            display_name="Name",
+            info="Name of the person or entity.",
+            value="",
+            tool_mode=True,
         ),
-        IntInput(
-            name="number_of_fields",
-            display_name="Number of Fields",
-            info="Number of fields to be added to the record.",
-            real_time_refresh=True,
-            value=0,
-            range_spec=RangeSpec(
-                min=1, max=MAX_FIELDS, step=1, step_type="int"
-            ),
+        MessageTextInput(
+            name="start_date",
+            display_name="Start Date",
+            info="Start date for the form (e.g., 01-01-2024).",
+            value="",
+            tool_mode=True,
+        ),
+        MessageTextInput(
+            name="end_date",
+            display_name="End Date",
+            info="End date for the form (e.g., 31-12-2024).",
+            value="",
+            tool_mode=True,
+        ),
+        MessageTextInput(
+            name="start_money",
+            display_name="Start Money",
+            info="Initial amount of money.",
+            value="",
+            tool_mode=True,
+        ),
+        MessageTextInput(
+            name="end_money",
+            display_name="End Money",
+            info="Final amount of money.",
+            value="",
+            tool_mode=True,
         ),
     ]
 
     outputs = [
         Output(display_name="Data", name="dict_list", method="build_data"),
     ]
-
-    def update_build_config(
-        self,
-        build_config: dotdict,
-        field_value: Any,
-        field_name: str | None = None,
-    ):
-        """Update the build configuration when the number of fields changes."""
-        if field_name == "number_of_fields":
-            default_keys = {
-                "code",
-                "_type",
-                "number_of_fields",
-                "paths",
-            }
-            try:
-                field_value_int = int(field_value)
-            except ValueError:
-                return build_config
-
-            if field_value_int > self.MAX_FIELDS:
-                build_config["number_of_fields"]["value"] = self.MAX_FIELDS
-                msg = f"Number of fields cannot exceed {self.MAX_FIELDS}."
-                raise ValueError(msg)
-
-            existing_fields = {}
-
-            for key in list(build_config.keys()):
-                if key not in default_keys:
-                    existing_fields[key] = build_config.pop(key)
-
-            for i in range(1, field_value_int + 1):
-                key = f"field_{i}_name"
-                if key in existing_fields:
-                    field = existing_fields[key]
-                    build_config[key] = field
-                else:
-                    field = MessageTextInput(
-                        display_name=f"Field {i} Name",
-                        name=key,
-                        info=f"Name of field {i}.",
-                    )
-                    build_config[field.name] = field.to_dict()
-
-            build_config["number_of_fields"]["value"] = field_value_int
-        return build_config
-
-    def get_field_names(self) -> List[str]:
-        """Get the list of field names from the component's attributes."""
-        field_names = []
-        for i in range(1, self.number_of_fields + 1):
-            field_name = self._attributes.get(f"field_{i}_name")
-            if field_name:
-                field_names.append(field_name)
-        return field_names
 
     def process_file(
         self, file_path: str, field_names: List[str]

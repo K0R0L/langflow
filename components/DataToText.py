@@ -17,18 +17,17 @@ class DataToText(Component):
     ]
     outputs: List[Output] = [Output(display_name="Text", name="output", method="build_output")]
 
-    def get_text_from_processed_data(self, processed_data: List[Dict[str, Any]]) -> str:
+    def get_text_from_processed_data(self, processed_data: List[str]) -> str:
         """Convert processed_data into a readable text format."""
         text_lines = []
         for person in processed_data:
-            #for key, record in person.items():
-             #   text_lines.append(f"  {key}: {record}")
-            text_lines.append(person)
-
+            for key, record in person.items():
+                text_lines.append(f"  {key}: {record}")
+                text_lines.append("")
+    
         return "\n".join(text_lines)
          
     def build_output(self) -> Data:
-        type_of_operation = self.dict_list.data.get("type_of_operation", [])
-        fields = self.dict_list.data.get("fields", [])
-        text = f"type_of_operation: {type_of_operation}, fields: {self.get_text_from_processed_data(fields)}"
+        fields = self.dict_list.data["items"]
+        text = f"{self.get_text_from_processed_data(fields)}"
         return text
