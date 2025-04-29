@@ -20,7 +20,7 @@ class File:
         self.document = None
         self.forms = None
 
-    def open(file_path, params="")
+    def open(file_path, params=""):
         self.builder = docbuilder.CDocBuilder()
 
         res = self.builder.OpenFile(file_path, params)
@@ -150,9 +150,7 @@ class FormFilterComponent(Component):
             info="List of fields to extract from the files.",
             input_types=["Data"],
             value=None,
-            
-        ),
-        
+        ),        
     ]
 
     outputs = [
@@ -196,10 +194,3 @@ class FormFilterComponent(Component):
         processed_data = self.build_main()
         file_paths = [record["file_path"] for record in processed_data]
         return file_paths
-
-
-
-
-
-
-
