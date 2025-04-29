@@ -14,7 +14,6 @@ class DateKeyComponent(Component):
     display_name: str = "Date Filter"
     description: str = "Returns the date range, along with the corresponding keys."
     name: str = "date_field_filter"
-    MAX_FIELDS = 15
 
     icon = "clock"
 
@@ -29,6 +28,7 @@ class DateKeyComponent(Component):
             name="tag_1",
             display_name="Tag 1",
             input_types=[],
+            advanced=True,
             info="Tag1.",
         ),
         MessageTextInput(
@@ -46,6 +46,7 @@ class DateKeyComponent(Component):
         ),
         MessageTextInput(
             name="tag_2",
+            advanced=True,
             display_name="Tag 2",
             input_types=[],
             info="Tag2.",
@@ -71,25 +72,24 @@ class DateKeyComponent(Component):
         if not date_str:
             return None
         try:
-            dt = datetime.strptime(str(date_str), "%d-%m-%Y")
-            return int(dt.timestamp())
-        except Exception:
-            return None
+            dt = datetime.strptime(str(date_str), "%d/%m/%Y")
+            return float(dt.timestamp()) * 1000
+        except (TypeError, ValueError) as e: 
+            msg = f"Can't parse '{date_str}' as date: {e!s}"
+            raise ValueError(msg) from e  
 
     def get_field_names(self) -> List[str | None]:
-        key1 = getattr(self, "field_1_name", None)
-        from_date_str = getattr(self, "field_2_name", None)
-        key2 = getattr(self, "field_3_name", None)
-        to_date_str = getattr(self, "field_4_name", None)
-        #raise Exception(f"{to_date_str=}")
-        tag1 = getattr(self, "tag_1", None)
-        tag2 = getattr(self, "tag_2", None)
+        key1:str|None = self.field_1_name
+        from_date_str:str|None = self.field_2_name
+        key2:str|None = self.field_3_name
+        to_date_str:str|None = self.field_4_name
+        tag1:str|None = self.tag_1
+        tag2:str|None = self.tag_2
         return [key1, tag1, from_date_str, key2, tag2, to_date_str]
 
     def process(self, api, forms: CDocBuilderValue, get_form_value) -> bool:
-        config_values: List[str] = self.get_field_names()
+        config_values: List[str|None] = self.get_field_names()
         key1, tag1, from_date_str, key2, tag2, to_date_str = config_values
-        #raise Exception(f"{to_date_str=}")
 
         if not key1 and not key2:
             return False
@@ -97,20 +97,15 @@ class DateKeyComponent(Component):
         input_from_date: int | None = self.parse_date(from_date_str)
         input_to_date: int | None = self.parse_date(to_date_str)
         file_to_date: int | None = get_form_value(forms, key2,tag2)
-        #raise Exception(f"{get_form_value(forms, key1,tag1)=}") 
         file_from_date: int | None = get_form_value(forms, key1,tag1)
 
-        #raise Exception(f"{config_values=}")
-        #raise Exception(f"{input_to_date=}, {input_from_date=},{file_to_date=},{file_from_date=}")
-        if input_to_date and input_from_date and key1 and key2:
-            raise Exception(f"{input_to_date=}, {input_from_date=},{file_to_date=},{file_from_date=},{(input_to_date > file_to_date) and (input_from_date < file_from_date)=}") 
-            return (input_to_date > file_to_date) and (input_from_date < file_from_date)
+        if all([input_to_date, input_from_date,file_from_date, file_to_date]):
+            return (input_from_date < file_from_date) and (file_to_date < input_to_date)
 
-        elif input_from_date and key1:
-            #raise Exception(f"{file_from_date=}, {input_from_date=},{input_from_date < file_from_date=}") 
+        elif input_from_date and file_from_date:
             return input_from_date < file_from_date
 
-        elif input_to_date and key2:
+        elif input_to_date and file_to_date:
             return file_to_date < input_to_date
         else:
             return False

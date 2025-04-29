@@ -20,6 +20,7 @@ class DirectoryPathComponent(Component):
             display_name="Path",
             info="Path to the directory to load files from. Defaults to current directory ('.')",
             value=".",
+            input_types=[],
             tool_mode=True,
         ),
         MultiselectInput(
@@ -35,13 +36,6 @@ class DirectoryPathComponent(Component):
             advanced=True,
             info="Depth to search for files.",
             value=0,
-        ),
-        IntInput(
-            name="max_concurrency",
-            display_name="Max Concurrency",
-            advanced=True,
-            info="Maximum concurrency for loading files.",
-            value=2,
         ),
         BoolInput(
             name="load_hidden",
@@ -60,12 +54,6 @@ class DirectoryPathComponent(Component):
             display_name="Silent Errors",
             advanced=True,
             info="If true, errors will not raise an exception.",
-        ),
-        BoolInput(
-            name="use_multithreading",
-            display_name="Use Multithreading",
-            advanced=True,
-            info="If true, multithreading will be used.",
         ),
     ]
 

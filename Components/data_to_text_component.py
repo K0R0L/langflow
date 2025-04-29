@@ -1,7 +1,6 @@
 from langflow.custom import Component
 from langflow.io import Output, DataInput
 from langflow.schema import Data
-from typing import List, Dict, Any
 
 class DataToTextComponent(Component):
     display_name = "Data To Text"
@@ -17,9 +16,9 @@ class DataToTextComponent(Component):
             required=True,
         ),
     ]
-    outputs: List[Output] = [Output(display_name="Text", name="output", method="build_output")]
+    outputs: list[Output] = [Output(display_name="Text", name="output", method="build_output")]
 
-    def get_text_from_processed_data(self, processed_data: List[str]) -> str:
+    def get_text_from_processed_data(self, processed_data: list[str]) -> str:
         """Convert processed_data into a readable text format."""
         text_lines = []
         for person in processed_data:
