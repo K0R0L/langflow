@@ -1,78 +1,151 @@
+from typing import Any, Dict, List
+
 from langflow.custom import Component
-from langflow.io import Output, DropdownInput
+from langflow.docbuilder import docbuilder
+from langflow.inputs import Input
+from langflow.inputs.inputs import (
+    DataInput,
+)
+from langflow.io import Output
 from langflow.schema import Data
-from langflow.inputs.inputs import IntInput, MessageTextInput
-from langflow.field_typing.range_spec import RangeSpec
-from langflow.schema.dotdict import dotdict
+
+STANDARD_ENCODE_FORMAT = (
+    "<m_nCsvTxtEncoding>0</m_nCsvTxtEncoding><m_nCsvDelimiter>0</m_nCsvDelimiter>"
+)
 
 
-class OutputKeysComponent(Component):
-    display_name = "Output Keys"
-    name = "output"
+class FormFilterComponent(Component):
+    display_name: str = "Form Filter"
+    description: str = "Filters the specified forms based on the specified criteria."
+    name: str = "FormFilter"
+    icon = "filter"
     MAX_FIELDS = 15
-    description: str = "Specifies the keys to be displayed."
-    icon = "table"
     inputs = [
-        IntInput(
-            name="number_of_fields",
-            display_name="Number of Keys",
-            info="Number of Keys to be added to the record.",
-            real_time_refresh=True,
-            value=0,
-            range_spec=RangeSpec(
-                min=1, max=MAX_FIELDS, step=1, step_type="int"
-            ),
+        DataInput(
+            name="paths",
+            display_name="File Paths",
+            info="List of file paths to process.",
+            is_list=True,
+            required=True,
         ),
+        Input(
+            name="fields",
+            input_types=["Component"],
+            component=Component,
+            is_list=True,
+            field_type=Any,
+        ),
+        DataInput(
+            name="output_keys",
+            display_name="Output keys",
+            info="List of fields to extract from the files.",
+            input_types=["Data"],
+            value=None,
+            
+        ),
+        
     ]
+
     outputs = [
-        Output(
-            display_name="Filtered Data", name="output", method="build_output"
-        )
+        Output(display_name="Data", name="data_list", method="build_data"),
+        Output(display_name="Paths", name="paths_list", method="load_directory"),
     ]
 
-    def update_build_config(
-        self, build_config: dotdict, field_value, field_name=None
-    ):
-        if field_name == "number_of_fields":
-            default_keys = {"code", "_type", "number_of_fields", "data"}
+    def process_file(self, file_path: str) -> Dict[str, Any]:
+        builder = docbuilder.CDocBuilder()
+        try:
+            builder.OpenFile(file_path, STANDARD_ENCODE_FORMAT)
+        except Exception:
+            msg=f"Error opening file: {file_path}"
+            raise Exception(msg)
+
+        context: docbuilder.CDocBuilderContext = builder.GetContext()
+        globalObj: docbuilder.CDocBuilderValue = context.GetGlobal()
+        api: docbuilder.CDocBuilderValue = globalObj["Api"]
+        document: docbuilder.CDocBuilderValue  = api.GetDocument()
+        forms: docbuilder.CDocBuilderValue = document.GetAllForms()
+        record = {}
+        record["file_path"] = file_path
+        record["forms"] = forms
+        record["api"] = api
+
+        builder.CloseFile()
+        return record
+
+    def get_existing_fields(
+        self, data: List[Dict[str, Any]], existing_fields: List[str]
+    ) -> List[Dict[str, Any]]:
+        """Filter data to include only existing fields."""
+        filtered_data = []
+        for record in data:
+            if all(key in record for key in existing_fields):
+                filtered_data.append(record)
+        return filtered_data
+
+    def get_form_value(self,forms, key,tag=None) -> Any:
+        for i in range(forms.GetLength()):
+            form = forms.Get(i)
+            form_key = form.GetFormKey().ToString()
+            form_tag = form.GetFormTag().ToString()
+            if form_key == key and (tag is None or form_tag == tag):
+                form_type = form.GetFormType().ToString()
+                if form_type == "textForm":
+                    return form.GetText().ToString()
+                elif form_type == "dateForm":
+                    return form.GetTime().ToInt()
+                elif form_type == "checkBoxForm":
+                    return form.IsChecked().ToBool()
+        return None
+
+    def build_main(self) -> List:
+        file_paths: list[str] = self.paths
+        filters: list[Component] = self.fields
+        output_keys = self.output_keys.data["output_keys"] if self.output_keys else None
+        result = []
+
+        for file_path in file_paths:
+            if isinstance(file_path, Data):
+                file_path = file_path.text
+            builder = docbuilder.CDocBuilder()
             try:
-                field_value_int = int(field_value)
-            except ValueError:
-                return build_config
-            if field_value_int > self.MAX_FIELDS:
-                build_config["number_of_fields"]["value"] = self.MAX_FIELDS
-                raise ValueError(
-                    f"Number of fields cannot exceed {self.MAX_FIELDS}."
-                )
+                builder.OpenFile(file_path, STANDARD_ENCODE_FORMAT)
+            except Exception:
+                continue
+            context = builder.GetContext()
+            globalObj = context.GetGlobal()
+            api = globalObj["Api"]
+            document = api.GetDocument()
+            forms = document.GetAllForms()
+            passed = True
+            for filter_component in filters:
+                if hasattr(filter_component, "process"):
+                    #raise Exception(f"{forms=}, {key=}")
+                    if not filter_component.process(api, forms, self.get_form_value):
+                        passed = False
+                        break
+            if passed:
+                record = {"file_path": file_path}
+                if output_keys:
+                    for key in output_keys:
+                        #raise Exception(f"{forms=}, {key=}")
+                        value = self.get_form_value(forms, key)
+                        record[key] = value
+                result.append(record)
+            builder.CloseFile()
+        return result
 
-            existing_fields = {}
-            for key in list(build_config.keys()):
-                if key not in default_keys:
-                    existing_fields[key] = build_config.pop(key)
+    def build_data(self) -> Data:
+        processed_data = self.build_main()
+        return Data(data={"items": processed_data})
 
-            for i in range(1, field_value_int + 1):
-                key = f"field_{i}_name"
-                if key in existing_fields:
-                    field = existing_fields[key]
-                    build_config[key] = field
-                else:
-                    field = MessageTextInput(
-                        display_name=f"Key {i} Name",
-                        name=key,
-                        info=f"Name of key {i} that you want to output.",
-                    )
-                    build_config[field.name] = field.to_dict()
-            build_config["number_of_fields"]["value"] = field_value_int
-        return build_config
+    def load_directory(self) -> list[Data]:
+        processed_data = self.build_main()
+        file_paths = [record["file_path"] for record in processed_data]
+        return file_paths
 
-    def get_field_names(self):
-        field_names = []
-        for i in range(1, getattr(self, "number_of_fields", 0) + 1):
-            field_name = getattr(self, f"field_{i}_name", None)
-            if field_name:
-                field_names.append(field_name)
-        return field_names
 
-    def build_output(self) -> Data:
-        field_names = self.get_field_names()
-        return Data(data={"output_keys": field_names})
+
+
+
+
+

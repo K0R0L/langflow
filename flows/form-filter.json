@@ -37,64 +37,8 @@
         "className": "",
         "data": {
           "sourceHandle": {
-            "dataType": "DirectoryPath",
-            "id": "DirectoryPath-PzUBY",
-            "name": "data",
-            "output_types": [
-              "Data"
-            ]
-          },
-          "targetHandle": {
-            "fieldName": "paths",
-            "id": "FromFilter-YPzbV",
-            "inputTypes": [
-              "Data"
-            ],
-            "type": "other"
-          }
-        },
-        "id": "xy-edge__DirectoryPath-PzUBY{œdataTypeœ:œDirectoryPathœ,œidœ:œDirectoryPath-PzUBYœ,œnameœ:œdataœ,œoutput_typesœ:[œDataœ]}-FromFilter-YPzbV{œfieldNameœ:œpathsœ,œidœ:œFromFilter-YPzbVœ,œinputTypesœ:[œDataœ],œtypeœ:œotherœ}",
-        "selected": false,
-        "source": "DirectoryPath-PzUBY",
-        "sourceHandle": "{œdataTypeœ:œDirectoryPathœ,œidœ:œDirectoryPath-PzUBYœ,œnameœ:œdataœ,œoutput_typesœ:[œDataœ]}",
-        "target": "FromFilter-YPzbV",
-        "targetHandle": "{œfieldNameœ:œpathsœ,œidœ:œFromFilter-YPzbVœ,œinputTypesœ:[œDataœ],œtypeœ:œotherœ}"
-      },
-      {
-        "animated": false,
-        "className": "",
-        "data": {
-          "sourceHandle": {
-            "dataType": "check_box",
-            "id": "check_box-JKRkx",
-            "name": "output",
-            "output_types": [
-              "Data"
-            ]
-          },
-          "targetHandle": {
-            "fieldName": "fields",
-            "id": "FromFilter-YPzbV",
-            "inputTypes": [
-              "Data"
-            ],
-            "type": "other"
-          }
-        },
-        "id": "xy-edge__check_box-JKRkx{œdataTypeœ:œcheck_boxœ,œidœ:œcheck_box-JKRkxœ,œnameœ:œoutputœ,œoutput_typesœ:[œDataœ]}-FromFilter-YPzbV{œfieldNameœ:œfieldsœ,œidœ:œFromFilter-YPzbVœ,œinputTypesœ:[œDataœ],œtypeœ:œotherœ}",
-        "selected": false,
-        "source": "check_box-JKRkx",
-        "sourceHandle": "{œdataTypeœ:œcheck_boxœ,œidœ:œcheck_box-JKRkxœ,œnameœ:œoutputœ,œoutput_typesœ:[œDataœ]}",
-        "target": "FromFilter-YPzbV",
-        "targetHandle": "{œfieldNameœ:œfieldsœ,œidœ:œFromFilter-YPzbVœ,œinputTypesœ:[œDataœ],œtypeœ:œotherœ}"
-      },
-      {
-        "animated": false,
-        "className": "",
-        "data": {
-          "sourceHandle": {
             "dataType": "output",
-            "id": "output-aq1rc",
+            "id": "output-ad1TZ",
             "name": "output",
             "output_types": [
               "Data"
@@ -102,27 +46,27 @@
           },
           "targetHandle": {
             "fieldName": "output_keys",
-            "id": "FromFilter-YPzbV",
+            "id": "FormsFiller-QFqCy",
             "inputTypes": [
               "Data"
             ],
             "type": "other"
           }
         },
-        "id": "xy-edge__output-aq1rc{œdataTypeœ:œoutputœ,œidœ:œoutput-aq1rcœ,œnameœ:œoutputœ,œoutput_typesœ:[œDataœ]}-FromFilter-YPzbV{œfieldNameœ:œoutput_keysœ,œidœ:œFromFilter-YPzbVœ,œinputTypesœ:[œDataœ],œtypeœ:œotherœ}",
+        "id": "xy-edge__output-ad1TZ{œdataTypeœ:œoutputœ,œidœ:œoutput-ad1TZœ,œnameœ:œoutputœ,œoutput_typesœ:[œDataœ]}-FormsFiller-QFqCy{œfieldNameœ:œoutput_keysœ,œidœ:œFormsFiller-QFqCyœ,œinputTypesœ:[œDataœ],œtypeœ:œotherœ}",
         "selected": false,
-        "source": "output-aq1rc",
-        "sourceHandle": "{œdataTypeœ:œoutputœ,œidœ:œoutput-aq1rcœ,œnameœ:œoutputœ,œoutput_typesœ:[œDataœ]}",
-        "target": "FromFilter-YPzbV",
-        "targetHandle": "{œfieldNameœ:œoutput_keysœ,œidœ:œFromFilter-YPzbVœ,œinputTypesœ:[œDataœ],œtypeœ:œotherœ}"
+        "source": "output-ad1TZ",
+        "sourceHandle": "{œdataTypeœ:œoutputœ,œidœ:œoutput-ad1TZœ,œnameœ:œoutputœ,œoutput_typesœ:[œDataœ]}",
+        "target": "FormsFiller-QFqCy",
+        "targetHandle": "{œfieldNameœ:œoutput_keysœ,œidœ:œFormsFiller-QFqCyœ,œinputTypesœ:[œDataœ],œtypeœ:œotherœ}"
       },
       {
         "animated": false,
         "className": "",
         "data": {
           "sourceHandle": {
-            "dataType": "FromFilter",
-            "id": "FromFilter-YPzbV",
+            "dataType": "FormFilter",
+            "id": "FormsFiller-QFqCy",
             "name": "data_list",
             "output_types": [
               "Data"
@@ -137,10 +81,10 @@
             "type": "other"
           }
         },
-        "id": "xy-edge__FromFilter-YPzbV{œdataTypeœ:œFromFilterœ,œidœ:œFromFilter-YPzbVœ,œnameœ:œdata_listœ,œoutput_typesœ:[œDataœ]}-DataToText-LRuDa{œfieldNameœ:œdict_listœ,œidœ:œDataToText-LRuDaœ,œinputTypesœ:[œDataœ],œtypeœ:œotherœ}",
+        "id": "xy-edge__FormsFiller-QFqCy{œdataTypeœ:œFormFilterœ,œidœ:œFormsFiller-QFqCyœ,œnameœ:œdata_listœ,œoutput_typesœ:[œDataœ]}-DataToText-LRuDa{œfieldNameœ:œdict_listœ,œidœ:œDataToText-LRuDaœ,œinputTypesœ:[œDataœ],œtypeœ:œotherœ}",
         "selected": false,
-        "source": "FromFilter-YPzbV",
-        "sourceHandle": "{œdataTypeœ:œFromFilterœ,œidœ:œFromFilter-YPzbVœ,œnameœ:œdata_listœ,œoutput_typesœ:[œDataœ]}",
+        "source": "FormsFiller-QFqCy",
+        "sourceHandle": "{œdataTypeœ:œFormFilterœ,œidœ:œFormsFiller-QFqCyœ,œnameœ:œdata_listœ,œoutput_typesœ:[œDataœ]}",
         "target": "DataToText-LRuDa",
         "targetHandle": "{œfieldNameœ:œdict_listœ,œidœ:œDataToText-LRuDaœ,œinputTypesœ:[œDataœ],œtypeœ:œotherœ}"
       },
@@ -149,28 +93,28 @@
         "className": "",
         "data": {
           "sourceHandle": {
-            "dataType": "Exist",
-            "id": "Exist-muPre",
-            "name": "output",
+            "dataType": "DirectoryPath",
+            "id": "DirectoryPath-PzUBY",
+            "name": "data",
             "output_types": [
               "Data"
             ]
           },
           "targetHandle": {
-            "fieldName": "fields",
-            "id": "FromFilter-YPzbV",
+            "fieldName": "paths",
+            "id": "FormsFiller-QFqCy",
             "inputTypes": [
               "Data"
             ],
             "type": "other"
           }
         },
-        "id": "xy-edge__Exist-muPre{œdataTypeœ:œExistœ,œidœ:œExist-muPreœ,œnameœ:œoutputœ,œoutput_typesœ:[œDataœ]}-FromFilter-YPzbV{œfieldNameœ:œfieldsœ,œidœ:œFromFilter-YPzbVœ,œinputTypesœ:[œDataœ],œtypeœ:œotherœ}",
+        "id": "xy-edge__DirectoryPath-PzUBY{œdataTypeœ:œDirectoryPathœ,œidœ:œDirectoryPath-PzUBYœ,œnameœ:œdataœ,œoutput_typesœ:[œDataœ]}-FormsFiller-QFqCy{œfieldNameœ:œpathsœ,œidœ:œFormsFiller-QFqCyœ,œinputTypesœ:[œDataœ],œtypeœ:œotherœ}",
         "selected": false,
-        "source": "Exist-muPre",
-        "sourceHandle": "{œdataTypeœ:œExistœ,œidœ:œExist-muPreœ,œnameœ:œoutputœ,œoutput_typesœ:[œDataœ]}",
-        "target": "FromFilter-YPzbV",
-        "targetHandle": "{œfieldNameœ:œfieldsœ,œidœ:œFromFilter-YPzbVœ,œinputTypesœ:[œDataœ],œtypeœ:œotherœ}"
+        "source": "DirectoryPath-PzUBY",
+        "sourceHandle": "{œdataTypeœ:œDirectoryPathœ,œidœ:œDirectoryPath-PzUBYœ,œnameœ:œdataœ,œoutput_typesœ:[œDataœ]}",
+        "target": "FormsFiller-QFqCy",
+        "targetHandle": "{œfieldNameœ:œpathsœ,œidœ:œFormsFiller-QFqCyœ,œinputTypesœ:[œDataœ],œtypeœ:œotherœ}"
       },
       {
         "animated": false,
@@ -178,27 +122,27 @@
         "data": {
           "sourceHandle": {
             "dataType": "date_field_filter",
-            "id": "date_field_filter-KrQnS",
+            "id": "date_field_filter-PmAfx",
             "name": "data",
             "output_types": [
-              "Data"
+              "Component"
             ]
           },
           "targetHandle": {
             "fieldName": "fields",
-            "id": "FromFilter-YPzbV",
+            "id": "FormsFiller-QFqCy",
             "inputTypes": [
-              "Data"
+              "Component"
             ],
-            "type": "other"
+            "type": "str"
           }
         },
-        "id": "xy-edge__date_field_filter-KrQnS{œdataTypeœ:œdate_field_filterœ,œidœ:œdate_field_filter-KrQnSœ,œnameœ:œdataœ,œoutput_typesœ:[œDataœ]}-FromFilter-YPzbV{œfieldNameœ:œfieldsœ,œidœ:œFromFilter-YPzbVœ,œinputTypesœ:[œDataœ],œtypeœ:œotherœ}",
+        "id": "xy-edge__date_field_filter-PmAfx{œdataTypeœ:œdate_field_filterœ,œidœ:œdate_field_filter-PmAfxœ,œnameœ:œdataœ,œoutput_typesœ:[œComponentœ]}-FormsFiller-QFqCy{œfieldNameœ:œfieldsœ,œidœ:œFormsFiller-QFqCyœ,œinputTypesœ:[œComponentœ],œtypeœ:œstrœ}",
         "selected": false,
-        "source": "date_field_filter-KrQnS",
-        "sourceHandle": "{œdataTypeœ:œdate_field_filterœ,œidœ:œdate_field_filter-KrQnSœ,œnameœ:œdataœ,œoutput_typesœ:[œDataœ]}",
-        "target": "FromFilter-YPzbV",
-        "targetHandle": "{œfieldNameœ:œfieldsœ,œidœ:œFromFilter-YPzbVœ,œinputTypesœ:[œDataœ],œtypeœ:œotherœ}"
+        "source": "date_field_filter-PmAfx",
+        "sourceHandle": "{œdataTypeœ:œdate_field_filterœ,œidœ:œdate_field_filter-PmAfxœ,œnameœ:œdataœ,œoutput_typesœ:[œComponentœ]}",
+        "target": "FormsFiller-QFqCy",
+        "targetHandle": "{œfieldNameœ:œfieldsœ,œidœ:œFormsFiller-QFqCyœ,œinputTypesœ:[œComponentœ],œtypeœ:œstrœ}"
       }
     ],
     "nodes": [
@@ -512,418 +456,6 @@
       },
       {
         "data": {
-          "id": "check_box-JKRkx",
-          "node": {
-            "base_classes": [
-              "Data"
-            ],
-            "beta": false,
-            "conditional_paths": [],
-            "custom_fields": {},
-            "description": "This determines which checkboxes from the list have been checked.",
-            "display_name": "Checkbox Filter",
-            "documentation": "",
-            "edited": true,
-            "field_order": [
-              "number_of_fields"
-            ],
-            "frozen": false,
-            "legacy": false,
-            "metadata": {},
-            "minimized": false,
-            "output_types": [],
-            "outputs": [
-              {
-                "allows_loop": false,
-                "cache": true,
-                "display_name": "Filtered Data",
-                "hidden": false,
-                "method": "build_output",
-                "name": "output",
-                "options": null,
-                "required_inputs": null,
-                "selected": "Data",
-                "tool_mode": true,
-                "types": [
-                  "Data"
-                ],
-                "value": "__UNDEFINED__"
-              }
-            ],
-            "pinned": false,
-            "template": {
-              "_type": "Component",
-              "code": {
-                "advanced": true,
-                "dynamic": true,
-                "fileTypes": [],
-                "file_path": "",
-                "info": "",
-                "list": false,
-                "load_from_db": false,
-                "multiline": true,
-                "name": "code",
-                "password": false,
-                "placeholder": "",
-                "required": true,
-                "show": true,
-                "title_case": false,
-                "type": "code",
-                "value": "from langflow.custom import Component\nfrom langflow.io import Output\nfrom langflow.schema import Data\nfrom langflow.inputs.inputs import IntInput, MessageTextInput\nfrom langflow.field_typing.range_spec import RangeSpec\nfrom langflow.schema.dotdict import dotdict\n\n\nclass CheckBoxComponent(Component):\n    display_name = \"Checkbox Filter\"\n    name = \"check_box\"\n    description: str = \"This determines which checkboxes from the list have been checked.\"\n    MAX_FIELDS = 15\n    inputs = [\n        IntInput(\n            name=\"number_of_fields\",\n            display_name=\"Number of Keys\",\n            info=\"Number of keys to be added to the record.\",\n            real_time_refresh=True,\n            value=1,\n            range_spec=RangeSpec(\n                min=1, max=MAX_FIELDS, step=1, step_type=\"int\"\n            ),\n        ),\n        \n    ]\n    outputs = [\n        Output(\n            display_name=\"Filtered Data\", name=\"output\", method=\"build_output\"\n        )\n    ]\n\n    def update_build_config(\n        self, build_config: dotdict, field_value, field_name=None\n    ):\n        if field_name == \"number_of_fields\":\n            default_keys = {\"code\", \"_type\", \"number_of_fields\", \"data\"}\n            try:\n                field_value_int = int(field_value)\n            except ValueError:\n                return build_config\n            if field_value_int > self.MAX_FIELDS:\n                build_config[\"number_of_fields\"][\"value\"] = self.MAX_FIELDS\n                raise ValueError(\n                    f\"Number of fields cannot exceed {self.MAX_FIELDS}.\"\n                )\n\n            existing_fields = {}\n            for key in list(build_config.keys()):\n                if key not in default_keys:\n                    existing_fields[key] = build_config.pop(key)\n\n            for i in range(1, field_value_int + 1):\n                key = f\"field_{i}_name\"\n                if key in existing_fields:\n                    field = existing_fields[key]\n                    build_config[key] = field\n                else:\n                    field = MessageTextInput(\n                        display_name=f\"Key {i} Name\",\n                        name=key,\n                        info=f\"Name of checkboxs key.\",\n                    )\n                    build_config[field.name] = field.to_dict()\n            build_config[\"number_of_fields\"][\"value\"] = field_value_int\n        return build_config\n\n    def get_field_names(self):\n        field_names = []\n        for i in range(1, getattr(self, \"number_of_fields\", 0) + 1):\n            field_name = getattr(self, f\"field_{i}_name\", None)\n            if field_name:\n                field_names.append(field_name)\n        return field_names\n\n    def build_output(self) -> Data:\n        field_names = self.get_field_names()\n        return Data(data={\"check_box\": field_names})\n"
-              },
-              "field_1_name": {
-                "_input_type": "MessageTextInput",
-                "advanced": false,
-                "display_name": "Key 1 Name",
-                "dynamic": false,
-                "info": "Name of checkboxs key.",
-                "input_types": [
-                  "Message"
-                ],
-                "list": false,
-                "list_add_label": "Add More",
-                "load_from_db": false,
-                "name": "field_1_name",
-                "placeholder": "",
-                "required": false,
-                "show": true,
-                "title_case": false,
-                "tool_mode": false,
-                "trace_as_input": true,
-                "trace_as_metadata": true,
-                "type": "str",
-                "value": ""
-              },
-              "field_2_name": {
-                "_input_type": "MessageTextInput",
-                "advanced": false,
-                "display_name": "Key 2 Name",
-                "dynamic": false,
-                "info": "Name of checkboxs key.",
-                "input_types": [
-                  "Message"
-                ],
-                "list": false,
-                "list_add_label": "Add More",
-                "load_from_db": false,
-                "name": "field_2_name",
-                "placeholder": "",
-                "required": false,
-                "show": true,
-                "title_case": false,
-                "tool_mode": false,
-                "trace_as_input": true,
-                "trace_as_metadata": true,
-                "type": "str",
-                "value": ""
-              },
-              "number_of_fields": {
-                "_input_type": "IntInput",
-                "advanced": false,
-                "display_name": "Number of Keys",
-                "dynamic": false,
-                "info": "Number of keys to be added to the record.",
-                "list": false,
-                "list_add_label": "Add More",
-                "load_from_db": false,
-                "name": "number_of_fields",
-                "placeholder": "",
-                "range_spec": {
-                  "max": 15,
-                  "min": 1,
-                  "step": 1,
-                  "step_type": "int"
-                },
-                "real_time_refresh": true,
-                "required": false,
-                "show": true,
-                "title_case": false,
-                "tool_mode": false,
-                "trace_as_metadata": true,
-                "type": "int",
-                "value": 2
-              }
-            },
-            "tool_mode": false
-          },
-          "showNode": true,
-          "type": "check_box"
-        },
-        "dragging": false,
-        "id": "check_box-JKRkx",
-        "measured": {
-          "height": 409,
-          "width": 320
-        },
-        "position": {
-          "x": -1106.7831117756964,
-          "y": -191.39307956336768
-        },
-        "selected": false,
-        "type": "genericNode"
-      },
-      {
-        "data": {
-          "id": "Exist-muPre",
-          "node": {
-            "base_classes": [
-              "Data"
-            ],
-            "beta": false,
-            "conditional_paths": [],
-            "custom_fields": {},
-            "description": "This defines the keys that will be checked for availability.",
-            "display_name": "Exist Key Filter",
-            "documentation": "",
-            "edited": true,
-            "field_order": [
-              "number_of_fields"
-            ],
-            "frozen": false,
-            "icon": "table",
-            "legacy": false,
-            "metadata": {},
-            "minimized": false,
-            "output_types": [],
-            "outputs": [
-              {
-                "allows_loop": false,
-                "cache": true,
-                "display_name": "Filtered Data",
-                "hidden": false,
-                "method": "build_output",
-                "name": "output",
-                "options": null,
-                "required_inputs": null,
-                "selected": "Data",
-                "tool_mode": true,
-                "types": [
-                  "Data"
-                ],
-                "value": "__UNDEFINED__"
-              }
-            ],
-            "pinned": false,
-            "template": {
-              "_type": "Component",
-              "code": {
-                "advanced": true,
-                "dynamic": true,
-                "fileTypes": [],
-                "file_path": "",
-                "info": "",
-                "list": false,
-                "load_from_db": false,
-                "multiline": true,
-                "name": "code",
-                "password": false,
-                "placeholder": "",
-                "required": true,
-                "show": true,
-                "title_case": false,
-                "type": "code",
-                "value": "from langflow.custom import Component\nfrom langflow.io import Output, DropdownInput\nfrom langflow.schema import Data\nfrom langflow.inputs.inputs import IntInput, MessageTextInput\nfrom langflow.field_typing.range_spec import RangeSpec\nfrom langflow.schema.dotdict import dotdict\n\n\nclass ExistComponent(Component):\n    display_name = \"Exist Key Filter\"\n    name = \"Exist\"\n    MAX_FIELDS = 15\n    icon = \"table\"\n    description: str = \"This defines the keys that will be checked for availability.\"\n    inputs = [\n        IntInput(\n            name=\"number_of_fields\",\n            display_name=\"Number of Keys\",\n            info=\"Number of keys to be added to the record.\",\n            real_time_refresh=True,\n            value=1,\n            range_spec=RangeSpec(\n                min=1, max=MAX_FIELDS, step=1, step_type=\"int\"\n            ),\n        ),\n        \n    ]\n    outputs = [\n        Output(\n            display_name=\"Filtered Data\", name=\"output\", method=\"build_output\"\n        )\n    ]\n\n    def update_build_config(\n        self, build_config: dotdict, field_value, field_name=None\n    ):\n        if field_name == \"number_of_fields\":\n            default_keys = {\"code\", \"_type\", \"number_of_fields\", \"data\"}\n            try:\n                field_value_int = int(field_value)\n            except ValueError:\n                return build_config\n            if field_value_int > self.MAX_FIELDS:\n                build_config[\"number_of_fields\"][\"value\"] = self.MAX_FIELDS\n                raise ValueError(\n                    f\"Number of fields cannot exceed {self.MAX_FIELDS}.\"\n                )\n\n            existing_fields = {}\n            for key in list(build_config.keys()):\n                if key not in default_keys:\n                    existing_fields[key] = build_config.pop(key)\n\n            for i in range(1, field_value_int + 1):\n                key = f\"field_{i}_name\"\n                if key in existing_fields:\n                    field = existing_fields[key]\n                    build_config[key] = field\n                else:\n                    field = MessageTextInput(\n                        display_name=f\"Key {i} Name\",\n                        name=key,\n                        info=f\"Name of key {i}.\",\n                    )\n                    build_config[field.name] = field.to_dict()\n            build_config[\"number_of_fields\"][\"value\"] = field_value_int\n        return build_config\n\n    def get_field_names(self):\n        field_names = []\n        for i in range(1, getattr(self, \"number_of_fields\", 0) + 1):\n            field_name = getattr(self, f\"field_{i}_name\", None)\n            if field_name:\n                field_names.append(field_name)\n        return field_names\n\n    def build_output(self) -> Data:\n        field_names = self.get_field_names()\n        return Data(data={\"existing_fields\": field_names})\n"
-              },
-              "field_1_name": {
-                "_input_type": "MessageTextInput",
-                "advanced": false,
-                "display_name": "Key 1 Name",
-                "dynamic": false,
-                "info": "Name of key 1.",
-                "input_types": [
-                  "Message"
-                ],
-                "list": false,
-                "list_add_label": "Add More",
-                "load_from_db": false,
-                "name": "field_1_name",
-                "placeholder": "",
-                "required": false,
-                "show": true,
-                "title_case": false,
-                "tool_mode": false,
-                "trace_as_input": true,
-                "trace_as_metadata": true,
-                "type": "str",
-                "value": ""
-              },
-              "number_of_fields": {
-                "_input_type": "IntInput",
-                "advanced": false,
-                "display_name": "Number of Keys",
-                "dynamic": false,
-                "info": "Number of keys to be added to the record.",
-                "list": false,
-                "list_add_label": "Add More",
-                "load_from_db": false,
-                "name": "number_of_fields",
-                "placeholder": "",
-                "range_spec": {
-                  "max": 15,
-                  "min": 1,
-                  "step": 1,
-                  "step_type": "int"
-                },
-                "real_time_refresh": true,
-                "required": false,
-                "show": true,
-                "title_case": false,
-                "tool_mode": false,
-                "trace_as_metadata": true,
-                "type": "int",
-                "value": 1
-              }
-            },
-            "tool_mode": false
-          },
-          "showNode": true,
-          "type": "Exist"
-        },
-        "dragging": false,
-        "id": "Exist-muPre",
-        "measured": {
-          "height": 331,
-          "width": 320
-        },
-        "position": {
-          "x": -1476.8535388404682,
-          "y": 221.94172307443242
-        },
-        "selected": false,
-        "type": "genericNode"
-      },
-      {
-        "data": {
-          "id": "output-aq1rc",
-          "node": {
-            "base_classes": [
-              "Data"
-            ],
-            "beta": false,
-            "conditional_paths": [],
-            "custom_fields": {},
-            "description": "Specifies the keys to be displayed.",
-            "display_name": "Output Keys",
-            "documentation": "",
-            "edited": true,
-            "field_order": [
-              "number_of_fields"
-            ],
-            "frozen": false,
-            "icon": "table",
-            "legacy": false,
-            "metadata": {},
-            "minimized": false,
-            "output_types": [],
-            "outputs": [
-              {
-                "allows_loop": false,
-                "cache": true,
-                "display_name": "Filtered Data",
-                "hidden": null,
-                "method": "build_output",
-                "name": "output",
-                "options": null,
-                "required_inputs": null,
-                "selected": "Data",
-                "tool_mode": true,
-                "types": [
-                  "Data"
-                ],
-                "value": "__UNDEFINED__"
-              }
-            ],
-            "pinned": false,
-            "template": {
-              "_type": "Component",
-              "code": {
-                "advanced": true,
-                "dynamic": true,
-                "fileTypes": [],
-                "file_path": "",
-                "info": "",
-                "list": false,
-                "load_from_db": false,
-                "multiline": true,
-                "name": "code",
-                "password": false,
-                "placeholder": "",
-                "required": true,
-                "show": true,
-                "title_case": false,
-                "type": "code",
-                "value": "from langflow.custom import Component\nfrom langflow.io import Output, DropdownInput\nfrom langflow.schema import Data\nfrom langflow.inputs.inputs import IntInput, MessageTextInput\nfrom langflow.field_typing.range_spec import RangeSpec\nfrom langflow.schema.dotdict import dotdict\n\n\nclass OutputComponent(Component):\n    display_name = \"Output Keys\"\n    name = \"output\"\n    MAX_FIELDS = 15\n    description: str = \"Specifies the keys to be displayed.\"\n    icon = \"table\"\n    inputs = [\n        IntInput(\n            name=\"number_of_fields\",\n            display_name=\"Number of Keys\",\n            info=\"Number of Keys to be added to the record.\",\n            real_time_refresh=True,\n            value=0,\n            range_spec=RangeSpec(\n                min=1, max=MAX_FIELDS, step=1, step_type=\"int\"\n            ),\n        ),\n    ]\n    outputs = [\n        Output(\n            display_name=\"Filtered Data\", name=\"output\", method=\"build_output\"\n        )\n    ]\n\n    def update_build_config(\n        self, build_config: dotdict, field_value, field_name=None\n    ):\n        if field_name == \"number_of_fields\":\n            default_keys = {\"code\", \"_type\", \"number_of_fields\", \"data\"}\n            try:\n                field_value_int = int(field_value)\n            except ValueError:\n                return build_config\n            if field_value_int > self.MAX_FIELDS:\n                build_config[\"number_of_fields\"][\"value\"] = self.MAX_FIELDS\n                raise ValueError(\n                    f\"Number of fields cannot exceed {self.MAX_FIELDS}.\"\n                )\n\n            existing_fields = {}\n            for key in list(build_config.keys()):\n                if key not in default_keys:\n                    existing_fields[key] = build_config.pop(key)\n\n            for i in range(1, field_value_int + 1):\n                key = f\"field_{i}_name\"\n                if key in existing_fields:\n                    field = existing_fields[key]\n                    build_config[key] = field\n                else:\n                    field = MessageTextInput(\n                        display_name=f\"Key {i} Name\",\n                        name=key,\n                        info=f\"Name of key {i} that you want to output.\",\n                    )\n                    build_config[field.name] = field.to_dict()\n            build_config[\"number_of_fields\"][\"value\"] = field_value_int\n        return build_config\n\n    def get_field_names(self):\n        field_names = []\n        for i in range(1, getattr(self, \"number_of_fields\", 0) + 1):\n            field_name = getattr(self, f\"field_{i}_name\", None)\n            if field_name:\n                field_names.append(field_name)\n        return field_names\n\n    def build_output(self) -> Data:\n        field_names = self.get_field_names()\n        return Data(data={\"output_keys\": field_names})"
-              },
-              "field_1_name": {
-                "_input_type": "MessageTextInput",
-                "advanced": false,
-                "display_name": "Key 1 Name",
-                "dynamic": false,
-                "info": "Name of key 1 that you want to output.",
-                "input_types": [
-                  "Message"
-                ],
-                "list": false,
-                "list_add_label": "Add More",
-                "load_from_db": false,
-                "name": "field_1_name",
-                "placeholder": "",
-                "required": false,
-                "show": true,
-                "title_case": false,
-                "tool_mode": false,
-                "trace_as_input": true,
-                "trace_as_metadata": true,
-                "type": "str",
-                "value": ""
-              },
-              "number_of_fields": {
-                "_input_type": "IntInput",
-                "advanced": false,
-                "display_name": "Number of Keys",
-                "dynamic": false,
-                "info": "Number of Keys to be added to the record.",
-                "list": false,
-                "list_add_label": "Add More",
-                "load_from_db": false,
-                "name": "number_of_fields",
-                "placeholder": "",
-                "range_spec": {
-                  "max": 15,
-                  "min": 1,
-                  "step": 1,
-                  "step_type": "int"
-                },
-                "real_time_refresh": true,
-                "required": false,
-                "show": true,
-                "title_case": false,
-                "tool_mode": false,
-                "trace_as_metadata": true,
-                "type": "int",
-                "value": 1
-              }
-            },
-            "tool_mode": false
-          },
-          "showNode": true,
-          "type": "output"
-        },
-        "dragging": false,
-        "id": "output-aq1rc",
-        "measured": {
-          "height": 311,
-          "width": 320
-        },
-        "position": {
-          "x": -1067.0240048734356,
-          "y": 837.2290484827952
-        },
-        "selected": false,
-        "type": "genericNode"
-      },
-      {
-        "data": {
           "id": "DataToText-LRuDa",
           "node": {
             "base_classes": [
@@ -1052,6 +584,7 @@
             "frozen": false,
             "icon": "folder",
             "legacy": false,
+            "lf_version": "1.3.4",
             "metadata": {},
             "minimized": false,
             "output_types": [],
@@ -1159,7 +692,7 @@
                 ],
                 "list": false,
                 "list_add_label": "Add More",
-                "load_from_db": true,
+                "load_from_db": false,
                 "name": "path",
                 "placeholder": "",
                 "required": false,
@@ -1169,7 +702,7 @@
                 "trace_as_input": true,
                 "trace_as_metadata": true,
                 "type": "str",
-                "value": "path"
+                "value": "/home/alexandr/Documents/test"
               },
               "recursive": {
                 "_input_type": "BoolInput",
@@ -1247,7 +780,8 @@
                 "trace_as_metadata": true,
                 "type": "str",
                 "value": [
-                  "docx"
+                  "docx",
+                  "pdf"
                 ]
               },
               "use_multithreading": {
@@ -1281,15 +815,187 @@
           "width": 320
         },
         "position": {
-          "x": -1528.9390160801286,
-          "y": -151.55544683293348
+          "x": -1887.8274258916424,
+          "y": -57.60560133253719
         },
         "selected": false,
         "type": "genericNode"
       },
       {
         "data": {
-          "id": "FromFilter-YPzbV",
+          "id": "output-ad1TZ",
+          "node": {
+            "base_classes": [
+              "Data"
+            ],
+            "beta": false,
+            "conditional_paths": [],
+            "custom_fields": {},
+            "description": "Specifies the keys to be displayed.",
+            "display_name": "Output Keys",
+            "documentation": "",
+            "edited": true,
+            "field_order": [
+              "number_of_fields"
+            ],
+            "frozen": false,
+            "icon": "table",
+            "legacy": false,
+            "lf_version": "1.3.4",
+            "metadata": {},
+            "minimized": false,
+            "output_types": [],
+            "outputs": [
+              {
+                "allows_loop": false,
+                "cache": true,
+                "display_name": "Filtered Data",
+                "hidden": null,
+                "method": "build_output",
+                "name": "output",
+                "options": null,
+                "required_inputs": null,
+                "selected": "Data",
+                "tool_mode": true,
+                "types": [
+                  "Data"
+                ],
+                "value": "__UNDEFINED__"
+              }
+            ],
+            "pinned": false,
+            "template": {
+              "_type": "Component",
+              "code": {
+                "advanced": true,
+                "dynamic": true,
+                "fileTypes": [],
+                "file_path": "",
+                "info": "",
+                "list": false,
+                "load_from_db": false,
+                "multiline": true,
+                "name": "code",
+                "password": false,
+                "placeholder": "",
+                "required": true,
+                "show": true,
+                "title_case": false,
+                "type": "code",
+                "value": "from langflow.custom import Component\nfrom langflow.io import Output, DropdownInput\nfrom langflow.schema import Data\nfrom langflow.inputs.inputs import IntInput, MessageTextInput\nfrom langflow.field_typing.range_spec import RangeSpec\nfrom langflow.schema.dotdict import dotdict\n\n\nclass OutputKeysComponent(Component):\n    display_name = \"Output Keys\"\n    name = \"output\"\n    MAX_FIELDS = 15\n    description: str = \"Specifies the keys to be displayed.\"\n    icon = \"table\"\n    inputs = [\n        IntInput(\n            name=\"number_of_fields\",\n            display_name=\"Number of Keys\",\n            info=\"Number of Keys to be added to the record.\",\n            real_time_refresh=True,\n            value=0,\n            input_types=[],\n            range_spec=RangeSpec(\n                min=1, max=MAX_FIELDS, step=1, step_type=\"int\"\n            ),\n        ),\n    ]\n    outputs = [\n        Output(\n            display_name=\"Filtered Data\", name=\"output\", method=\"build_output\"\n        )\n    ]\n\n    def update_build_config(\n        self, build_config: dotdict, field_value, field_name=None\n    ):\n        if field_name == \"number_of_fields\":\n            default_keys = {\"code\", \"_type\", \"number_of_fields\", \"data\"}\n            try:\n                field_value_int = int(field_value)\n            except ValueError:\n                return build_config\n            if field_value_int > self.MAX_FIELDS:\n                build_config[\"number_of_fields\"][\"value\"] = self.MAX_FIELDS\n                raise ValueError(\n                    f\"Number of fields cannot exceed {self.MAX_FIELDS}.\"\n                )\n\n            existing_fields = {}\n            for key in list(build_config.keys()):\n                if key not in default_keys:\n                    existing_fields[key] = build_config.pop(key)\n\n            for i in range(1, field_value_int + 1):\n                key = f\"field_{i}_name\"\n                if key in existing_fields:\n                    field = existing_fields[key]\n                    build_config[key] = field\n                else:\n                    field = MessageTextInput(\n                        display_name=f\"Key {i} Name\",\n                        name=key,\n                        input_types=[],\n                        info=f\"Name of key {i} that you want to output.\",\n                    )\n                    build_config[field.name] = field.to_dict()\n            build_config[\"number_of_fields\"][\"value\"] = field_value_int\n        return build_config\n\n    def get_field_names(self):\n        field_names = []\n        for i in range(1, getattr(self, \"number_of_fields\", 0) + 1):\n            field_name = getattr(self, f\"field_{i}_name\", None)\n            if field_name:\n                field_names.append(field_name)\n        return field_names\n\n    def build_output(self) -> Data:\n        field_names = self.get_field_names()\n        return Data(data={\"output_keys\": field_names})"
+              },
+              "field_1_name": {
+                "_input_type": "MessageTextInput",
+                "advanced": false,
+                "display_name": "Key 1 Name",
+                "dynamic": false,
+                "info": "Name of key 1 that you want to output.",
+                "input_types": [],
+                "list": false,
+                "list_add_label": "Add More",
+                "load_from_db": false,
+                "name": "field_1_name",
+                "placeholder": "",
+                "required": false,
+                "show": true,
+                "title_case": false,
+                "tool_mode": false,
+                "trace_as_input": true,
+                "trace_as_metadata": true,
+                "type": "str",
+                "value": "decedent_name"
+              },
+              "field_2_name": {
+                "_input_type": "MessageTextInput",
+                "advanced": false,
+                "display_name": "Key 2 Name",
+                "dynamic": false,
+                "info": "Name of key 2 that you want to output.",
+                "input_types": [],
+                "list": false,
+                "list_add_label": "Add More",
+                "load_from_db": false,
+                "name": "field_2_name",
+                "placeholder": "",
+                "required": false,
+                "show": true,
+                "title_case": false,
+                "tool_mode": false,
+                "trace_as_input": true,
+                "trace_as_metadata": true,
+                "type": "str",
+                "value": "signature_date"
+              },
+              "field_3_name": {
+                "_input_type": "MessageTextInput",
+                "advanced": false,
+                "display_name": "Key 3 Name",
+                "dynamic": false,
+                "info": "Name of key 3 that you want to output.",
+                "input_types": [],
+                "list": false,
+                "list_add_label": "Add More",
+                "load_from_db": false,
+                "name": "field_3_name",
+                "placeholder": "",
+                "required": false,
+                "show": true,
+                "title_case": false,
+                "tool_mode": false,
+                "trace_as_input": true,
+                "trace_as_metadata": true,
+                "type": "str",
+                "value": "representative_signature_date"
+              },
+              "number_of_fields": {
+                "_input_type": "IntInput",
+                "advanced": false,
+                "display_name": "Number of Keys",
+                "dynamic": false,
+                "info": "Number of Keys to be added to the record.",
+                "input_types": [],
+                "list": false,
+                "list_add_label": "Add More",
+                "load_from_db": false,
+                "name": "number_of_fields",
+                "placeholder": "",
+                "range_spec": {
+                  "max": 15,
+                  "min": 1,
+                  "step": 1,
+                  "step_type": "int"
+                },
+                "real_time_refresh": true,
+                "required": false,
+                "show": true,
+                "title_case": false,
+                "tool_mode": false,
+                "trace_as_metadata": true,
+                "type": "int",
+                "value": 3
+              }
+            },
+            "tool_mode": false
+          },
+          "showNode": true,
+          "type": "output"
+        },
+        "dragging": false,
+        "id": "output-ad1TZ",
+        "measured": {
+          "height": 475,
+          "width": 320
+        },
+        "position": {
+          "x": -1333.5543105588886,
+          "y": 848.2329729082944
+        },
+        "selected": false,
+        "type": "genericNode"
+      },
+      {
+        "data": {
+          "id": "FormsFiller-QFqCy",
           "node": {
             "base_classes": [
               "Data"
@@ -1298,7 +1004,7 @@
             "conditional_paths": [],
             "custom_fields": {},
             "description": "Filters the specified forms based on the specified criteria.",
-            "display_name": "From Filter",
+            "display_name": "Form Filter",
             "documentation": "",
             "edited": true,
             "field_order": [
@@ -1317,7 +1023,7 @@
                 "allows_loop": false,
                 "cache": true,
                 "display_name": "Data",
-                "hidden": false,
+                "hidden": null,
                 "method": "build_data",
                 "name": "data_list",
                 "options": null,
@@ -1365,28 +1071,26 @@
                 "show": true,
                 "title_case": false,
                 "type": "code",
-                "value": "from typing import Any, Dict, List\n\nfrom langflow.custom import Component\nfrom langflow.docbuilder import docbuilder\nfrom langflow.inputs.inputs import (\n    DataInput,\n)\nfrom langflow.io import Output\nfrom langflow.schema import Data\nfrom datetime import datetime\n\nSTANDARD_ENCODE_FORMAT = (\n    \"<m_nCsvTxtEncoding>0</m_nCsvTxtEncoding><m_nCsvDelimiter>0</m_nCsvDelimiter>\"\n)\n\n\nclass FromFilter(Component):\n    display_name: str = \"From Filter\"\n    description: str = \"Filters the specified forms based on the specified criteria.\"\n    name: str = \"FromFilter\"\n    icon = \"filter\"\n    MAX_FIELDS = 15\n    inputs = [\n        DataInput(\n            name=\"paths\",\n            display_name=\"File Paths\",\n            info=\"List of file paths to process.\",\n            is_list=True,\n            required=True,\n        ),\n        DataInput(\n            name=\"fields\",\n            display_name=\"Criteria\",\n            info=\"List of fields to extract from the files.\",\n            input_types=[\"Data\"],\n            value=None,\n            is_list=True,\n        ),\n        DataInput(\n            name=\"output_keys\",\n            display_name=\"Output keys\",\n            info=\"List of fields to extract from the files.\",\n            input_types=[\"Data\"],\n            value=None,\n            \n        ),\n        \n    ]\n\n    outputs = [\n        Output(display_name=\"Data\", name=\"data_list\", method=\"build_data\"),\n        Output(display_name=\"Paths\", name=\"paths_list\", method=\"load_directory\"),\n    ]\n\n    def process_file(self, file_path: str) -> Dict[str, Any]:\n        \"\"\"Process the file and extract data based on the provided field names.\"\"\"\n        builder = docbuilder.CDocBuilder()\n        try:\n            builder.OpenFile(file_path, STANDARD_ENCODE_FORMAT)\n        except Exception as e:\n            msg=f\"Error opening file: {file_path}: {e}\"\n            raise Exception(msg)\n\n        context = builder.GetContext()\n        globalObj = context.GetGlobal()\n        api = globalObj[\"Api\"]\n        document = api.GetDocument()\n        forms = document.GetAllForms()\n        formsLength: int = forms.GetLength()\n        record = {}\n        record[\"file_path\"] = file_path\n        for i in range(formsLength):\n            form = forms.Get(i)\n            key: str = form.GetFormKey().ToString()\n            form_type: str = form.GetFormType().ToString()\n\n            if form_type == \"textForm\":\n                text: str = form.GetText().ToString()\n                record[key] = text\n            elif form_type == \"dateForm\":\n                time: int = form.GetTime().ToInt()\n                record[key] = time\n\n            elif form_type == \"checkBoxForm\":\n                checkBox: bool = form.IsChecked().ToBool()\n                record[key] = checkBox\n        builder.CloseFile()\n        return record\n\n    def get_existing_fields(\n        self, data: List[Dict[str, Any]], existing_fields: List[str]\n    ) -> List[Dict[str, Any]]:\n        \"\"\"Filter data to include only existing fields.\"\"\"\n        filtered_data = []\n        for record in data:\n            if all(key in record for key in existing_fields):\n                filtered_data.append(record)\n        return filtered_data\n\n    def _should_include_person(\n        self,\n        person: dict,\n        operation: str,\n        parsed_values: tuple,\n        keys,\n    ) -> bool:\n        \"\"\"Determine if person should be included in filtered results (money only).\"\"\"\n        if operation == \"Insert\":\n            start_field, end_field = parsed_values\n            form_start = self.parse_date(person[keys[0]]) \n            form_end =self.parse_date(person[keys[1]])\n            return (end_field >= form_end) and (form_start >= start_field)\n        else:\n            if operation == \"<\":\n                form_field = self.parse_date(person[keys[0]])\n                field = parsed_values[0]\n                return field < form_field\n            elif operation == \">\":\n                form_field = self.parse_date(person[keys[1]])\n                field = parsed_values[1]\n                return form_field < field\n\n        return False\n        \n    def parse_date(self,date_str)-> int:\n        \"\"\"Convert date string to milliseconds since epoch.\"\"\"\n        if not date_str:\n            return None\n        try:\n            dt = datetime.strptime(date_str, \"%d-%m-%Y\")\n            return int(dt.timestamp() * 1000)\n        except Exception:\n            return None\n            \n    def filter_date(\n        self,\n        money_data: list[dict[str, Any]],\n        *field_names: int,\n    ) -> list[dict[str, Any]]:\n        \"\"\"Filter money data based on operation type and amounts.\"\"\"\n        amounts:list[str] = field_names[0][1::2]\n        keys:list[str] = field_names[0][0::2]\n\n        parsed_dates = [self.parse_date(a) for a in amounts]\n\n        if parsed_dates[0] and parsed_dates[1]:\n            operation =\"Insert\"\n        elif parsed_dates[0]:\n            operation = \"<\"\n        elif parsed_dates[1]:\n            operation = \">\"\n        else:\n            msg=\"Invalid operation\"\n            raise Exception(msg)\n\n        return [\n            person\n            for person in money_data\n            if self._should_include_person(\n                person, operation, parsed_dates, keys\n            )\n        ]\n\n    def build_main(self) -> List:\n        \"\"\"Process files and return extracted data.\"\"\"\n        file_paths = self.paths\n        all_data = self.fields\n        existing_fields = []\n        checkbox_values = []\n        operation_fields = []\n        output_keys = self.output_keys.data[\"output_keys\"]\n        for data_obj in all_data:\n            data = data_obj.data\n            if \"existing_fields\" in data:\n                existing_fields.extend(data[\"existing_fields\"])\n            if \"check_box\" in data:\n                checkbox_values.extend(data[\"check_box\"])\n            if \"fields\" in data:\n                operation_fields.append(data[\"fields\"])\n        processed_data = []\n\n        for file_path in file_paths:\n            if isinstance(file_path, Data):\n                file_path = file_path.text\n            file_data: Dict[str, Any] = self.process_file(file_path)\n            processed_data.append(file_data)\n\n        if existing_fields:\n            processed_data = self.get_existing_fields(processed_data, existing_fields)\n        if checkbox_values:\n            processed_data = [\n                record for record in processed_data\n                if not any(\n                    value in record and record[value] is False\n                    for value in checkbox_values\n                )\n            ]\n\n        while len(operation_fields) > 0:\n            field_names = operation_fields.pop()\n            processed_data = self.filter_date(\n                processed_data,\n                field_names,\n            )\n\n        #processed_data = [\n        #    {key: record[key] for key in record if key != \"file_path\"}\n        #    for record in processed_data\n        #]\n        if output_keys is not None:\n            processed_data = [\n                {key: record[key] for key in record if key in output_keys}\n                for record in processed_data\n            ]\n        return processed_data\n\n    def build_data(self) -> Data:\n        processed_data = self.build_main()\n        return Data(data={\"items\": processed_data})\n\n    def load_directory(self) -> list[Data]:\n        processed_data = self.build_main()\n        file_paths = [record[\"file_path\"] for record in processed_data]\n        return file_paths\n\n\n\n"
+                "value": "from typing import Any, Dict, List\n\nfrom langflow.custom import Component\nfrom langflow.docbuilder import docbuilder\nfrom langflow.inputs import Input\nfrom langflow.inputs.inputs import (\n    DataInput,\n)\nfrom langflow.io import Output\nfrom langflow.schema import Data\n\nSTANDARD_ENCODE_FORMAT = (\n    \"<m_nCsvTxtEncoding>0</m_nCsvTxtEncoding><m_nCsvDelimiter>0</m_nCsvDelimiter>\"\n)\n\n\nclass FormFilterComponent(Component):\n    display_name: str = \"Form Filter\"\n    description: str = \"Filters the specified forms based on the specified criteria.\"\n    name: str = \"FormFilter\"\n    icon = \"filter\"\n    MAX_FIELDS = 15\n    inputs = [\n        DataInput(\n            name=\"paths\",\n            display_name=\"File Paths\",\n            info=\"List of file paths to process.\",\n            is_list=True,\n            required=True,\n        ),\n        Input(\n            name=\"fields\",\n            input_types=[\"Component\"],\n            component=Component,\n            is_list=True,\n        ),\n        DataInput(\n            name=\"output_keys\",\n            display_name=\"Output keys\",\n            info=\"List of fields to extract from the files.\",\n            input_types=[\"Data\"],\n            value=None,\n            \n        ),\n        \n    ]\n\n    outputs = [\n        Output(display_name=\"Data\", name=\"data_list\", method=\"build_data\"),\n        Output(display_name=\"Paths\", name=\"paths_list\", method=\"load_directory\"),\n    ]\n\n    def process_file(self, file_path: str) -> Dict[str, Any]:\n        builder = docbuilder.CDocBuilder()\n        try:\n            builder.OpenFile(file_path, STANDARD_ENCODE_FORMAT)\n        except Exception:\n            msg=f\"Error opening file: {file_path}\"\n            raise Exception(msg)\n\n        context: docbuilder.CDocBuilderContext = builder.GetContext()\n        globalObj: docbuilder.CDocBuilderValue = context.GetGlobal()\n        api: docbuilder.CDocBuilderValue = globalObj[\"Api\"]\n        document: docbuilder.CDocBuilderValue  = api.GetDocument()\n        forms: docbuilder.CDocBuilderValue = document.GetAllForms()\n        record = {}\n        record[\"file_path\"] = file_path\n        record[\"forms\"] = forms\n        record[\"api\"] = api\n\n        builder.CloseFile()\n        return record\n\n    def get_existing_fields(\n        self, data: List[Dict[str, Any]], existing_fields: List[str]\n    ) -> List[Dict[str, Any]]:\n        \"\"\"Filter data to include only existing fields.\"\"\"\n        filtered_data = []\n        for record in data:\n            if all(key in record for key in existing_fields):\n                filtered_data.append(record)\n        return filtered_data\n\n    def get_form_value(self,forms, key,tag=None) -> Any:\n        for i in range(forms.GetLength()):\n            form = forms.Get(i)\n            form_key = form.GetFormKey().ToString()\n            form_tag = form.GetFormTag().ToString()\n            \n            if form_key == key and (not tag or form_tag == tag):\n                form_type = form.GetFormType().ToString()\n                if form_type == \"textForm\":\n                    #raise Exception(f\"{form_key=},{form.GetText().ToString()=}\")\n                    return form.GetText().ToString()\n                elif form_type == \"dateForm\":\n                    raise Exception(f\"{form_key=},{form.GetTime().ToInt()=},{form.GetText().ToString()=}\")\n                    return form.GetTime().ToInt()\n                elif form_type == \"checkBoxForm\":\n                    return form.IsChecked().ToBool()\n        return None\n\n    def build_main(self) -> List:\n        file_paths: list[str] = self.paths\n        filters: list[Component] = self.fields\n        output_keys = self.output_keys.data[\"output_keys\"] if self.output_keys else None\n        result = []\n\n        for file_path in file_paths:\n            if isinstance(file_path, Data):\n                file_path = file_path.text\n            builder = docbuilder.CDocBuilder()\n            try:\n                builder.OpenFile(file_path, STANDARD_ENCODE_FORMAT)\n            except Exception:\n                continue\n            context = builder.GetContext()\n            globalObj = context.GetGlobal()\n            api = globalObj[\"Api\"]\n            document = api.GetDocument()\n            forms = document.GetAllForms()\n            passed = True\n            for filter_component in filters:\n                if hasattr(filter_component, \"process\"):\n                    #raise Exception(f\"{forms=}, {key=}\")\n                    if not filter_component.process(api, forms, self.get_form_value):\n                        passed = False\n                        break\n            if passed:\n                record = {\"file_path\": file_path}\n                if output_keys:\n                    for key in output_keys:\n                        #raise Exception(f\"{forms=}, {key=}\")\n                        value = self.get_form_value(forms, key)\n                        record[key] = value\n                result.append(record)\n            builder.CloseFile()\n        return result\n\n    def build_data(self) -> Data:\n        processed_data = self.build_main()\n        return Data(data={\"items\": processed_data})\n\n    def load_directory(self) -> list[Data]:\n        processed_data = self.build_main()\n        file_paths = [record[\"file_path\"] for record in processed_data]\n        return file_paths\n\n\n\n\n\n\n\n"
               },
               "fields": {
-                "_input_type": "DataInput",
                 "advanced": false,
-                "display_name": "Criteria",
                 "dynamic": false,
-                "info": "List of fields to extract from the files.",
+                "fileTypes": [],
+                "file_path": "",
+                "info": "",
                 "input_types": [
-                  "Data"
+                  "Component"
                 ],
                 "list": true,
-                "list_add_label": "Add More",
+                "load_from_db": false,
+                "multiline": false,
                 "name": "fields",
                 "placeholder": "",
                 "required": false,
                 "show": true,
                 "title_case": false,
-                "tool_mode": false,
-                "trace_as_input": true,
-                "trace_as_metadata": true,
-                "type": "other"
+                "type": "str"
               },
               "output_keys": {
                 "_input_type": "DataInput",
@@ -1435,44 +1139,43 @@
             "tool_mode": false
           },
           "showNode": true,
-          "type": "FromFilter"
+          "type": "FormFilter"
         },
         "dragging": false,
-        "id": "FromFilter-YPzbV",
+        "id": "FormsFiller-QFqCy",
         "measured": {
-          "height": 347,
+          "height": 393,
           "width": 320
         },
         "position": {
-          "x": -686.2022840844633,
-          "y": 221.96072520763968
+          "x": -881.4729435940566,
+          "y": 151.58221063375154
         },
         "selected": false,
         "type": "genericNode"
       },
       {
         "data": {
-          "id": "date_field_filter-KrQnS",
+          "id": "Exist-XsRPw",
           "node": {
             "base_classes": [
-              "Data"
+              "Component"
             ],
             "beta": false,
             "conditional_paths": [],
             "custom_fields": {},
-            "description": "Returns the date range, along with the corresponding keys.",
-            "display_name": "Date Filter",
+            "description": "This defines the keys that will be checked for availability.",
+            "display_name": "Exist Key Filter",
             "documentation": "",
-            "edited": true,
+            "edited": false,
             "field_order": [
-              "field_1_name",
-              "field_2_name",
-              "field_3_name",
-              "field_4_name"
+              "key",
+              "tag"
             ],
             "frozen": false,
-            "icon": "clock",
+            "icon": "table",
             "legacy": false,
+            "lf_version": "1.3.4",
             "metadata": {},
             "minimized": false,
             "output_types": [],
@@ -1480,16 +1183,14 @@
               {
                 "allows_loop": false,
                 "cache": true,
-                "display_name": "Data",
+                "display_name": "Filtered Data",
                 "hidden": false,
-                "method": "build_data",
-                "name": "data",
-                "options": null,
-                "required_inputs": null,
-                "selected": "Data",
+                "method": "build_output",
+                "name": "output",
+                "selected": "Component",
                 "tool_mode": true,
                 "types": [
-                  "Data"
+                  "Component"
                 ],
                 "value": "__UNDEFINED__"
               }
@@ -1513,7 +1214,136 @@
                 "show": true,
                 "title_case": false,
                 "type": "code",
-                "value": "from typing import List\n\nfrom langflow.custom import Component\nfrom langflow.io import (\n    MessageTextInput,\n    Output,\n)\nfrom langflow.schema import Data\n\n\nclass DateKeyFilter(Component):\n    display_name: str = \"Date Filter\"\n    description: str = \"Returns the date range, along with the corresponding keys.\"\n    name: str = \"date_field_filter\"\n    MAX_FIELDS = 15\n\n    icon = \"clock\"\n\n    inputs = [\n        MessageTextInput(\n            name=\"field_1_name\",\n            display_name=\"Key 1\",\n            info=\"Key1.\",\n        ),\n        MessageTextInput(\n            name=\"field_2_name\",\n            display_name=\"From\",\n            placeholder = \"DD/MM/YYYY\",\n            info=\"Value of form for key:1.\",\n        ),\n        MessageTextInput(\n            name=\"field_3_name\",\n            display_name=\"Key 2\",\n            info=\"Key2.\",\n        ),\n        MessageTextInput(\n            name=\"field_4_name\",\n            display_name=\"To\",\n            placeholder = \"DD/MM/YYYY\",\n            info=\"Value of form for key:2.\",\n        ),\n    ]\n\n    outputs = [\n        Output(\n            display_name=\"Data\",\n            name=\"data\",\n            method=\"build_data\",\n        ),\n    ]\n\n    def get_field_names(self) -> List[str]:\n        \"\"\"Get the list of field names from the component's attributes.\"\"\"\n        field_names = []\n        for key, value in self._attributes.items():\n            if key.startswith(\"field_\") and key.endswith(\"_name\"):\n                field_names.append(value)\n        return field_names\n\n    def get_text_from_processed_data(self, processed_data: List[str]) -> str:\n        \"\"\"Convert processed_data into a readable text format.\"\"\"\n        text_lines = []\n        for text in processed_data:\n            text_lines.append(text)\n            text_lines.append(\"\")\n\n        return \"\\n\".join(text_lines)\n\n    def build_data(self) -> Data:\n        \"\"\"Process the list of dictionaries.\"\"\"\n        fields = self.get_field_names()\n        return Data(data={\"fields\":fields})\n"
+                "value": "from langflow.custom import Component\nfrom langflow.io import Output\nfrom langflow.schema import Data\nfrom langflow.inputs.inputs import IntInput, MessageTextInput\nfrom langflow.field_typing.range_spec import RangeSpec\nfrom langflow.schema.dotdict import dotdict\n\nfrom langflow.docbuilder import docbuilder\n\nclass ExistComponent(Component):\n    display_name = \"Exist Key Filter\"\n    name = \"Exist\"\n    MAX_FIELDS = 15\n    icon = \"table\"\n    description: str = \"This defines the keys that will be checked for availability.\"\n    inputs = [\n        MessageTextInput(\n            name=\"key\",\n            display_name=\"Key\",\n            input_types=[],\n            info=\"Key.\",\n        ),\n        MessageTextInput(\n            name=\"tag\",\n            display_name=\"Tag\",\n            input_types=[],\n            info=\"Tag.\",\n        ),\n        \n    ]\n    outputs = [\n        Output(\n            display_name=\"Filtered Data\", name=\"output\", method=\"build_output\"\n        )\n    ]\n\n\n    def build_output(self) -> Component:\n        return self\n\n    def process(self, api, forms, get_form_value) -> bool:\n        key = self.key\n        tag = self.tag\n        value = get_form_value(forms, key,tag)\n        if not value:\n            return False\n        return True\n\n\n"
+              },
+              "key": {
+                "_input_type": "MessageTextInput",
+                "advanced": false,
+                "display_name": "Key",
+                "dynamic": false,
+                "info": "Key.",
+                "input_types": [],
+                "list": false,
+                "list_add_label": "Add More",
+                "load_from_db": false,
+                "name": "key",
+                "placeholder": "",
+                "required": false,
+                "show": true,
+                "title_case": false,
+                "tool_mode": false,
+                "trace_as_input": true,
+                "trace_as_metadata": true,
+                "type": "str",
+                "value": "decedent_name"
+              },
+              "tag": {
+                "_input_type": "MessageTextInput",
+                "advanced": false,
+                "display_name": "Tag",
+                "dynamic": false,
+                "info": "Tag.",
+                "input_types": [],
+                "list": false,
+                "list_add_label": "Add More",
+                "load_from_db": false,
+                "name": "tag",
+                "placeholder": "",
+                "required": false,
+                "show": true,
+                "title_case": false,
+                "tool_mode": false,
+                "trace_as_input": true,
+                "trace_as_metadata": true,
+                "type": "str",
+                "value": ""
+              }
+            },
+            "tool_mode": false
+          },
+          "showNode": true,
+          "type": "Exist"
+        },
+        "dragging": false,
+        "id": "Exist-XsRPw",
+        "measured": {
+          "height": 331,
+          "width": 320
+        },
+        "position": {
+          "x": -1429.1589510012882,
+          "y": -180.237927743557
+        },
+        "selected": false,
+        "type": "genericNode"
+      },
+      {
+        "data": {
+          "id": "date_field_filter-PmAfx",
+          "node": {
+            "base_classes": [
+              "Component"
+            ],
+            "beta": false,
+            "conditional_paths": [],
+            "custom_fields": {},
+            "description": "Returns the date range, along with the corresponding keys.",
+            "display_name": "Date Filter",
+            "documentation": "",
+            "edited": true,
+            "field_order": [
+              "field_1_name",
+              "tag_1",
+              "field_2_name",
+              "field_3_name",
+              "tag_2",
+              "field_4_name"
+            ],
+            "frozen": false,
+            "icon": "clock",
+            "legacy": false,
+            "lf_version": "1.3.4",
+            "metadata": {},
+            "minimized": false,
+            "output_types": [],
+            "outputs": [
+              {
+                "allows_loop": false,
+                "cache": true,
+                "display_name": "Data",
+                "hidden": null,
+                "method": "build_data",
+                "name": "data",
+                "options": null,
+                "required_inputs": null,
+                "selected": "Component",
+                "tool_mode": true,
+                "types": [
+                  "Component"
+                ],
+                "value": "__UNDEFINED__"
+              }
+            ],
+            "pinned": false,
+            "template": {
+              "_type": "Component",
+              "code": {
+                "advanced": true,
+                "dynamic": true,
+                "fileTypes": [],
+                "file_path": "",
+                "info": "",
+                "list": false,
+                "load_from_db": false,
+                "multiline": true,
+                "name": "code",
+                "password": false,
+                "placeholder": "",
+                "required": true,
+                "show": true,
+                "title_case": false,
+                "type": "code",
+                "value": "from typing import List\nfrom datetime import datetime\n\nfrom langflow.custom import Component\nfrom langflow.io import (\n    MessageTextInput,\n    Output,\n)\n\nfrom langflow.docbuilder import CDocBuilderValue\n\n\nclass DateKeyComponent(Component):\n    display_name: str = \"Date Filter\"\n    description: str = \"Returns the date range, along with the corresponding keys.\"\n    name: str = \"date_field_filter\"\n    MAX_FIELDS = 15\n\n    icon = \"clock\"\n\n    inputs = [\n        MessageTextInput(\n            name=\"field_1_name\",\n            display_name=\"Key 1\",\n            input_types=[],\n            info=\"Key1.\",\n        ),\n        MessageTextInput(\n            name=\"tag_1\",\n            display_name=\"Tag 1\",\n            input_types=[],\n            info=\"Tag1.\",\n        ),\n        MessageTextInput(\n            name=\"field_2_name\",\n            display_name=\"From\",\n            placeholder=\"DD/MM/YYYY\",\n            input_types=[],\n            info=\"Value of form for key:1.\",\n        ),\n        MessageTextInput(\n            name=\"field_3_name\",\n            display_name=\"Key 2\",\n            input_types=[],\n            info=\"Key2.\",\n        ),\n        MessageTextInput(\n            name=\"tag_2\",\n            display_name=\"Tag 2\",\n            input_types=[],\n            info=\"Tag2.\",\n        ),\n        MessageTextInput(\n            name=\"field_4_name\",\n            display_name=\"To\",\n            placeholder=\"DD/MM/YYYY\",\n            input_types=[],\n            info=\"Value of form for key:2.\",\n        ),\n    ]\n\n    outputs = [\n        Output(\n            display_name=\"Data\",\n            name=\"data\",\n            method=\"build_data\",\n        ),\n    ]\n\n    def parse_date(self, date_str) -> int:\n        if not date_str:\n            return None\n        try:\n            dt = datetime.strptime(str(date_str), \"%d-%m-%Y\")\n            return int(dt.timestamp())\n        except Exception:\n            return None\n\n    def get_field_names(self) -> List[str | None]:\n        key1 = getattr(self, \"field_1_name\", None)\n        from_date_str = getattr(self, \"field_2_name\", None)\n        key2 = getattr(self, \"field_3_name\", None)\n        to_date_str = getattr(self, \"field_4_name\", None)\n        #raise Exception(f\"{to_date_str=}\")\n        tag1 = getattr(self, \"tag_1\", None)\n        tag2 = getattr(self, \"tag_2\", None)\n        return [key1, tag1, from_date_str, key2, tag2, to_date_str]\n\n    def process(self, api, forms: CDocBuilderValue, get_form_value) -> bool:\n        config_values: List[str] = self.get_field_names()\n        key1, tag1, from_date_str, key2, tag2, to_date_str = config_values\n        #raise Exception(f\"{to_date_str=}\")\n\n        if not key1 and not key2:\n            return False\n\n        input_from_date: int | None = self.parse_date(from_date_str)\n        input_to_date: int | None = self.parse_date(to_date_str)\n        file_to_date: int | None = get_form_value(forms, key2,tag2)\n        #raise Exception(f\"{get_form_value(forms, key1,tag1)=}\") \n        file_from_date: int | None = get_form_value(forms, key1,tag1)\n\n#        raise Exception(f\"{config_values=}\")\n        raise Exception(f\"{input_to_date=}, {input_from_date=},{file_to_date=},{file_from_date=}\")\n        if input_to_date and input_from_date and key1 and key2:\n            raise Exception(f\"{input_to_date=}, {input_from_date=},{file_to_date=},{file_from_date=},{(input_to_date > file_to_date) and (input_from_date < file_from_date)=}\") \n            return (input_to_date > file_to_date) and (input_from_date < file_from_date)\n\n        elif input_from_date and key1:\n            #raise Exception(f\"{file_from_date=}, {input_from_date=},{input_from_date < file_from_date=}\") \n            return input_from_date < file_from_date\n\n        elif input_to_date and key2:\n            return file_to_date < input_to_date\n        else:\n            return False\n\n    def build_data(self) -> Component:\n        return self\n"
               },
               "field_1_name": {
                 "_input_type": "MessageTextInput",
@@ -1521,9 +1351,7 @@
                 "display_name": "Key 1",
                 "dynamic": false,
                 "info": "Key1.",
-                "input_types": [
-                  "Message"
-                ],
+                "input_types": [],
                 "list": false,
                 "list_add_label": "Add More",
                 "load_from_db": false,
@@ -1536,7 +1364,7 @@
                 "trace_as_input": true,
                 "trace_as_metadata": true,
                 "type": "str",
-                "value": ""
+                "value": "Form2"
               },
               "field_2_name": {
                 "_input_type": "MessageTextInput",
@@ -1544,9 +1372,7 @@
                 "display_name": "From",
                 "dynamic": false,
                 "info": "Value of form for key:1.",
-                "input_types": [
-                  "Message"
-                ],
+                "input_types": [],
                 "list": false,
                 "list_add_label": "Add More",
                 "load_from_db": false,
@@ -1559,7 +1385,7 @@
                 "trace_as_input": true,
                 "trace_as_metadata": true,
                 "type": "str",
-                "value": ""
+                "value": "01-01-2023"
               },
               "field_3_name": {
                 "_input_type": "MessageTextInput",
@@ -1567,9 +1393,7 @@
                 "display_name": "Key 2",
                 "dynamic": false,
                 "info": "Key2.",
-                "input_types": [
-                  "Message"
-                ],
+                "input_types": [],
                 "list": false,
                 "list_add_label": "Add More",
                 "load_from_db": false,
@@ -1582,7 +1406,7 @@
                 "trace_as_input": true,
                 "trace_as_metadata": true,
                 "type": "str",
-                "value": ""
+                "value": "Form2"
               },
               "field_4_name": {
                 "_input_type": "MessageTextInput",
@@ -1590,14 +1414,54 @@
                 "display_name": "To",
                 "dynamic": false,
                 "info": "Value of form for key:2.",
-                "input_types": [
-                  "Message"
-                ],
+                "input_types": [],
                 "list": false,
                 "list_add_label": "Add More",
                 "load_from_db": false,
                 "name": "field_4_name",
                 "placeholder": "DD/MM/YYYY",
+                "required": false,
+                "show": true,
+                "title_case": false,
+                "tool_mode": false,
+                "trace_as_input": true,
+                "trace_as_metadata": true,
+                "type": "str",
+                "value": "01-01-2023"
+              },
+              "tag_1": {
+                "_input_type": "MessageTextInput",
+                "advanced": false,
+                "display_name": "Tag 1",
+                "dynamic": false,
+                "info": "Tag1.",
+                "input_types": [],
+                "list": false,
+                "list_add_label": "Add More",
+                "load_from_db": false,
+                "name": "tag_1",
+                "placeholder": "",
+                "required": false,
+                "show": true,
+                "title_case": false,
+                "tool_mode": false,
+                "trace_as_input": true,
+                "trace_as_metadata": true,
+                "type": "str",
+                "value": ""
+              },
+              "tag_2": {
+                "_input_type": "MessageTextInput",
+                "advanced": false,
+                "display_name": "Tag 2",
+                "dynamic": false,
+                "info": "Tag2.",
+                "input_types": [],
+                "list": false,
+                "list_add_label": "Add More",
+                "load_from_db": false,
+                "name": "tag_2",
+                "placeholder": "",
                 "required": false,
                 "show": true,
                 "title_case": false,
@@ -1614,23 +1478,23 @@
           "type": "date_field_filter"
         },
         "dragging": false,
-        "id": "date_field_filter-KrQnS",
+        "id": "date_field_filter-PmAfx",
         "measured": {
-          "height": 496,
+          "height": 660,
           "width": 320
         },
         "position": {
-          "x": -1543.9059742941627,
-          "y": 631.0581380191486
+          "x": -1893.8721841940162,
+          "y": 309.70860317909205
         },
-        "selected": true,
+        "selected": false,
         "type": "genericNode"
       }
     ],
     "viewport": {
-      "x": 918.1245859504666,
-      "y": 133.75494372330283,
-      "zoom": 0.5178796449331511
+      "x": 893.8700394046682,
+      "y": 164.31837776493973,
+      "zoom": 0.39275611476959865
     }
   },
   "description": "Powerful Prompts, Perfectly Positioned.",
@@ -1645,7 +1509,7 @@
   "locked": false,
   "name": "form-filter",
   "tags": [],
-  "updated_at": "2025-04-25T13:24:53+00:00",
+  "updated_at": "2025-04-29T17:27:08+00:00",
   "user_id": "342acb18-c0ac-4d3e-8239-e941b4676372",
   "webhook": false
 }
