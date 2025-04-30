@@ -1,8 +1,8 @@
 from langflow.custom import Component
+from langflow.field_typing.range_spec import RangeSpec
+from langflow.inputs.inputs import IntInput, MessageTextInput
 from langflow.io import Output
 from langflow.schema import Data
-from langflow.inputs.inputs import IntInput, MessageTextInput
-from langflow.field_typing.range_spec import RangeSpec
 from langflow.schema.dotdict import dotdict
 
 
@@ -20,15 +20,11 @@ class OutputKeysComponent(Component):
             real_time_refresh=True,
             value=1,
             input_types=[],
-            range_spec=RangeSpec(
-                min=1, max=MAX_FIELDS, step=1, step_type="int"
-            ),
+            range_spec=RangeSpec(min=1, max=MAX_FIELDS, step=1, step_type="int"),
         ),
     ]
     outputs = [
-        Output(
-            display_name="Filtered Data", name="output", method="build_output"
-        )
+        Output(display_name="Filtered Data", name="output", method="build_output")
     ]
 
     def update_build_config(
@@ -42,9 +38,7 @@ class OutputKeysComponent(Component):
                 return build_config
             if field_value_int > self.MAX_FIELDS:
                 build_config["number_of_fields"]["value"] = self.MAX_FIELDS
-                raise ValueError(
-                    f"Number of fields cannot exceed {self.MAX_FIELDS}."
-                )
+                raise ValueError(f"Number of fields cannot exceed {self.MAX_FIELDS}.")
 
             existing_fields = {}
             for key in list(build_config.keys()):

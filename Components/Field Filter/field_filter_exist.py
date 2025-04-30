@@ -1,12 +1,11 @@
 from langflow.custom import Component
-from langflow.io import Output
 from langflow.inputs.inputs import MessageTextInput
+from langflow.io import Output
 
 
 class ExistComponent(Component):
     display_name = "Exist Key Filter"
-    name = "exist"
-    MAX_FIELDS = 15
+    name = "Exist"
     icon = "table"
     description: str = "This defines the keys that will be checked for availability."
     inputs = [
@@ -23,14 +22,10 @@ class ExistComponent(Component):
             info="Tag.",
             advanced=True,
         ),
-        
     ]
     outputs = [
-        Output(
-            display_name="Filtered Data", name="output", method="build_output"
-        )
+        Output(display_name="Filtered Data", name="output", method="build_output")
     ]
-
 
     def build_output(self) -> Component:
         return self

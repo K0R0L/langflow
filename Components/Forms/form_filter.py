@@ -1,11 +1,10 @@
 from langflow.custom import Component
 from langflow.docbuilder import docbuilder
 from langflow.inputs import Input
-from langflow.inputs.inputs import (
-    DataInput,
-)
+from langflow.inputs.inputs import DataInput
 from langflow.io import Output
 from langflow.schema import Data
+
 
 class File:
     def __init__(self):
@@ -22,7 +21,7 @@ class File:
         self.builder = docbuilder.CDocBuilder()
 
         res = self.builder.OpenFile(file_path, params)
-        if (res != 0):
+        if res != 0:
             return False
 
         self.context = self.builder.GetContext()
@@ -33,7 +32,7 @@ class File:
         return True
 
     def close(self):
-        if (self.context is None):
+        if self.context is None:
             return
         del self.forms
         del self.document
@@ -44,37 +43,37 @@ class File:
         self.builder.CloseFile()
 
     def getAllForms(self):
-        if (self.context is None):
+        if self.context is None:
             return []
-        if (self.forms is None):
+        if self.forms is None:
             self.forms = self.document.GetAllForms()
         return self.forms
 
     def getFormsByTag(self, tag):
-        if (self.context is None):
+        if self.context is None:
             return []
         return self.document.GetFormsByTag(tag)
 
     def getFormsByKey(self, key):
-        if (self.context is None):
+        if self.context is None:
             return []
         result = []
         for i in range(len(self.forms)):
             form = self.forms[i]
-            if (form.GetFormKey().ToString() == key):
+            if form.GetFormKey().ToString() == key:
                 result.append(form)
         return result
 
     def getFormsByKeyTag(self, key, tag=None):
-        if (self.context is None):
+        if self.context is None:
             return []
         key_tag_forms = self.forms
-        if (tag is not None and tag != ""):
+        if tag is not None and tag != "":
             key_tag_forms = self.getFormsByTag(tag)
         result = []
         for i in range(len(key_tag_forms)):
             form = key_tag_forms[i]
-            if (form.GetFormKey().ToString() == key):
+            if form.GetFormKey().ToString() == key:
                 result.append(form)
         return result
 
@@ -98,27 +97,27 @@ class File:
         forms_check = self.getFormsByKeyTag(key, tag)
         count = len(forms_check)
 
-        if (0 == count):
+        if 0 == count:
             return None
-        if (1 == count):
+        if 1 == count:
             return self.getFormValue(forms_check[0])
 
         choice = ""
         for i in range(count):
             form = forms_check[i]
             form_type = form.GetFormType().ToString()
-            if ("radioButtonForm" != form_type):
+            if "radioButtonForm" != form_type:
                 return self.getFormValue(form)
-            if (form.IsChecked()):
+            if form.IsChecked():
                 choice = form.GetChoiceName()
         return choice
 
     def getRadioButtonValue(self, key):
         for i in range(len(self.forms)):
             form = self.forms[i]
-            if (form.GetFormKey().ToString() == key):
+            if form.GetFormKey().ToString() == key:
                 form_type = form.GetFormType().ToString()
-                if (form_type == "checkBoxForm" or form_type == "radioButtonForm"):
+                if form_type == "checkBoxForm" or form_type == "radioButtonForm":
                     if form.IsChecked().ToBool():
                         return form.GetChoiceName().ToString()
         return None
@@ -153,7 +152,7 @@ class FormFilterComponent(Component):
             info="List of fields to extract from the files.",
             input_types=["Data"],
             value=None,
-        ),        
+        ),
     ]
 
     outputs = [

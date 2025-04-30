@@ -6,6 +6,7 @@ from langflow.io import (
     Output,
 )
 
+
 class DateKeyComponent(Component):
     display_name: str = "Date Filter"
     description: str = "Returns the date range, along with the corresponding keys."
@@ -70,17 +71,17 @@ class DateKeyComponent(Component):
         try:
             dt = datetime.strptime(str(date_str), "%d/%m/%Y")
             return float(dt.timestamp()) * 1000
-        except (TypeError, ValueError) as e: 
+        except (TypeError, ValueError) as e:
             msg = f"Can't parse '{date_str}' as date: {e!s}"
-            raise ValueError(msg) from e  
+            raise ValueError(msg) from e
 
     def get_field_names(self) -> list[str | None]:
-        key1:str|None = self.field_1_name
-        from_date_str:str|None = self.field_2_name
-        key2:str|None = self.field_3_name
-        to_date_str:str|None = self.field_4_name
-        tag1:str|None = self.tag_1
-        tag2:str|None = self.tag_2
+        key1: str | None = self.field_1_name
+        from_date_str: str | None = self.field_2_name
+        key2: str | None = self.field_3_name
+        to_date_str: str | None = self.field_4_name
+        tag1: str | None = self.tag_1
+        tag2: str | None = self.tag_2
         return [key1, tag1, from_date_str, key2, tag2, to_date_str]
 
     def process(self, file) -> bool:
@@ -92,10 +93,10 @@ class DateKeyComponent(Component):
 
         input_from_date: int | None = self.parse_date(from_date_str)
         input_to_date: int | None = self.parse_date(to_date_str)
-        file_to_date: int | None = file.getFormValueByKey(key2,tag2)
-        file_from_date: int | None = file.getFormValueByKey(key1,tag1)
+        file_to_date: int | None = file.getFormValueByKey(key2, tag2)
+        file_from_date: int | None = file.getFormValueByKey(key1, tag1)
 
-        if all([input_to_date, input_from_date,file_from_date, file_to_date]):
+        if all([input_to_date, input_from_date, file_from_date, file_to_date]):
             return (input_from_date < file_from_date) and (file_to_date < input_to_date)
 
         elif input_from_date and file_from_date:

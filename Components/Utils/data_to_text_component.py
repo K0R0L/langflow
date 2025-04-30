@@ -1,6 +1,6 @@
 from langflow.custom import Component
 from langflow.io import Output, DataInput
-from langflow.schema import Data
+from langflow.schema import Message
 
 class DataToTextComponent(Component):
     display_name = "Data To Text"
@@ -31,8 +31,6 @@ class DataToTextComponent(Component):
         return "\n".join(text_lines)
          
     def build_output(self) -> Message:
-        #msg = f"{self.dict_list}"
-        #raise ValueError(msg)
         fields = self.dict_list.data["items"]
         text = f"{self.get_text_from_processed_data(fields)}"
         message = Message(

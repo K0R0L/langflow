@@ -1,11 +1,14 @@
 from langflow.custom import Component
+from langflow.inputs.inputs import BoolInput, MessageTextInput
 from langflow.io import Output
-from langflow.inputs.inputs import MessageTextInput, BoolInput
+
 
 class CheckBoxComponent(Component):
     display_name = "Checkbox Filter"
     name = "check_box"
-    description: str = "This determines which checkboxes from the list have been checked."
+    description: str = (
+        "This determines which checkboxes from the list have been checked."
+    )
     inputs = [
         MessageTextInput(
             name="key",
@@ -14,11 +17,7 @@ class CheckBoxComponent(Component):
             info="Key.",
         ),
         MessageTextInput(
-            name="tag",
-            display_name="Tag",
-            input_types=[],
-            info="Tag.",
-            advanced=True
+            name="tag", display_name="Tag", input_types=[], info="Tag.", advanced=True
         ),
         BoolInput(
             name="checked",
@@ -27,12 +26,9 @@ class CheckBoxComponent(Component):
             input_types=[],
             value=True,
         ),
-        
     ]
     outputs = [
-        Output(
-            display_name="Filtered Data", name="output", method="build_output"
-        )
+        Output(display_name="Filtered Data", name="output", method="build_output")
     ]
 
     def build_output(self) -> Component:

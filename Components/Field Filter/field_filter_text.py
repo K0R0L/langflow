@@ -1,6 +1,6 @@
 from langflow.custom import Component
-from langflow.io import Output
 from langflow.inputs.inputs import MessageTextInput
+from langflow.io import Output
 
 
 class ExistComponent(Component):
@@ -10,38 +10,20 @@ class ExistComponent(Component):
     icon = "table"
     description: str = "This defines the keys that will be checked for availability."
     inputs = [
+        MessageTextInput(name="key", display_name="Key", input_types=[], info="Key."),
         MessageTextInput(
-            name="key",
-            display_name="Key",
-            input_types=[],
-            info="Key."
+            name="tag", display_name="Tag", input_types=[], info="Tag.", advanced=True
         ),
         MessageTextInput(
-            name="tag",
-            display_name="Tag",
-            input_types=[],
-            info="Tag.",
-            advanced=True
+            name="value", display_name="Value", input_types=[], info="Value."
         ),
-        MessageTextInput(
-            name="value",
-            display_name="Value",
-            input_types=[],
-            info="Value."
-        ),
-        
     ]
     outputs = [
-        Output(
-            display_name="Filtered Data", name="output", method="build_output"
-        )
+        Output(display_name="Filtered Data", name="output", method="build_output")
     ]
-
 
     def build_output(self) -> Component:
         return self
 
     def process(self, file) -> bool:
         return self.value == file.getFormValueByKey(self.key, self.tag)
-
-
