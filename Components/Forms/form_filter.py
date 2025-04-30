@@ -17,17 +17,17 @@ class File:
         self.document = None
         self.forms = None
 
-    def open(self, file_path, params=""):
+    def open(self, file_path, params="") -> bool:
         self.builder = docbuilder.CDocBuilder()
 
         res = self.builder.OpenFile(file_path, params)
         if res != 0:
             return False
 
-        self.context = self.builder.GetContext()
-        self.globalObj = self.context.GetGlobal()
-        self.Api = self.globalObj["Api"]
-        self.document = self.Api.GetDocument()
+        self.context: docbuilder.CDocBuilderContext = self.builder.GetContext()
+        self.globalObj: docbuilder.CDocBuilderValue = self.context.GetGlobal()
+        self.Api: docbuilder.CDocBuilderValue | None = self.globalObj["Api"]
+        self.document: docbuilder.CDocBuilderValue | None = self.Api.GetDocument()
         self.getAllForms()
         return True
 
@@ -58,8 +58,7 @@ class File:
         if self.context is None:
             return []
         result = []
-        for i in range(len(self.forms)):
-            form = self.forms[i]
+        for form in self.forms:
             if form.GetFormKey().ToString() == key:
                 result.append(form)
         return result
@@ -68,11 +67,10 @@ class File:
         if self.context is None:
             return []
         key_tag_forms = self.forms
-        if tag is not None and tag != "":
+        if tag:
             key_tag_forms = self.getFormsByTag(tag)
         result = []
-        for i in range(len(key_tag_forms)):
-            form = key_tag_forms[i]
+        for form in key_tag_forms:
             if form.GetFormKey().ToString() == key:
                 result.append(form)
         return result
@@ -103,18 +101,16 @@ class File:
             return self.getFormValue(forms_check[0])
 
         choice = ""
-        for i in range(count):
-            form = forms_check[i]
+        for form in forms_check:
             form_type = form.GetFormType().ToString()
             if "radioButtonForm" != form_type:
                 return self.getFormValue(form)
-            if form.IsChecked():
+            if form.IsChecked().ToBool():
                 choice = form.GetChoiceName()
         return choice
 
     def getRadioButtonValue(self, key):
-        for i in range(len(self.forms)):
-            form = self.forms[i]
+        for form in self.forms:
             if form.GetFormKey().ToString() == key:
                 form_type = form.GetFormType().ToString()
                 if form_type == "checkBoxForm" or form_type == "radioButtonForm":

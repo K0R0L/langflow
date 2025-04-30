@@ -25,7 +25,7 @@ class DateKeyComponent(Component):
             name="tag_1",
             display_name="Tag 1",
             input_types=[],
-            advanced=True,
+            #advanced=True,
             info="Tag1.",
         ),
         MessageTextInput(
@@ -43,7 +43,7 @@ class DateKeyComponent(Component):
         ),
         MessageTextInput(
             name="tag_2",
-            advanced=True,
+            #advanced=True,
             display_name="Tag 2",
             input_types=[],
             info="Tag2.",
@@ -88,7 +88,7 @@ class DateKeyComponent(Component):
         config_values: list[str] = self.get_field_names()
         key1, tag1, from_date_str, key2, tag2, to_date_str = config_values
 
-        if not key1 and not key2:
+        if not key1 and not key2 and not tag1 and not tag2:
             return False
 
         input_from_date: int | None = self.parse_date(from_date_str)
