@@ -8,8 +8,8 @@ from langflow.schema.dotdict import dotdict
 from langflow.docbuilder import docbuilder
 
 class ExistComponent(Component):
-    display_name = "Exist Key Filter"
-    name = "Exist"
+    display_name = "Text Key Filter"
+    name = "Text"
     MAX_FIELDS = 15
     icon = "table"
     description: str = "This defines the keys that will be checked for availability."
