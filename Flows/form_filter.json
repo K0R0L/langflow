@@ -6,8 +6,8 @@
         "id": "FormFilter-77ocL",
         "type": "genericNode",
         "position": {
-          "x": 686.7341648304248,
-          "y": -174.84491024252867
+          "x": 803.3487399418702,
+          "y": -140.2924435428411
         },
         "data": {
           "node": {
@@ -82,7 +82,7 @@
                 "list": false,
                 "show": true,
                 "multiline": true,
-                "value": "from typing import Any, Dict, List\r\n\r\nfrom langflow.custom import Component\r\nfrom langflow.docbuilder import docbuilder\r\nfrom langflow.inputs import Input\r\nfrom langflow.inputs.inputs import (\r\n    DataInput,\r\n)\r\nfrom langflow.io import Output\r\nfrom langflow.schema import Data\r\n\r\nclass File:\r\n    def __init__(self):\r\n        self.builder = None\r\n        self.context = None\r\n\r\n        # js objects\r\n        self.globalObj = None\r\n        self.api = None\r\n        self.document = None\r\n        self.forms = None\r\n\r\n    def open(file_path, params=\"\"):\r\n        self.builder = docbuilder.CDocBuilder()\r\n\r\n        res = self.builder.OpenFile(file_path, params)\r\n        if (res != 0):\r\n            return False\r\n\r\n        self.context = self.builder.GetContext()\r\n        self.globalObj = self.context.GetGlobal()\r\n        self.Api = self.globalObj[\"Api\"]\r\n        self.document = self.Api.GetDocument()\r\n        return True\r\n\r\n    def close():\r\n        if (self.context is None):\r\n            return\r\n        del self.forms\r\n        del self.document\r\n        del self.api\r\n        del self.globalObj\r\n        del self.context\r\n        self.builder.CloseFile()\r\n\r\n    def getAllForms(self):\r\n        if (self.context is None):\r\n            return []\r\n        if (self.forms is None):\r\n            self.forms = self.document.GetAllForms()\r\n        return self.forms\r\n\r\n    def getFormsByTag(self, tag):\r\n        if (self.context is None):\r\n            return []\r\n        return self.document.GetFormsByTag(tag);\r\n\r\n    def getFormsByKey(self, key):\r\n        if (self.context is None):\r\n            return []\r\n        result = []\r\n        for i in range(self.forms.GetLength()):\r\n            form = self.forms.Get(i)\r\n            if (form.GetFormKey().ToString() == key):\r\n                result.append(form)\r\n        return result\r\n\r\n    def getFormsByKeyTag(self, key, tag=None):\r\n        if (self.context is None):\r\n            return []\r\n        key_tag_forms = self.forms\r\n        if (tag is not None and tag != \"\"):\r\n            key_tag_forms = self.getFormsByTag(tag)\r\n        for i in range(key_tag_forms.GetLength()):\r\n            form = key_tag_forms.Get(i)\r\n            if (form.GetFormKey().ToString() == key):\r\n                result.append(form)\r\n        return result\r\n\r\n    def getFormValue(self, form):\r\n        form_type = form.GetFormType().ToString()\r\n        if form_type == \"textForm\":\r\n            return form.GetText().ToString()\r\n        elif form_type == \"dateForm\":\r\n            return form.GetTime().ToDouble()\r\n        elif form_type == \"checkBoxForm\":\r\n            return form.IsChecked().ToBool()\r\n        elif form_type == \"radioButtonForm\":\r\n            return form.IsChecked().ToBool()\r\n        elif form_type == \"comboBoxForm\":\r\n            return form.GetText().ToString()\r\n        elif form_type == \"dropDownForm\":\r\n            return form.GetText().ToString()\r\n        return None\r\n\r\n    def getFormValueByKey(self, key, tag=None):\r\n        forms_check = self.getFormsByKeyTag(key, tag)\r\n        count = forms_check.GetLength()\r\n        if (0 == count):\r\n            return None\r\n        if (1 == count):\r\n            return self.getFormValue(forms_check.Get(0))\r\n\r\n        choice = \"\"\r\n        for i in range(count):\r\n            form = forms_check.Get(i)\r\n            form_type = form.GetFormType().ToString()\r\n            if (\"radioButtonForm\" != form_type):\r\n                return self.getFormValue(form)\r\n            if (form.IsChecked()):\r\n                choice = form.GetChoiceName()\r\n        return choice\r\n\r\n    def getRadioButtonValue(self, key):\r\n        for i in range(self.forms.GetLength()):\r\n            form = self.forms.Get(i)\r\n            if (form.GetFormKey().ToString() == key):\r\n                form_type = form.GetFormType().ToString()\r\n                if (form_type == \"checkBoxForm\" or form_type == \"radioButtonForm\"):\r\n                    if form.IsChecked().ToBool():\r\n                        return form.GetChoiceName().ToString()\r\n        return None\r\n\r\n    def __del__(self):\r\n        self.close()\r\n\r\n\r\nclass FormFilterComponent(Component):\r\n    display_name: str = \"Form Filter\"\r\n    description: str = \"Filters the specified forms based on the specified criteria.\"\r\n    name: str = \"FormFilter\"\r\n    icon = \"filter\"\r\n    inputs = [\r\n        DataInput(\r\n            name=\"paths\",\r\n            display_name=\"File Paths\",\r\n            info=\"List of file paths to process.\",\r\n            is_list=True,\r\n            required=True,\r\n        ),\r\n        Input(\r\n            name=\"fields\",\r\n            input_types=[\"Component\"],\r\n            component=Component,\r\n            is_list=True,\r\n        ),\r\n        DataInput(\r\n            name=\"output_keys\",\r\n            display_name=\"Output keys\",\r\n            info=\"List of fields to extract from the files.\",\r\n            input_types=[\"Data\"],\r\n            value=None,\r\n        ),        \r\n    ]\r\n\r\n    outputs = [\r\n        Output(display_name=\"Data\", name=\"data_list\", method=\"build_data\"),\r\n        Output(display_name=\"Paths\", name=\"paths_list\", method=\"build_paths\"),\r\n    ]\r\n\r\n    def build_main(self) -> List:\r\n        file_paths: list[str] = self.paths\r\n        filters: list[Component] = self.fields\r\n        output_keys = self.output_keys.data[\"output_keys\"] if self.output_keys else None\r\n        result = []\r\n\r\n        for file_path in file_paths:\r\n            if isinstance(file_path, Data):\r\n                file_path = file_path.text\r\n            file = File()\r\n            if not file.open(file_path):\r\n                continue\r\n            \r\n            passed = True\r\n            for filter_component in filters:\r\n                if hasattr(filter_component, \"process\"):\r\n                    if not filter_component.process(file):\r\n                        passed = False\r\n                        break\r\n            if passed:\r\n                record = {\"file_path\": file_path}\r\n                if output_keys:\r\n                    for key in output_keys:\r\n                        record[key] = file.getFormValueByKey(key)\r\n                result.append(record)\r\n            file.close()\r\n        return result\r\n\r\n    def build_data(self) -> Data:\r\n        processed_data = self.build_main()\r\n        return Data(data={\"items\": processed_data})\r\n\r\n    def build_paths(self) -> list[Data]:\r\n        processed_data = self.build_main()\r\n        file_paths = [record[\"file_path\"] for record in processed_data]\r\n        return file_paths\r\n",
+                "value": "from typing import Any, Dict, List\r\n\r\nfrom langflow.custom import Component\r\nfrom langflow.docbuilder import docbuilder\r\nfrom langflow.inputs import Input\r\nfrom langflow.inputs.inputs import (\r\n    DataInput,\r\n)\r\nfrom langflow.io import Output\r\nfrom langflow.schema import Data\r\n\r\nclass File:\r\n    def __init__(self):\r\n        self.builder = None\r\n        self.context = None\r\n\r\n        # js objects\r\n        self.globalObj = None\r\n        self.api = None\r\n        self.document = None\r\n        self.forms = None\r\n\r\n    def open(self, file_path, params=\"\"):\r\n        self.builder = docbuilder.CDocBuilder()\r\n\r\n        res = self.builder.OpenFile(file_path, params)\r\n        if (res != 0):\r\n            return False\r\n\r\n        self.context = self.builder.GetContext()\r\n        self.globalObj = self.context.GetGlobal()\r\n        self.Api = self.globalObj[\"Api\"]\r\n        self.document = self.Api.GetDocument()\r\n        self.getAllForms()\r\n        return True\r\n\r\n    def close(self):\r\n        if (self.context is None):\r\n            return\r\n        del self.forms\r\n        del self.document\r\n        del self.api\r\n        del self.globalObj\r\n        del self.context\r\n        self.context = None\r\n        self.builder.CloseFile()\r\n\r\n    def getAllForms(self):\r\n        if (self.context is None):\r\n            return []\r\n        if (self.forms is None):\r\n            self.forms = self.document.GetAllForms()\r\n        return self.forms\r\n\r\n    def getFormsByTag(self, tag):\r\n        if (self.context is None):\r\n            return []\r\n        return self.document.GetFormsByTag(tag);\r\n\r\n    def getFormsByKey(self, key):\r\n        if (self.context is None):\r\n            return []\r\n        result = []\r\n        for i in range(len(self.forms)):\r\n            form = self.forms[i]\r\n            if (form.GetFormKey().ToString() == key):\r\n                result.append(form)\r\n        return result\r\n\r\n    def getFormsByKeyTag(self, key, tag=None):\r\n        if (self.context is None):\r\n            return []\r\n        key_tag_forms = self.forms\r\n        if (tag is not None and tag != \"\"):\r\n            key_tag_forms = self.getFormsByTag(tag)\r\n        result = []\r\n        for i in range(len(key_tag_forms)):\r\n            form = key_tag_forms[i]\r\n            if (form.GetFormKey().ToString() == key):\r\n                result.append(form)\r\n        return result\r\n\r\n    def getFormValue(self, form):\r\n        form_type = form.GetFormType().ToString()\r\n        if form_type == \"textForm\":\r\n            return form.GetText().ToString()\r\n        elif form_type == \"dateForm\":\r\n            return form.GetTime().ToDouble()\r\n        elif form_type == \"checkBoxForm\":\r\n            return form.IsChecked().ToBool()\r\n        elif form_type == \"radioButtonForm\":\r\n            return form.IsChecked().ToBool()\r\n        elif form_type == \"comboBoxForm\":\r\n            return form.GetText().ToString()\r\n        elif form_type == \"dropDownForm\":\r\n            return form.GetText().ToString()\r\n        return None\r\n\r\n    def getFormValueByKey(self, key, tag=None):\r\n        forms_check = self.getFormsByKeyTag(key, tag)\r\n        count = len(forms_check)\r\n\r\n        if (0 == count):\r\n            return None\r\n        if (1 == count):\r\n            return self.getFormValue(forms_check[0])\r\n\r\n        choice = \"\"\r\n        for i in range(count):\r\n            form = forms_check[i]\r\n            form_type = form.GetFormType().ToString()\r\n            if (\"radioButtonForm\" != form_type):\r\n                return self.getFormValue(form)\r\n            if (form.IsChecked()):\r\n                choice = form.GetChoiceName()\r\n        return choice\r\n\r\n    def getRadioButtonValue(self, key):\r\n        for i in range(len(self.forms)):\r\n            form = self.forms[i]\r\n            if (form.GetFormKey().ToString() == key):\r\n                form_type = form.GetFormType().ToString()\r\n                if (form_type == \"checkBoxForm\" or form_type == \"radioButtonForm\"):\r\n                    if form.IsChecked().ToBool():\r\n                        return form.GetChoiceName().ToString()\r\n        return None\r\n\r\n    def __del__(self):\r\n        self.close()\r\n\r\n\r\nclass FormFilterComponent(Component):\r\n    display_name: str = \"Form Filter\"\r\n    description: str = \"Filters the specified forms based on the specified criteria.\"\r\n    name: str = \"FormFilter\"\r\n    icon = \"filter\"\r\n    inputs = [\r\n        DataInput(\r\n            name=\"paths\",\r\n            display_name=\"File Paths\",\r\n            info=\"List of file paths to process.\",\r\n            is_list=True,\r\n            required=True,\r\n        ),\r\n        Input(\r\n            name=\"fields\",\r\n            input_types=[\"Component\"],\r\n            component=Component,\r\n            is_list=True,\r\n        ),\r\n        DataInput(\r\n            name=\"output_keys\",\r\n            display_name=\"Output keys\",\r\n            info=\"List of fields to extract from the files.\",\r\n            input_types=[\"Data\"],\r\n            value=None,\r\n        ),        \r\n    ]\r\n\r\n    outputs = [\r\n        Output(display_name=\"Data\", name=\"data_list\", method=\"build_data\"),\r\n        Output(display_name=\"Paths\", name=\"paths_list\", method=\"build_paths\"),\r\n    ]\r\n\r\n    def build_main(self) -> List:\r\n        file_paths: list[str] = self.paths\r\n        filters: list[Component] = self.fields\r\n        output_keys = self.output_keys.data[\"output_keys\"] if self.output_keys else None\r\n        result = []\r\n\r\n        for file_path in file_paths:\r\n            if isinstance(file_path, Data):\r\n                file_path = file_path.text\r\n\r\n            file = File()\r\n            if not file.open(file_path):\r\n                continue\r\n\r\n            passed = True\r\n            for filter_component in filters:\r\n                if hasattr(filter_component, \"process\"):\r\n                    if not filter_component.process(file):\r\n                        passed = False\r\n                        break\r\n            if passed:\r\n                record = {\"file_path\": file_path}\r\n                if output_keys:\r\n                    for key in output_keys:\r\n                        record[key] = file.getFormValueByKey(key)\r\n                result.append(record)\r\n            file.close()\r\n\r\n        return result\r\n\r\n    def build_data(self) -> Data:\r\n        processed_data = self.build_main()\r\n        return Data(data={\"items\": processed_data})\r\n\r\n    def build_paths(self) -> list[Data]:\r\n        processed_data = self.build_main()\r\n        file_paths = [record[\"file_path\"] for record in processed_data]\r\n        return file_paths\r\n",
                 "fileTypes": [],
                 "file_path": "",
                 "password": false,
@@ -114,10 +114,12 @@
                 ],
                 "selected": "Data",
                 "name": "data_list",
+                "hidden": null,
                 "display_name": "Data",
                 "method": "build_data",
                 "value": "__UNDEFINED__",
                 "cache": true,
+                "required_inputs": null,
                 "allows_loop": false,
                 "tool_mode": true
               },
@@ -127,10 +129,12 @@
                 ],
                 "selected": "Data",
                 "name": "paths_list",
+                "hidden": null,
                 "display_name": "Paths",
                 "method": "build_paths",
                 "value": "__UNDEFINED__",
                 "cache": true,
+                "required_inputs": null,
                 "allows_loop": false,
                 "tool_mode": true
               }
@@ -142,15 +146,16 @@
             ],
             "beta": false,
             "legacy": false,
-            "edited": false,
+            "edited": true,
             "metadata": {},
-            "tool_mode": false
+            "tool_mode": false,
+            "lf_version": "1.3.2"
           },
           "showNode": true,
           "type": "FormFilter",
           "id": "FormFilter-77ocL"
         },
-        "selected": false,
+        "selected": true,
         "measured": {
           "width": 320,
           "height": 393
@@ -401,7 +406,8 @@
             "legacy": false,
             "edited": false,
             "metadata": {},
-            "tool_mode": false
+            "tool_mode": false,
+            "lf_version": "1.3.2"
           },
           "showNode": true,
           "type": "DirectoryPath",
@@ -529,13 +535,14 @@
             "legacy": false,
             "edited": false,
             "metadata": {},
-            "tool_mode": false
+            "tool_mode": false,
+            "lf_version": "1.3.2"
           },
           "showNode": true,
           "type": "output",
           "id": "output-NshNm"
         },
-        "selected": true,
+        "selected": false,
         "measured": {
           "width": 320,
           "height": 311
@@ -669,7 +676,8 @@
             "legacy": false,
             "edited": false,
             "metadata": {},
-            "tool_mode": false
+            "tool_mode": false,
+            "lf_version": "1.3.2"
           },
           "showNode": true,
           "type": "check_box",
@@ -722,7 +730,7 @@
                 "list": false,
                 "show": true,
                 "multiline": true,
-                "value": "from langflow.custom import Component\r\nfrom langflow.io import Output, DataInput\r\nfrom langflow.schema import Data\r\n\r\nclass DataToTextComponent(Component):\r\n    display_name = \"Data To Text\"\r\n    name = \"DataToText\"\r\n    icon = \"braces\"\r\n    description: str = \"Converts data into text.\"\r\n    inputs = [\r\n        DataInput(\r\n            name=\"dict_list\",\r\n            display_name=\"Data\",\r\n            info=\"List of dictionaries to process.\",\r\n            input_types=[\"Data\"],\r\n            required=True,\r\n        ),\r\n    ]\r\n    outputs = [\r\n        Output(display_name=\"Message\", name=\"text\", method=\"build_output\"),\r\n    ]\r\n\r\n    def get_text_from_processed_data(self, processed_data: list[str]) -> str:\r\n        \"\"\"Convert processed_data into a readable text format.\"\"\"\r\n        text_lines = []\r\n        for person in processed_data:\r\n            for key, record in person.items():\r\n                text_lines.append(f\"  {key}: {record}\")\r\n                text_lines.append(\"\")\r\n    \r\n        return \"\\n\".join(text_lines)\r\n         \r\n    def build_output(self) -> Message:\r\n        #msg = f\"{self.dict_list}\"\r\n        #raise ValueError(msg)\r\n        fields = self.dict_list.data[\"items\"]\r\n        text = f\"{self.get_text_from_processed_data(fields)}\"\r\n        message = Message(\r\n            text=text,\r\n        )\r\n        return message",
+                "value": "from langflow.custom import Component\r\nfrom langflow.io import Output, DataInput\r\nfrom langflow.schema import Data\r\n\r\nclass DataToTextComponent(Component):\r\n    display_name = \"Data To Text\"\r\n    name = \"DataToText\"\r\n    icon = \"braces\"\r\n    description: str = \"Converts data into text.\"\r\n    inputs = [\r\n        DataInput(\r\n            name=\"dict_list\",\r\n            display_name=\"Data\",\r\n            info=\"List of dictionaries to process.\",\r\n            input_types=[\"Data\"],\r\n            required=True,\r\n        ),\r\n    ]\r\n    outputs = [\r\n        Output(display_name=\"Message\", name=\"text\", method=\"build_output\"),\r\n    ]\r\n\r\n    def get_text_from_processed_data(self, processed_data: list[str]) -> str:\r\n        \"\"\"Convert processed_data into a readable text format.\"\"\"\r\n        text_lines = []\r\n        for person in processed_data:\r\n            for key, record in person.items():\r\n                text_lines.append(f\"  {key}: {record}\")\r\n                text_lines.append(\"\")\r\n    \r\n        return \"\\n\".join(text_lines)\r\n         \r\n    def build_output(self) -> Message:\r\n        #msg = f\"{self.dict_list}\"\r\n        #raise ValueError(msg)\r\n        fields = self.dict_list.data[\"items\"]\r\n        text = f\"{self.get_text_from_processed_data(fields)}\"\r\n        message = Message(\r\n            text=text,\r\n        )\r\n        print(text)\r\n        return message",
                 "fileTypes": [],
                 "file_path": "",
                 "password": false,
@@ -771,7 +779,8 @@
             "legacy": false,
             "edited": true,
             "metadata": {},
-            "tool_mode": false
+            "tool_mode": false,
+            "lf_version": "1.3.2"
           },
           "showNode": true,
           "type": "DataToText",
@@ -1059,7 +1068,8 @@
             "legacy": false,
             "edited": false,
             "metadata": {},
-            "tool_mode": false
+            "tool_mode": false,
+            "lf_version": "1.3.2"
           },
           "showNode": false,
           "type": "ChatOutput",
@@ -1098,7 +1108,8 @@
           }
         },
         "id": "xy-edge__DirectoryPath-kLK4g{œdataTypeœ:œDirectoryPathœ,œidœ:œDirectoryPath-kLK4gœ,œnameœ:œdataœ,œoutput_typesœ:[œDataœ]}-FormFilter-77ocL{œfieldNameœ:œpathsœ,œidœ:œFormFilter-77ocLœ,œinputTypesœ:[œDataœ],œtypeœ:œotherœ}",
-        "className": ""
+        "className": "",
+        "animated": false
       },
       {
         "source": "output-NshNm",
@@ -1124,7 +1135,8 @@
           }
         },
         "id": "xy-edge__output-NshNm{œdataTypeœ:œoutputœ,œidœ:œoutput-NshNmœ,œnameœ:œoutputœ,œoutput_typesœ:[œDataœ]}-FormFilter-77ocL{œfieldNameœ:œoutput_keysœ,œidœ:œFormFilter-77ocLœ,œinputTypesœ:[œDataœ],œtypeœ:œotherœ}",
-        "className": ""
+        "className": "",
+        "animated": false
       },
       {
         "source": "check_box-NzZsM",
@@ -1150,7 +1162,8 @@
           }
         },
         "id": "xy-edge__check_box-NzZsM{œdataTypeœ:œcheck_boxœ,œidœ:œcheck_box-NzZsMœ,œnameœ:œoutputœ,œoutput_typesœ:[œComponentœ]}-FormFilter-77ocL{œfieldNameœ:œfieldsœ,œidœ:œFormFilter-77ocLœ,œinputTypesœ:[œComponentœ],œtypeœ:œstrœ}",
-        "className": ""
+        "className": "",
+        "animated": false
       },
       {
         "source": "FormFilter-77ocL",
@@ -1176,7 +1189,8 @@
           }
         },
         "id": "xy-edge__FormFilter-77ocL{œdataTypeœ:œFormFilterœ,œidœ:œFormFilter-77ocLœ,œnameœ:œdata_listœ,œoutput_typesœ:[œDataœ]}-DataToText-cBji5{œfieldNameœ:œdict_listœ,œidœ:œDataToText-cBji5œ,œinputTypesœ:[œDataœ],œtypeœ:œotherœ}",
-        "className": ""
+        "className": "",
+        "animated": false
       },
       {
         "source": "DataToText-cBji5",
@@ -1201,7 +1215,9 @@
             ]
           }
         },
-        "id": "xy-edge__DataToText-cBji5{œdataTypeœ:œDataToTextœ,œidœ:œDataToText-cBji5œ,œnameœ:œtextœ,œoutput_typesœ:[œMessageœ]}-ChatOutput-rkraP{œfieldNameœ:œinput_valueœ,œidœ:œChatOutput-rkraPœ,œinputTypesœ:[œMessageœ],œtypeœ:œstrœ}"
+        "id": "xy-edge__DataToText-cBji5{œdataTypeœ:œDataToTextœ,œidœ:œDataToText-cBji5œ,œnameœ:œtextœ,œoutput_typesœ:[œMessageœ]}-ChatOutput-rkraP{œfieldNameœ:œinput_valueœ,œidœ:œChatOutput-rkraPœ,œinputTypesœ:[œMessageœ],œtypeœ:œstrœ}",
+        "animated": false,
+        "className": ""
       }
     ],
     "viewport": {
@@ -1211,7 +1227,7 @@
     }
   },
   "description": "Powerful Prompts, Perfectly Positioned.",
-  "name": "flow_filter",
+  "name": "form_filter",
   "last_tested_version": "1.3.2",
   "endpoint_name": null,
   "is_component": false
