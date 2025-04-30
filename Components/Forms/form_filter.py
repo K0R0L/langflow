@@ -7,9 +7,124 @@ from langflow.inputs.inputs import (
 from langflow.io import Output
 from langflow.schema import Data
 
-STANDARD_ENCODE_FORMAT = (
-    "<m_nCsvTxtEncoding>0</m_nCsvTxtEncoding><m_nCsvDelimiter>0</m_nCsvDelimiter>"
-)
+class File:
+    def __init__(self):
+        self.builder = None
+        self.context = None
+
+        # js objects
+        self.globalObj = None
+        self.api = None
+        self.document = None
+        self.forms = None
+
+    def open(self, file_path, params=""):
+        self.builder = docbuilder.CDocBuilder()
+
+        res = self.builder.OpenFile(file_path, params)
+        if (res != 0):
+            return False
+
+        self.context = self.builder.GetContext()
+        self.globalObj = self.context.GetGlobal()
+        self.Api = self.globalObj["Api"]
+        self.document = self.Api.GetDocument()
+        self.getAllForms()
+        return True
+
+    def close(self):
+        if (self.context is None):
+            return
+        del self.forms
+        del self.document
+        del self.api
+        del self.globalObj
+        del self.context
+        self.context = None
+        self.builder.CloseFile()
+
+    def getAllForms(self):
+        if (self.context is None):
+            return []
+        if (self.forms is None):
+            self.forms = self.document.GetAllForms()
+        return self.forms
+
+    def getFormsByTag(self, tag):
+        if (self.context is None):
+            return []
+        return self.document.GetFormsByTag(tag)
+
+    def getFormsByKey(self, key):
+        if (self.context is None):
+            return []
+        result = []
+        for i in range(len(self.forms)):
+            form = self.forms[i]
+            if (form.GetFormKey().ToString() == key):
+                result.append(form)
+        return result
+
+    def getFormsByKeyTag(self, key, tag=None):
+        if (self.context is None):
+            return []
+        key_tag_forms = self.forms
+        if (tag is not None and tag != ""):
+            key_tag_forms = self.getFormsByTag(tag)
+        result = []
+        for i in range(len(key_tag_forms)):
+            form = key_tag_forms[i]
+            if (form.GetFormKey().ToString() == key):
+                result.append(form)
+        return result
+
+    def getFormValue(self, form):
+        form_type = form.GetFormType().ToString()
+        if form_type == "textForm":
+            return form.GetText().ToString()
+        elif form_type == "dateForm":
+            return form.GetTime().ToDouble()
+        elif form_type == "checkBoxForm":
+            return form.IsChecked().ToBool()
+        elif form_type == "radioButtonForm":
+            return form.IsChecked().ToBool()
+        elif form_type == "comboBoxForm":
+            return form.GetText().ToString()
+        elif form_type == "dropDownForm":
+            return form.GetText().ToString()
+        return None
+
+    def getFormValueByKey(self, key, tag=None):
+        forms_check = self.getFormsByKeyTag(key, tag)
+        count = len(forms_check)
+
+        if (0 == count):
+            return None
+        if (1 == count):
+            return self.getFormValue(forms_check[0])
+
+        choice = ""
+        for i in range(count):
+            form = forms_check[i]
+            form_type = form.GetFormType().ToString()
+            if ("radioButtonForm" != form_type):
+                return self.getFormValue(form)
+            if (form.IsChecked()):
+                choice = form.GetChoiceName()
+        return choice
+
+    def getRadioButtonValue(self, key):
+        for i in range(len(self.forms)):
+            form = self.forms[i]
+            if (form.GetFormKey().ToString() == key):
+                form_type = form.GetFormType().ToString()
+                if (form_type == "checkBoxForm" or form_type == "radioButtonForm"):
+                    if form.IsChecked().ToBool():
+                        return form.GetChoiceName().ToString()
+        return None
+
+    def __del__(self):
+        self.close()
 
 
 class FormFilterComponent(Component):
@@ -38,72 +153,49 @@ class FormFilterComponent(Component):
             info="List of fields to extract from the files.",
             input_types=["Data"],
             value=None,
-        ),
+        ),        
     ]
 
     outputs = [
         Output(display_name="Data", name="data_list", method="build_data"),
-        Output(display_name="Paths", name="paths_list", method="load_directory"),
+        Output(display_name="Paths", name="paths_list", method="build_paths"),
     ]
 
-    def get_form_value(self, forms, key, tag=None) -> str | int | bool | None:
-        for i in range(forms.GetLength()):
-            form = forms.Get(i)
-            form_key = form.GetFormKey().ToString()
-            if form_key == key:
-                form_type = form.GetFormType().ToString()
-                if form_type == "textForm":
-                    return form.GetText().ToString()
-                elif form_type == "dateForm":
-                    return form.GetTime().ToDouble()
-                elif form_type == "checkBoxForm":
-                    return form.IsChecked().ToBool()
-        return None
-
-    def build_main(self) -> list[dict]:
-        
+    def build_main(self) -> list:
         file_paths: list[str] = self.paths
-
-
         filters: list[Component] = self.fields
-        output_keys: list[str] = (
-            self.output_keys.data["output_keys"] if self.output_keys else None
-        )
-        result: list[dict] = []
+        output_keys = self.output_keys.data["output_keys"] if self.output_keys else None
+        result = []
 
         for file_path in file_paths:
             if isinstance(file_path, Data):
-                file_path: str = file_path.text
-            builder = docbuilder.CDocBuilder()
+                file_path = file_path.text
 
-            builder.OpenFile(file_path, STANDARD_ENCODE_FORMAT)
-   
-            context: docbuilder.CDocBuilderContext = builder.GetContext()
-            globalObj: docbuilder.CDocBuilderValue = context.GetGlobal()
-            api: docbuilder.CDocBuilderValue | None = globalObj["Api"]
-            document: docbuilder.CDocBuilderValue | None = api.GetDocument()
-            forms: docbuilder.CDocBuilderValue | None = document.GetAllForms()
-            passed: bool= True
+            file = File()
+            if not file.open(file_path):
+                continue
+
+            passed = True
             for filter_component in filters:
                 if hasattr(filter_component, "process"):
-                    if not filter_component.process(api, forms, self.get_form_value):
+                    if not filter_component.process(file):
                         passed = False
                         break
             if passed:
                 record = {"file_path": file_path}
                 if output_keys:
                     for key in output_keys:
-                        value: str | int | bool | None = self.get_form_value(forms, key)
-                        record[key] = value
+                        record[key] = file.getFormValueByKey(key)
                 result.append(record)
-            builder.CloseFile()
+            file.close()
+
         return result
 
     def build_data(self) -> Data:
         processed_data = self.build_main()
         return Data(data={"items": processed_data})
 
-    def load_directory(self) -> list[Data]:
+    def build_paths(self) -> list[Data]:
         processed_data = self.build_main()
         file_paths = [record["file_path"] for record in processed_data]
         return file_paths

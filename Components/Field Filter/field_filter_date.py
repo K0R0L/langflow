@@ -1,4 +1,3 @@
-from typing import List
 from datetime import datetime
 
 from langflow.custom import Component
@@ -6,9 +5,6 @@ from langflow.io import (
     MessageTextInput,
     Output,
 )
-
-from langflow.docbuilder import CDocBuilderValue
-
 
 class DateKeyComponent(Component):
     display_name: str = "Date Filter"
@@ -78,7 +74,7 @@ class DateKeyComponent(Component):
             msg = f"Can't parse '{date_str}' as date: {e!s}"
             raise ValueError(msg) from e  
 
-    def get_field_names(self) -> List[str | None]:
+    def get_field_names(self) -> list[str | None]:
         key1:str|None = self.field_1_name
         from_date_str:str|None = self.field_2_name
         key2:str|None = self.field_3_name
@@ -87,8 +83,8 @@ class DateKeyComponent(Component):
         tag2:str|None = self.tag_2
         return [key1, tag1, from_date_str, key2, tag2, to_date_str]
 
-    def process(self, api, forms: CDocBuilderValue, get_form_value) -> bool:
-        config_values: List[str|None] = self.get_field_names()
+    def process(self, file) -> bool:
+        config_values: list[str] = self.get_field_names()
         key1, tag1, from_date_str, key2, tag2, to_date_str = config_values
 
         if not key1 and not key2:
@@ -96,8 +92,8 @@ class DateKeyComponent(Component):
 
         input_from_date: int | None = self.parse_date(from_date_str)
         input_to_date: int | None = self.parse_date(to_date_str)
-        file_to_date: int | None = get_form_value(forms, key2,tag2)
-        file_from_date: int | None = get_form_value(forms, key1,tag1)
+        file_to_date: int | None = file.getFormValueByKey(key2,tag2)
+        file_from_date: int | None = file.getFormValueByKey(key1,tag1)
 
         if all([input_to_date, input_from_date,file_from_date, file_to_date]):
             return (input_from_date < file_from_date) and (file_to_date < input_to_date)

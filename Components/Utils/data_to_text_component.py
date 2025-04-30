@@ -16,7 +16,9 @@ class DataToTextComponent(Component):
             required=True,
         ),
     ]
-    outputs: list[Output] = [Output(display_name="Text", name="output", method="build_output")]
+    outputs = [
+        Output(display_name="Message", name="text", method="build_output"),
+    ]
 
     def get_text_from_processed_data(self, processed_data: list[str]) -> str:
         """Convert processed_data into a readable text format."""
@@ -28,9 +30,12 @@ class DataToTextComponent(Component):
     
         return "\n".join(text_lines)
          
-    def build_output(self) -> Data:
+    def build_output(self) -> Message:
         #msg = f"{self.dict_list}"
         #raise ValueError(msg)
         fields = self.dict_list.data["items"]
         text = f"{self.get_text_from_processed_data(fields)}"
-        return text
+        message = Message(
+            text=text,
+        )
+        return message

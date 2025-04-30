@@ -2,13 +2,10 @@ from langflow.custom import Component
 from langflow.io import Output
 from langflow.inputs.inputs import MessageTextInput
 
-
-class ExistComponent(Component):
-    display_name = "Exist Key Filter"
-    name = "exist"
-    MAX_FIELDS = 15
-    icon = "table"
-    description: str = "This defines the keys that will be checked for availability."
+class RadioButtonComponent(Component):
+    display_name = "RadioButton Filter"
+    name = "radio_button"
+    description: str = "Choice checker for radiobutton group."
     inputs = [
         MessageTextInput(
             name="key",
@@ -21,7 +18,14 @@ class ExistComponent(Component):
             display_name="Tag",
             input_types=[],
             info="Tag.",
-            advanced=True,
+            advanced=True
+        ),
+        MessageTextInput(
+            name="choice",
+            display_name="Choice",
+            info="Choice for radio button group",
+            input_types=[],
+            value="",
         ),
         
     ]
@@ -31,10 +35,8 @@ class ExistComponent(Component):
         )
     ]
 
-
     def build_output(self) -> Component:
         return self
 
     def process(self, file) -> bool:
-        forms = file.getFormsByKeyTag(self.key, self.tag)
-        return len(forms) > 0
+        return self.choice == file.getFormValueByKey(self.key, self.tag)

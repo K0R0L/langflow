@@ -4,8 +4,8 @@ from langflow.inputs.inputs import MessageTextInput
 
 
 class ExistComponent(Component):
-    display_name = "Exist Key Filter"
-    name = "exist"
+    display_name = "Text Key Filter"
+    name = "Text"
     MAX_FIELDS = 15
     icon = "table"
     description: str = "This defines the keys that will be checked for availability."
@@ -14,14 +14,20 @@ class ExistComponent(Component):
             name="key",
             display_name="Key",
             input_types=[],
-            info="Key.",
+            info="Key."
         ),
         MessageTextInput(
             name="tag",
             display_name="Tag",
             input_types=[],
             info="Tag.",
-            advanced=True,
+            advanced=True
+        ),
+        MessageTextInput(
+            name="value",
+            display_name="Value",
+            input_types=[],
+            info="Value."
         ),
         
     ]
@@ -36,5 +42,6 @@ class ExistComponent(Component):
         return self
 
     def process(self, file) -> bool:
-        forms = file.getFormsByKeyTag(self.key, self.tag)
-        return len(forms) > 0
+        return self.value == file.getFormValueByKey(self.key, self.tag)
+
+
