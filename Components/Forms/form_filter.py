@@ -20,7 +20,7 @@ class File:
         self.document = None
         self.forms = None
 
-    def open(file_path, params=""):
+    def open(self, file_path, params=""):
         self.builder = docbuilder.CDocBuilder()
 
         res = self.builder.OpenFile(file_path, params)
@@ -31,9 +31,10 @@ class File:
         self.globalObj = self.context.GetGlobal()
         self.Api = self.globalObj["Api"]
         self.document = self.Api.GetDocument()
+        self.getAllForms()
         return True
 
-    def close():
+    def close(self):
         if (self.context is None):
             return
         del self.forms
@@ -41,6 +42,7 @@ class File:
         del self.api
         del self.globalObj
         del self.context
+        self.context = None
         self.builder.CloseFile()
 
     def getAllForms(self):
@@ -59,8 +61,8 @@ class File:
         if (self.context is None):
             return []
         result = []
-        for i in range(self.forms.GetLength()):
-            form = self.forms.Get(i)
+        for i in range(len(self.forms)):
+            form = self.forms[i]
             if (form.GetFormKey().ToString() == key):
                 result.append(form)
         return result
@@ -71,8 +73,9 @@ class File:
         key_tag_forms = self.forms
         if (tag is not None and tag != ""):
             key_tag_forms = self.getFormsByTag(tag)
-        for i in range(key_tag_forms.GetLength()):
-            form = key_tag_forms.Get(i)
+        result = []
+        for i in range(len(key_tag_forms)):
+            form = key_tag_forms[i]
             if (form.GetFormKey().ToString() == key):
                 result.append(form)
         return result
@@ -95,15 +98,16 @@ class File:
 
     def getFormValueByKey(self, key, tag=None):
         forms_check = self.getFormsByKeyTag(key, tag)
-        count = forms_check.GetLength()
+        count = len(forms_check)
+
         if (0 == count):
             return None
         if (1 == count):
-            return self.getFormValue(forms_check.Get(0))
+            return self.getFormValue(forms_check[0])
 
         choice = ""
         for i in range(count):
-            form = forms_check.Get(i)
+            form = forms_check[i]
             form_type = form.GetFormType().ToString()
             if ("radioButtonForm" != form_type):
                 return self.getFormValue(form)
@@ -112,8 +116,8 @@ class File:
         return choice
 
     def getRadioButtonValue(self, key):
-        for i in range(self.forms.GetLength()):
-            form = self.forms.Get(i)
+        for i in range(len(self.forms)):
+            form = self.forms[i]
             if (form.GetFormKey().ToString() == key):
                 form_type = form.GetFormType().ToString()
                 if (form_type == "checkBoxForm" or form_type == "radioButtonForm"):
@@ -167,10 +171,11 @@ class FormFilterComponent(Component):
         for file_path in file_paths:
             if isinstance(file_path, Data):
                 file_path = file_path.text
+
             file = File()
             if not file.open(file_path):
                 continue
-            
+
             passed = True
             for filter_component in filters:
                 if hasattr(filter_component, "process"):
@@ -184,6 +189,7 @@ class FormFilterComponent(Component):
                         record[key] = file.getFormValueByKey(key)
                 result.append(record)
             file.close()
+
         return result
 
     def build_data(self) -> Data:

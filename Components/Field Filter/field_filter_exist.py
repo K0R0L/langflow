@@ -41,6 +41,6 @@ class ExistComponent(Component):
 
     def process(self, file) -> bool:
         forms = file.getFormsByKeyTag(self.key, self.tag)
-        if (forms.GetLength() > 0):
+        if (len(forms) > 0):
             return True
         return False
