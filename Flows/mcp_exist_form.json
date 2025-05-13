@@ -1,0 +1,1776 @@
+{
+  "access_type": "PRIVATE",
+  "action_description": "Powerful Prompts, Perfectly Positioned.",
+  "action_name": "mcp_exist_form",
+  "data": {
+    "edges": [
+      {
+        "animated": false,
+        "className": "",
+        "data": {
+          "sourceHandle": {
+            "dataType": "DirectoryPath",
+            "id": "DirectoryPath-0teKE",
+            "name": "data",
+            "output_types": [
+              "Data"
+            ]
+          },
+          "targetHandle": {
+            "fieldName": "paths",
+            "id": "FormFilter-l4kl0",
+            "inputTypes": [
+              "Data"
+            ],
+            "type": "other"
+          }
+        },
+        "id": "xy-edge__DirectoryPath-0teKE{œdataTypeœ:œDirectoryPathœ,œidœ:œDirectoryPath-0teKEœ,œnameœ:œdataœ,œoutput_typesœ:[œDataœ]}-FormFilter-l4kl0{œfieldNameœ:œpathsœ,œidœ:œFormFilter-l4kl0œ,œinputTypesœ:[œDataœ],œtypeœ:œotherœ}",
+        "selected": false,
+        "source": "DirectoryPath-0teKE",
+        "sourceHandle": "{œdataTypeœ:œDirectoryPathœ,œidœ:œDirectoryPath-0teKEœ,œnameœ:œdataœ,œoutput_typesœ:[œDataœ]}",
+        "target": "FormFilter-l4kl0",
+        "targetHandle": "{œfieldNameœ:œpathsœ,œidœ:œFormFilter-l4kl0œ,œinputTypesœ:[œDataœ],œtypeœ:œotherœ}"
+      },
+      {
+        "animated": false,
+        "className": "",
+        "data": {
+          "sourceHandle": {
+            "dataType": "Exist",
+            "id": "Exist-tiDF8",
+            "name": "output",
+            "output_types": [
+              "Component"
+            ]
+          },
+          "targetHandle": {
+            "fieldName": "fields",
+            "id": "FormFilter-l4kl0",
+            "inputTypes": [
+              "Component"
+            ],
+            "type": "str"
+          }
+        },
+        "id": "xy-edge__Exist-tiDF8{œdataTypeœ:œExistœ,œidœ:œExist-tiDF8œ,œnameœ:œoutputœ,œoutput_typesœ:[œComponentœ]}-FormFilter-l4kl0{œfieldNameœ:œfieldsœ,œidœ:œFormFilter-l4kl0œ,œinputTypesœ:[œComponentœ],œtypeœ:œstrœ}",
+        "selected": false,
+        "source": "Exist-tiDF8",
+        "sourceHandle": "{œdataTypeœ:œExistœ,œidœ:œExist-tiDF8œ,œnameœ:œoutputœ,œoutput_typesœ:[œComponentœ]}",
+        "target": "FormFilter-l4kl0",
+        "targetHandle": "{œfieldNameœ:œfieldsœ,œidœ:œFormFilter-l4kl0œ,œinputTypesœ:[œComponentœ],œtypeœ:œstrœ}"
+      },
+      {
+        "animated": false,
+        "className": "",
+        "data": {
+          "sourceHandle": {
+            "dataType": "output",
+            "id": "output-ZzGYZ",
+            "name": "output",
+            "output_types": [
+              "Data"
+            ]
+          },
+          "targetHandle": {
+            "fieldName": "output_keys",
+            "id": "FormFilter-l4kl0",
+            "inputTypes": [
+              "Data"
+            ],
+            "type": "other"
+          }
+        },
+        "id": "xy-edge__output-ZzGYZ{œdataTypeœ:œoutputœ,œidœ:œoutput-ZzGYZœ,œnameœ:œoutputœ,œoutput_typesœ:[œDataœ]}-FormFilter-l4kl0{œfieldNameœ:œoutput_keysœ,œidœ:œFormFilter-l4kl0œ,œinputTypesœ:[œDataœ],œtypeœ:œotherœ}",
+        "selected": false,
+        "source": "output-ZzGYZ",
+        "sourceHandle": "{œdataTypeœ:œoutputœ,œidœ:œoutput-ZzGYZœ,œnameœ:œoutputœ,œoutput_typesœ:[œDataœ]}",
+        "target": "FormFilter-l4kl0",
+        "targetHandle": "{œfieldNameœ:œoutput_keysœ,œidœ:œFormFilter-l4kl0œ,œinputTypesœ:[œDataœ],œtypeœ:œotherœ}"
+      },
+      {
+        "animated": false,
+        "className": "",
+        "data": {
+          "sourceHandle": {
+            "dataType": "MessagetoData",
+            "id": "MessagetoData-5mYAF",
+            "name": "key",
+            "output_types": [
+              "Message"
+            ]
+          },
+          "targetHandle": {
+            "fieldName": "key",
+            "id": "Exist-tiDF8",
+            "inputTypes": [
+              "Message"
+            ],
+            "type": "str"
+          }
+        },
+        "id": "xy-edge__MessagetoData-5mYAF{œdataTypeœ:œMessagetoDataœ,œidœ:œMessagetoData-5mYAFœ,œnameœ:œkeyœ,œoutput_typesœ:[œMessageœ]}-Exist-tiDF8{œfieldNameœ:œkeyœ,œidœ:œExist-tiDF8œ,œinputTypesœ:[œMessageœ],œtypeœ:œstrœ}",
+        "selected": false,
+        "source": "MessagetoData-5mYAF",
+        "sourceHandle": "{œdataTypeœ:œMessagetoDataœ,œidœ:œMessagetoData-5mYAFœ,œnameœ:œkeyœ,œoutput_typesœ:[œMessageœ]}",
+        "target": "Exist-tiDF8",
+        "targetHandle": "{œfieldNameœ:œkeyœ,œidœ:œExist-tiDF8œ,œinputTypesœ:[œMessageœ],œtypeœ:œstrœ}"
+      },
+      {
+        "animated": false,
+        "className": "",
+        "data": {
+          "sourceHandle": {
+            "dataType": "MessagetoData",
+            "id": "MessagetoData-5mYAF",
+            "name": "directory",
+            "output_types": [
+              "Message"
+            ]
+          },
+          "targetHandle": {
+            "fieldName": "path",
+            "id": "DirectoryPath-0teKE",
+            "inputTypes": [
+              "Message"
+            ],
+            "type": "str"
+          }
+        },
+        "id": "xy-edge__MessagetoData-5mYAF{œdataTypeœ:œMessagetoDataœ,œidœ:œMessagetoData-5mYAFœ,œnameœ:œdirectoryœ,œoutput_typesœ:[œMessageœ]}-DirectoryPath-0teKE{œfieldNameœ:œpathœ,œidœ:œDirectoryPath-0teKEœ,œinputTypesœ:[œMessageœ],œtypeœ:œstrœ}",
+        "selected": false,
+        "source": "MessagetoData-5mYAF",
+        "sourceHandle": "{œdataTypeœ:œMessagetoDataœ,œidœ:œMessagetoData-5mYAFœ,œnameœ:œdirectoryœ,œoutput_typesœ:[œMessageœ]}",
+        "target": "DirectoryPath-0teKE",
+        "targetHandle": "{œfieldNameœ:œpathœ,œidœ:œDirectoryPath-0teKEœ,œinputTypesœ:[œMessageœ],œtypeœ:œstrœ}"
+      },
+      {
+        "animated": false,
+        "className": "",
+        "data": {
+          "sourceHandle": {
+            "dataType": "FormFilter",
+            "id": "FormFilter-l4kl0",
+            "name": "data_list",
+            "output_types": [
+              "Data"
+            ]
+          },
+          "targetHandle": {
+            "fieldName": "dict_list",
+            "id": "DataToText-BI4S9",
+            "inputTypes": [
+              "Data"
+            ],
+            "type": "other"
+          }
+        },
+        "id": "xy-edge__FormFilter-l4kl0{œdataTypeœ:œFormFilterœ,œidœ:œFormFilter-l4kl0œ,œnameœ:œdata_listœ,œoutput_typesœ:[œDataœ]}-DataToText-BI4S9{œfieldNameœ:œdict_listœ,œidœ:œDataToText-BI4S9œ,œinputTypesœ:[œDataœ],œtypeœ:œotherœ}",
+        "selected": false,
+        "source": "FormFilter-l4kl0",
+        "sourceHandle": "{œdataTypeœ:œFormFilterœ,œidœ:œFormFilter-l4kl0œ,œnameœ:œdata_listœ,œoutput_typesœ:[œDataœ]}",
+        "target": "DataToText-BI4S9",
+        "targetHandle": "{œfieldNameœ:œdict_listœ,œidœ:œDataToText-BI4S9œ,œinputTypesœ:[œDataœ],œtypeœ:œotherœ}"
+      },
+      {
+        "animated": false,
+        "className": "",
+        "data": {
+          "sourceHandle": {
+            "dataType": "DataToText",
+            "id": "DataToText-BI4S9",
+            "name": "text",
+            "output_types": [
+              "Message"
+            ]
+          },
+          "targetHandle": {
+            "fieldName": "input_value",
+            "id": "ChatOutput-Ru7U9",
+            "inputTypes": [
+              "Data",
+              "DataFrame",
+              "Message"
+            ],
+            "type": "other"
+          }
+        },
+        "id": "xy-edge__DataToText-BI4S9{œdataTypeœ:œDataToTextœ,œidœ:œDataToText-BI4S9œ,œnameœ:œtextœ,œoutput_typesœ:[œMessageœ]}-ChatOutput-Ru7U9{œfieldNameœ:œinput_valueœ,œidœ:œChatOutput-Ru7U9œ,œinputTypesœ:[œDataœ,œDataFrameœ,œMessageœ],œtypeœ:œotherœ}",
+        "selected": false,
+        "source": "DataToText-BI4S9",
+        "sourceHandle": "{œdataTypeœ:œDataToTextœ,œidœ:œDataToText-BI4S9œ,œnameœ:œtextœ,œoutput_typesœ:[œMessageœ]}",
+        "target": "ChatOutput-Ru7U9",
+        "targetHandle": "{œfieldNameœ:œinput_valueœ,œidœ:œChatOutput-Ru7U9œ,œinputTypesœ:[œDataœ,œDataFrameœ,œMessageœ],œtypeœ:œotherœ}"
+      },
+      {
+        "animated": false,
+        "className": "",
+        "data": {
+          "sourceHandle": {
+            "dataType": "MessagetoData",
+            "id": "MessagetoData-5mYAF",
+            "name": "key",
+            "output_types": [
+              "Message"
+            ]
+          },
+          "targetHandle": {
+            "fieldName": "field_1_name",
+            "id": "output-ZzGYZ",
+            "inputTypes": [
+              "Message"
+            ],
+            "type": "str"
+          }
+        },
+        "id": "xy-edge__MessagetoData-5mYAF{œdataTypeœ:œMessagetoDataœ,œidœ:œMessagetoData-5mYAFœ,œnameœ:œkeyœ,œoutput_typesœ:[œMessageœ]}-output-ZzGYZ{œfieldNameœ:œfield_1_nameœ,œidœ:œoutput-ZzGYZœ,œinputTypesœ:[œMessageœ],œtypeœ:œstrœ}",
+        "selected": false,
+        "source": "MessagetoData-5mYAF",
+        "sourceHandle": "{œdataTypeœ:œMessagetoDataœ,œidœ:œMessagetoData-5mYAFœ,œnameœ:œkeyœ,œoutput_typesœ:[œMessageœ]}",
+        "target": "output-ZzGYZ",
+        "targetHandle": "{œfieldNameœ:œfield_1_nameœ,œidœ:œoutput-ZzGYZœ,œinputTypesœ:[œMessageœ],œtypeœ:œstrœ}"
+      },
+      {
+        "animated": false,
+        "className": "",
+        "data": {
+          "sourceHandle": {
+            "dataType": "ChatInput",
+            "id": "ChatInput-8xAmM",
+            "name": "message",
+            "output_types": [
+              "Message"
+            ]
+          },
+          "targetHandle": {
+            "fieldName": "message",
+            "id": "MessagetoData-5mYAF",
+            "inputTypes": [
+              "Message"
+            ],
+            "type": "str"
+          }
+        },
+        "id": "xy-edge__ChatInput-8xAmM{œdataTypeœ:œChatInputœ,œidœ:œChatInput-8xAmMœ,œnameœ:œmessageœ,œoutput_typesœ:[œMessageœ]}-MessagetoData-5mYAF{œfieldNameœ:œmessageœ,œidœ:œMessagetoData-5mYAFœ,œinputTypesœ:[œMessageœ],œtypeœ:œstrœ}",
+        "selected": false,
+        "source": "ChatInput-8xAmM",
+        "sourceHandle": "{œdataTypeœ:œChatInputœ,œidœ:œChatInput-8xAmMœ,œnameœ:œmessageœ,œoutput_typesœ:[œMessageœ]}",
+        "target": "MessagetoData-5mYAF",
+        "targetHandle": "{œfieldNameœ:œmessageœ,œidœ:œMessagetoData-5mYAFœ,œinputTypesœ:[œMessageœ],œtypeœ:œstrœ}"
+      }
+    ],
+    "nodes": [
+      {
+        "data": {
+          "description": "Retrieve paths from a folder.",
+          "display_name": "Directory Paths",
+          "id": "DirectoryPath-0teKE",
+          "node": {
+            "base_classes": [
+              "Data"
+            ],
+            "beta": false,
+            "conditional_paths": [],
+            "custom_fields": {},
+            "description": "Retrieve paths from a folder.",
+            "display_name": "Directory Paths",
+            "documentation": "",
+            "edited": true,
+            "field_order": [
+              "path",
+              "types",
+              "depth",
+              "load_hidden",
+              "recursive",
+              "silent_errors"
+            ],
+            "frozen": false,
+            "icon": "folder",
+            "legacy": false,
+            "lf_version": "1.4.1",
+            "metadata": {},
+            "minimized": false,
+            "output_types": [],
+            "outputs": [
+              {
+                "allows_loop": false,
+                "cache": true,
+                "display_name": "Data",
+                "hidden": false,
+                "method": "load_directory",
+                "name": "data",
+                "options": null,
+                "required_inputs": null,
+                "selected": "Data",
+                "tool_mode": true,
+                "types": [
+                  "Data"
+                ],
+                "value": "__UNDEFINED__"
+              }
+            ],
+            "pinned": false,
+            "template": {
+              "_type": "Component",
+              "code": {
+                "advanced": true,
+                "dynamic": true,
+                "fileTypes": [],
+                "file_path": "",
+                "info": "",
+                "list": false,
+                "load_from_db": false,
+                "multiline": true,
+                "name": "code",
+                "password": false,
+                "placeholder": "",
+                "required": true,
+                "show": true,
+                "title_case": false,
+                "type": "code",
+                "value": "from langflow.base.data.utils import (\n    TEXT_FILE_TYPES,\n    retrieve_file_paths,\n)\nfrom langflow.custom import Component\nfrom langflow.io import BoolInput, IntInput, MessageTextInput, MultiselectInput\nfrom langflow.schema import Data\nfrom langflow.template import Output\n\n\nclass DirectoryPathComponent(Component):\n    display_name = \"Directory Paths\"\n    description = \"Retrieve paths from a folder.\"\n    icon = \"folder\"\n    name = \"DirectoryPath\"\n\n    inputs = [\n        MessageTextInput(\n            name=\"path\",\n            display_name=\"Path\",\n            info=\"Path to the directory to load files from. Defaults to current directory ('.')\",\n            value=\".\",\n            input_types=[\"Message\"],\n            tool_mode=True,\n        ),\n        MultiselectInput(\n            name=\"types\",\n            display_name=\"File Types\",\n            info=\"File types to load. Select one or more types or leave empty to load all supported types.\",\n            options=TEXT_FILE_TYPES,\n            value=[],\n        ),\n        IntInput(\n            name=\"depth\",\n            display_name=\"Depth\",\n            advanced=True,\n            info=\"Depth to search for files.\",\n            value=0,\n        ),\n        BoolInput(\n            name=\"load_hidden\",\n            display_name=\"Load Hidden\",\n            advanced=True,\n            info=\"If true, hidden files will be loaded.\",\n        ),\n        BoolInput(\n            name=\"recursive\",\n            display_name=\"Recursive\",\n            advanced=True,\n            info=\"If true, the search will be recursive.\",\n        ),\n        BoolInput(\n            name=\"silent_errors\",\n            display_name=\"Silent Errors\",\n            advanced=True,\n            info=\"If true, errors will not raise an exception.\",\n        ),\n    ]\n\n    outputs = [\n        Output(display_name=\"Data\", name=\"data\", method=\"load_directory\"),\n    ]\n\n    def load_directory(self) -> list[Data]:\n        path = self.path\n        types = self.types\n        depth = self.depth\n        load_hidden = self.load_hidden\n        recursive = self.recursive\n\n        resolved_path = self.resolve_path(path)\n\n        if not types:\n            types = TEXT_FILE_TYPES\n\n        invalid_types = [t for t in types if t not in TEXT_FILE_TYPES]\n        if invalid_types:\n            msg = f\"Invalid file types specified: {invalid_types}. Valid types are: {TEXT_FILE_TYPES}\"\n            raise ValueError(msg)\n\n        valid_types = types\n\n        file_paths = retrieve_file_paths(\n            resolved_path,\n            load_hidden=load_hidden,\n            recursive=recursive,\n            depth=depth,\n            types=valid_types,\n        )\n\n        return file_paths\n"
+              },
+              "depth": {
+                "_input_type": "IntInput",
+                "advanced": true,
+                "display_name": "Depth",
+                "dynamic": false,
+                "info": "Depth to search for files.",
+                "list": false,
+                "list_add_label": "Add More",
+                "name": "depth",
+                "placeholder": "",
+                "required": false,
+                "show": true,
+                "title_case": false,
+                "tool_mode": false,
+                "trace_as_metadata": true,
+                "type": "int",
+                "value": 0
+              },
+              "load_hidden": {
+                "_input_type": "BoolInput",
+                "advanced": true,
+                "display_name": "Load Hidden",
+                "dynamic": false,
+                "info": "If true, hidden files will be loaded.",
+                "list": false,
+                "list_add_label": "Add More",
+                "name": "load_hidden",
+                "placeholder": "",
+                "required": false,
+                "show": true,
+                "title_case": false,
+                "tool_mode": false,
+                "trace_as_metadata": true,
+                "type": "bool",
+                "value": false
+              },
+              "path": {
+                "_input_type": "MessageTextInput",
+                "advanced": false,
+                "display_name": "Path",
+                "dynamic": false,
+                "info": "Path to the directory to load files from. Defaults to current directory ('.')",
+                "input_types": [
+                  "Message"
+                ],
+                "list": false,
+                "list_add_label": "Add More",
+                "load_from_db": false,
+                "name": "path",
+                "placeholder": "",
+                "required": false,
+                "show": true,
+                "title_case": false,
+                "tool_mode": true,
+                "trace_as_input": true,
+                "trace_as_metadata": true,
+                "type": "str",
+                "value": ""
+              },
+              "recursive": {
+                "_input_type": "BoolInput",
+                "advanced": true,
+                "display_name": "Recursive",
+                "dynamic": false,
+                "info": "If true, the search will be recursive.",
+                "list": false,
+                "list_add_label": "Add More",
+                "name": "recursive",
+                "placeholder": "",
+                "required": false,
+                "show": true,
+                "title_case": false,
+                "tool_mode": false,
+                "trace_as_metadata": true,
+                "type": "bool",
+                "value": false
+              },
+              "silent_errors": {
+                "_input_type": "BoolInput",
+                "advanced": true,
+                "display_name": "Silent Errors",
+                "dynamic": false,
+                "info": "If true, errors will not raise an exception.",
+                "list": false,
+                "list_add_label": "Add More",
+                "name": "silent_errors",
+                "placeholder": "",
+                "required": false,
+                "show": true,
+                "title_case": false,
+                "tool_mode": false,
+                "trace_as_metadata": true,
+                "type": "bool",
+                "value": false
+              },
+              "types": {
+                "_input_type": "MultiselectInput",
+                "advanced": false,
+                "combobox": false,
+                "display_name": "File Types",
+                "dynamic": false,
+                "info": "File types to load. Select one or more types or leave empty to load all supported types.",
+                "list": true,
+                "list_add_label": "Add More",
+                "load_from_db": false,
+                "name": "types",
+                "options": [
+                  "txt",
+                  "md",
+                  "mdx",
+                  "csv",
+                  "json",
+                  "yaml",
+                  "yml",
+                  "xml",
+                  "html",
+                  "htm",
+                  "pdf",
+                  "docx",
+                  "py",
+                  "sh",
+                  "sql",
+                  "js",
+                  "ts",
+                  "tsx"
+                ],
+                "placeholder": "",
+                "required": false,
+                "show": true,
+                "title_case": false,
+                "toggle": false,
+                "tool_mode": false,
+                "trace_as_metadata": true,
+                "type": "str",
+                "value": [
+                  "pdf"
+                ]
+              }
+            },
+            "tool_mode": false
+          },
+          "showNode": true,
+          "type": "DirectoryPath"
+        },
+        "dragging": false,
+        "id": "DirectoryPath-0teKE",
+        "measured": {
+          "height": 311,
+          "width": 320
+        },
+        "position": {
+          "x": -2434.8348419941367,
+          "y": -28.72224518199538
+        },
+        "selected": false,
+        "type": "genericNode"
+      },
+      {
+        "data": {
+          "description": "Filters the specified forms based on the specified criteria.",
+          "display_name": "Form Filter",
+          "id": "FormFilter-l4kl0",
+          "node": {
+            "base_classes": [
+              "Data"
+            ],
+            "beta": false,
+            "conditional_paths": [],
+            "custom_fields": {},
+            "description": "Filters the specified forms based on the specified criteria.",
+            "display_name": "Form Filter",
+            "documentation": "",
+            "edited": true,
+            "field_order": [
+              "paths",
+              "fields",
+              "output_keys"
+            ],
+            "frozen": false,
+            "icon": "filter",
+            "legacy": false,
+            "lf_version": "1.4.1",
+            "metadata": {},
+            "minimized": false,
+            "output_types": [],
+            "outputs": [
+              {
+                "allows_loop": false,
+                "cache": true,
+                "display_name": "Data",
+                "hidden": false,
+                "method": "build_data",
+                "name": "data_list",
+                "options": null,
+                "required_inputs": null,
+                "selected": "Data",
+                "tool_mode": true,
+                "types": [
+                  "Data"
+                ],
+                "value": "__UNDEFINED__"
+              },
+              {
+                "allows_loop": false,
+                "cache": true,
+                "display_name": "Paths",
+                "hidden": null,
+                "method": "build_paths",
+                "name": "paths_list",
+                "options": null,
+                "required_inputs": null,
+                "selected": "Data",
+                "tool_mode": true,
+                "types": [
+                  "Data"
+                ],
+                "value": "__UNDEFINED__"
+              }
+            ],
+            "pinned": false,
+            "template": {
+              "_type": "Component",
+              "code": {
+                "advanced": true,
+                "dynamic": true,
+                "fileTypes": [],
+                "file_path": "",
+                "info": "",
+                "list": false,
+                "load_from_db": false,
+                "multiline": true,
+                "name": "code",
+                "password": false,
+                "placeholder": "",
+                "required": true,
+                "show": true,
+                "title_case": false,
+                "type": "code",
+                "value": "from langflow.custom import Component\nfrom langflow.docbuilder import docbuilder\nfrom langflow.inputs import Input\nfrom langflow.inputs.inputs import DataInput\nfrom langflow.io import Output\nfrom langflow.schema import Data\n\n\nclass File:\n    def __init__(self):\n        self.builder = None\n        self.context = None\n\n        # js objects\n        self.globalObj = None\n        self.api = None\n        self.document = None\n        self.forms = None\n\n    def open(self, file_path, params=\"\") -> bool:\n        self.builder = docbuilder.CDocBuilder()\n\n        res = self.builder.OpenFile(file_path, params)\n        if res != 0:\n            return False\n\n        self.context: docbuilder.CDocBuilderContext = self.builder.GetContext()\n        self.globalObj: docbuilder.CDocBuilderValue = self.context.GetGlobal()\n        self.Api: docbuilder.CDocBuilderValue | None = self.globalObj[\"Api\"]\n        self.document: docbuilder.CDocBuilderValue | None = self.Api.GetDocument()\n        self.getAllForms()\n        return True\n\n    def close(self):\n        if self.context is None:\n            return\n        del self.forms\n        del self.document\n        del self.api\n        del self.globalObj\n        del self.context\n        self.context = None\n        self.builder.CloseFile()\n\n    def getAllForms(self):\n        if self.context is None:\n            return []\n        if self.forms is None:\n            self.forms = self.document.GetAllForms()\n        return self.forms\n\n    def getFormsByTag(self, tag):\n        if self.context is None:\n            return []\n        return self.document.GetFormsByTag(tag)\n\n    def getFormsByKey(self, key):\n        if self.context is None:\n            return []\n        result = []\n        for form in self.forms:\n            if form.GetFormKey().ToString() == key:\n                result.append(form)\n        return result\n\n    def getFormsByKeyTag(self, key, tag=None):\n        if self.context is None:\n            return []\n        key_tag_forms = self.forms\n        if tag:\n            key_tag_forms = self.getFormsByTag(tag)\n        result = []\n        for form in key_tag_forms:\n            if form.GetFormKey().ToString() == key:\n                result.append(form)\n        return result\n\n    def getFormValue(self, form):\n        form_type = form.GetFormType().ToString()\n        if form_type == \"textForm\":\n            return form.GetText().ToString()\n        elif form_type == \"dateForm\":\n            return form.GetTime().ToDouble()\n        elif form_type == \"checkBoxForm\":\n            return form.IsChecked().ToBool()\n        elif form_type == \"radioButtonForm\":\n            return form.IsChecked().ToBool()\n        elif form_type == \"comboBoxForm\":\n            return form.GetText().ToString()\n        elif form_type == \"dropDownForm\":\n            return form.GetText().ToString()\n        return None\n\n    def getFormValueByKey(self, key, tag=None):\n        forms_check = self.getFormsByKeyTag(key, tag)\n        count = len(forms_check)\n\n        if 0 == count:\n            return None\n        if 1 == count:\n            return self.getFormValue(forms_check[0])\n\n        choice = \"\"\n        for form in forms_check:\n            form_type = form.GetFormType().ToString()\n            if \"radioButtonForm\" != form_type:\n                return self.getFormValue(form)\n            if form.IsChecked().ToBool():\n                choice = form.GetChoiceName()\n        return choice\n\n    def getRadioButtonValue(self, key):\n        for form in self.forms:\n            if form.GetFormKey().ToString() == key:\n                form_type = form.GetFormType().ToString()\n                if form_type == \"checkBoxForm\" or form_type == \"radioButtonForm\":\n                    if form.IsChecked().ToBool():\n                        return form.GetChoiceName().ToString()\n        return None\n\n    def __del__(self):\n        self.close()\n\n\nclass FormFilterComponent(Component):\n    display_name: str = \"Form Filter\"\n    description: str = \"Filters the specified forms based on the specified criteria.\"\n    name: str = \"FormFilter\"\n    icon = \"filter\"\n    inputs = [\n        DataInput(\n            name=\"paths\",\n            display_name=\"File Paths\",\n            info=\"List of file paths to process.\",\n            is_list=True,\n            required=True,\n        ),\n        Input(\n            name=\"fields\",\n            display_name=\"Criteria\",\n            input_types=[\"Component\"],\n            component=Component,\n            is_list=True,\n        ),\n        DataInput(\n            name=\"output_keys\",\n            display_name=\"Output keys\",\n            info=\"List of fields to extract from the files.\",\n            input_types=[\"Data\"],\n            value=None,\n        ),\n    ]\n\n    outputs = [\n        Output(display_name=\"Data\", name=\"data_list\", method=\"build_data\"),\n        Output(display_name=\"Paths\", name=\"paths_list\", method=\"build_paths\"),\n    ]\n\n    def build_main(self) -> list:\n        file_paths: list[str] = self.paths\n        filters: list[Component] = self.fields\n        output_keys = self.output_keys.data[\"output_keys\"] if self.output_keys else None\n        result = []\n\n        for file_path in file_paths:\n            if isinstance(file_path, Data):\n                file_path = file_path.text\n\n            file = File()\n            if not file.open(file_path):\n                continue\n\n            passed = True\n            for filter_component in filters:\n                if hasattr(filter_component, \"process\"):\n                    if not filter_component.process(file):\n                        passed = False\n                        break\n            if passed:\n                record = {\"file_path\": file_path}\n                if output_keys:\n                    for key in output_keys:\n                        record[key] = file.getFormValueByKey(key)\n                result.append(record)\n            file.close()\n\n        return result\n\n    def build_data(self) -> Data:\n        processed_data = self.build_main()\n        return Data(data={\"items\": processed_data})\n\n    def build_paths(self) -> list[Data]:\n        processed_data = self.build_main()\n        file_paths = [record[\"file_path\"] for record in processed_data]\n        return file_paths\n"
+              },
+              "fields": {
+                "advanced": false,
+                "display_name": "Criteria",
+                "dynamic": false,
+                "fileTypes": [],
+                "file_path": "",
+                "info": "",
+                "input_types": [
+                  "Component"
+                ],
+                "list": true,
+                "load_from_db": false,
+                "multiline": false,
+                "name": "fields",
+                "placeholder": "",
+                "required": false,
+                "show": true,
+                "title_case": false,
+                "type": "str"
+              },
+              "output_keys": {
+                "_input_type": "DataInput",
+                "advanced": false,
+                "display_name": "Output keys",
+                "dynamic": false,
+                "info": "List of fields to extract from the files.",
+                "input_types": [
+                  "Data"
+                ],
+                "list": false,
+                "list_add_label": "Add More",
+                "name": "output_keys",
+                "placeholder": "",
+                "required": false,
+                "show": true,
+                "title_case": false,
+                "tool_mode": false,
+                "trace_as_input": true,
+                "trace_as_metadata": true,
+                "type": "other"
+              },
+              "paths": {
+                "_input_type": "DataInput",
+                "advanced": false,
+                "display_name": "File Paths",
+                "dynamic": false,
+                "info": "List of file paths to process.",
+                "input_types": [
+                  "Data"
+                ],
+                "list": true,
+                "list_add_label": "Add More",
+                "name": "paths",
+                "placeholder": "",
+                "required": true,
+                "show": true,
+                "title_case": false,
+                "tool_mode": false,
+                "trace_as_input": true,
+                "trace_as_metadata": true,
+                "type": "other",
+                "value": ""
+              }
+            },
+            "tool_mode": false
+          },
+          "showNode": true,
+          "type": "FormFilter"
+        },
+        "dragging": false,
+        "id": "FormFilter-l4kl0",
+        "measured": {
+          "height": 393,
+          "width": 320
+        },
+        "position": {
+          "x": -1832.0793346044738,
+          "y": 262.2242027134522
+        },
+        "selected": false,
+        "type": "genericNode"
+      },
+      {
+        "data": {
+          "id": "Exist-tiDF8",
+          "node": {
+            "base_classes": [
+              "Component"
+            ],
+            "beta": false,
+            "conditional_paths": [],
+            "custom_fields": {},
+            "description": "This defines the keys that will be checked for availability.",
+            "display_name": "Exist Key Filter",
+            "documentation": "",
+            "edited": true,
+            "field_order": [
+              "key",
+              "tag"
+            ],
+            "frozen": false,
+            "icon": "table",
+            "legacy": false,
+            "lf_version": "1.4.1",
+            "metadata": {},
+            "minimized": false,
+            "output_types": [],
+            "outputs": [
+              {
+                "allows_loop": false,
+                "cache": true,
+                "display_name": "Filtered Data",
+                "hidden": false,
+                "method": "build_output",
+                "name": "output",
+                "options": null,
+                "required_inputs": null,
+                "selected": "Component",
+                "tool_mode": true,
+                "types": [
+                  "Component"
+                ],
+                "value": "__UNDEFINED__"
+              }
+            ],
+            "pinned": false,
+            "template": {
+              "_type": "Component",
+              "code": {
+                "advanced": true,
+                "dynamic": true,
+                "fileTypes": [],
+                "file_path": "",
+                "info": "",
+                "list": false,
+                "load_from_db": false,
+                "multiline": true,
+                "name": "code",
+                "password": false,
+                "placeholder": "",
+                "required": true,
+                "show": true,
+                "title_case": false,
+                "type": "code",
+                "value": "from langflow.custom import Component\nfrom langflow.inputs.inputs import MessageTextInput\nfrom langflow.io import Output\n\n\nclass ExistComponent(Component):\n    display_name = \"Exist Key Filter\"\n    name = \"Exist\"\n    icon = \"table\"\n    description: str = \"This defines the keys that will be checked for availability.\"\n    inputs = [\n        MessageTextInput(\n            name=\"key\",\n            display_name=\"Key\",\n            input_types=[\"Message\"],\n            info=\"Key.\",\n        ),\n        MessageTextInput(\n            name=\"tag\",\n            display_name=\"Tag\",\n            input_types=[],\n            info=\"Tag.\",\n            advanced=True,\n        ),\n    ]\n    outputs = [\n        Output(display_name=\"Filtered Data\", name=\"output\", method=\"build_output\")\n    ]\n\n    def build_output(self) -> Component:\n        return self\n\n    def process(self, file) -> bool:\n        #raise Exception(f\"{self.key}\")\n        forms = file.getFormsByKeyTag(self.key, self.tag)\n        return len(forms) > 0\n"
+              },
+              "key": {
+                "_input_type": "MessageTextInput",
+                "advanced": false,
+                "display_name": "Key",
+                "dynamic": false,
+                "info": "Key.",
+                "input_types": [
+                  "Message"
+                ],
+                "list": false,
+                "list_add_label": "Add More",
+                "load_from_db": false,
+                "name": "key",
+                "placeholder": "",
+                "required": false,
+                "show": true,
+                "title_case": false,
+                "tool_mode": false,
+                "trace_as_input": true,
+                "trace_as_metadata": true,
+                "type": "str",
+                "value": ""
+              },
+              "tag": {
+                "_input_type": "MessageTextInput",
+                "advanced": true,
+                "display_name": "Tag",
+                "dynamic": false,
+                "info": "Tag.",
+                "input_types": [],
+                "list": false,
+                "list_add_label": "Add More",
+                "load_from_db": false,
+                "name": "tag",
+                "placeholder": "",
+                "required": false,
+                "show": true,
+                "title_case": false,
+                "tool_mode": false,
+                "trace_as_input": true,
+                "trace_as_metadata": true,
+                "type": "str",
+                "value": ""
+              }
+            },
+            "tool_mode": false
+          },
+          "showNode": true,
+          "type": "Exist"
+        },
+        "dragging": false,
+        "id": "Exist-tiDF8",
+        "measured": {
+          "height": 249,
+          "width": 320
+        },
+        "position": {
+          "x": -2438.705444299406,
+          "y": 383.6662583104753
+        },
+        "selected": false,
+        "type": "genericNode"
+      },
+      {
+        "data": {
+          "id": "output-ZzGYZ",
+          "node": {
+            "base_classes": [
+              "Data"
+            ],
+            "beta": false,
+            "conditional_paths": [],
+            "custom_fields": {},
+            "description": "Specifies the keys to be displayed.",
+            "display_name": "Output Keys",
+            "documentation": "",
+            "edited": true,
+            "field_order": [
+              "number_of_fields"
+            ],
+            "frozen": false,
+            "icon": "table",
+            "legacy": false,
+            "lf_version": "1.4.1",
+            "metadata": {},
+            "minimized": false,
+            "output_types": [],
+            "outputs": [
+              {
+                "allows_loop": false,
+                "cache": true,
+                "display_name": "Filtered Data",
+                "hidden": null,
+                "method": "build_output",
+                "name": "output",
+                "options": null,
+                "required_inputs": null,
+                "selected": "Data",
+                "tool_mode": true,
+                "types": [
+                  "Data"
+                ],
+                "value": "__UNDEFINED__"
+              }
+            ],
+            "pinned": false,
+            "template": {
+              "_type": "Component",
+              "code": {
+                "advanced": true,
+                "dynamic": true,
+                "fileTypes": [],
+                "file_path": "",
+                "info": "",
+                "list": false,
+                "load_from_db": false,
+                "multiline": true,
+                "name": "code",
+                "password": false,
+                "placeholder": "",
+                "required": true,
+                "show": true,
+                "title_case": false,
+                "type": "code",
+                "value": "from langflow.custom import Component\nfrom langflow.field_typing.range_spec import RangeSpec\nfrom langflow.inputs.inputs import IntInput, MessageTextInput\nfrom langflow.io import Output\nfrom langflow.schema import Data\nfrom langflow.schema.dotdict import dotdict\n\n\nclass OutputKeysComponent(Component):\n    display_name = \"Output Keys\"\n    name = \"output\"\n    MAX_FIELDS = 15\n    description: str = \"Specifies the keys to be displayed.\"\n    icon = \"table\"\n    inputs = [\n        IntInput(\n            name=\"number_of_fields\",\n            display_name=\"Number of Keys\",\n            info=\"Number of Keys to be added to the record.\",\n            real_time_refresh=True,\n            value=2,\n            input_types=[],\n            range_spec=RangeSpec(min=1, max=MAX_FIELDS, step=1, step_type=\"int\"),\n        ),\n    ]\n    outputs = [\n        Output(display_name=\"Filtered Data\", name=\"output\", method=\"build_output\")\n    ]\n\n    def update_build_config(\n        self, build_config: dotdict, field_value, field_name=None\n    ) -> dotdict:\n        if field_name == \"number_of_fields\":\n            default_keys = {\"code\", \"_type\", \"number_of_fields\", \"data\"}\n            try:\n                field_value_int = int(field_value)\n            except ValueError:\n                return build_config\n            if field_value_int > self.MAX_FIELDS:\n                build_config[\"number_of_fields\"][\"value\"] = self.MAX_FIELDS\n                raise ValueError(f\"Number of fields cannot exceed {self.MAX_FIELDS}.\")\n\n            existing_fields = {}\n            for key in list(build_config.keys()):\n                if key not in default_keys:\n                    existing_fields[key] = build_config.pop(key)\n\n            for i in range(1, field_value_int + 1):\n                key = f\"field_{i}_name\"\n                if key in existing_fields:\n                    field = existing_fields[key]\n                    build_config[key] = field\n                else:\n                    field = MessageTextInput(\n                        display_name=f\"Key {i} Name\",\n                        name=key,\n                        input_types=[\"Message\"],\n                        info=f\"Name of key {i} that you want to output.\",\n                    )\n                    build_config[field.name] = field.to_dict()\n            build_config[\"number_of_fields\"][\"value\"] = field_value_int\n        return build_config\n\n    def get_field_names(self):\n        field_names = []\n        for i in range(1, getattr(self, \"number_of_fields\", 0) + 1):\n            field_name = getattr(self, f\"field_{i}_name\", None)\n            if field_name:\n                field_names.append(field_name.text)\n        return field_names\n\n    def build_output(self) -> Data:\n        field_names = self.get_field_names()\n        #raise Exception(f\"{field_names=}\")\n        return Data(data={\"output_keys\": field_names})\n"
+              },
+              "field_1_name": {
+                "_input_type": "MessageTextInput",
+                "advanced": false,
+                "display_name": "Key 1 Name",
+                "dynamic": false,
+                "info": "Name of key 1 that you want to output.",
+                "input_types": [
+                  "Message"
+                ],
+                "list": false,
+                "list_add_label": "Add More",
+                "load_from_db": false,
+                "name": "field_1_name",
+                "placeholder": "",
+                "required": false,
+                "show": true,
+                "title_case": false,
+                "tool_mode": false,
+                "trace_as_input": true,
+                "trace_as_metadata": true,
+                "type": "str",
+                "value": ""
+              },
+              "number_of_fields": {
+                "_input_type": "IntInput",
+                "advanced": false,
+                "display_name": "Number of Keys",
+                "dynamic": false,
+                "info": "Number of Keys to be added to the record.",
+                "input_types": [],
+                "list": false,
+                "list_add_label": "Add More",
+                "name": "number_of_fields",
+                "placeholder": "",
+                "range_spec": {
+                  "max": 15,
+                  "min": 1,
+                  "step": 1,
+                  "step_type": "int"
+                },
+                "real_time_refresh": true,
+                "required": false,
+                "show": true,
+                "title_case": false,
+                "tool_mode": false,
+                "trace_as_metadata": true,
+                "type": "int",
+                "value": 1
+              }
+            },
+            "tool_mode": false
+          },
+          "showNode": true,
+          "type": "output"
+        },
+        "dragging": false,
+        "id": "output-ZzGYZ",
+        "measured": {
+          "height": 311,
+          "width": 320
+        },
+        "position": {
+          "x": -2416.8057741364355,
+          "y": 722.8790952365165
+        },
+        "selected": false,
+        "type": "genericNode"
+      },
+      {
+        "data": {
+          "id": "MessagetoData-5mYAF",
+          "node": {
+            "base_classes": [
+              "Message"
+            ],
+            "beta": true,
+            "conditional_paths": [],
+            "custom_fields": {},
+            "description": "Split message to path and key.",
+            "display_name": "ParsePathKey",
+            "documentation": "",
+            "edited": true,
+            "field_order": [
+              "message"
+            ],
+            "frozen": false,
+            "icon": "message-square-share",
+            "legacy": false,
+            "metadata": {},
+            "minimized": false,
+            "output_types": [],
+            "outputs": [
+              {
+                "allows_loop": false,
+                "cache": true,
+                "display_name": "Directory",
+                "hidden": null,
+                "method": "get_directory",
+                "name": "directory",
+                "options": null,
+                "required_inputs": null,
+                "selected": "Message",
+                "tool_mode": true,
+                "types": [
+                  "Message"
+                ],
+                "value": "__UNDEFINED__"
+              },
+              {
+                "allows_loop": false,
+                "cache": true,
+                "display_name": "Key",
+                "hidden": null,
+                "method": "get_key",
+                "name": "key",
+                "options": null,
+                "required_inputs": null,
+                "selected": "Message",
+                "tool_mode": true,
+                "types": [
+                  "Message"
+                ],
+                "value": "__UNDEFINED__"
+              }
+            ],
+            "pinned": false,
+            "template": {
+              "_type": "Component",
+              "code": {
+                "advanced": true,
+                "dynamic": true,
+                "fileTypes": [],
+                "file_path": "",
+                "info": "",
+                "list": false,
+                "load_from_db": false,
+                "multiline": true,
+                "name": "code",
+                "password": false,
+                "placeholder": "",
+                "required": true,
+                "show": true,
+                "title_case": false,
+                "type": "code",
+                "value": "from loguru import logger\n\nfrom langflow.custom import Component\nfrom langflow.io import MessageInput, Output\nfrom langflow.schema import Data\nfrom langflow.schema.message import Message\n\n\nclass ParsePathKeyComponent(Component):\n    display_name = \"ParsePathKey\"\n    description = \"Split message to path and key.\"\n    icon = \"message-square-share\"\n    beta = True\n    name = \"MessagetoData\"\n\n    inputs = [\n        MessageInput(\n            name=\"message\",\n            display_name=\"Message\",\n            info=\"The Message object to convert to a Data object\",\n        ),\n    ]\n\n    outputs = [\n        Output(display_name=\"Directory\", name=\"directory\", method=\"get_directory\"),\n        Output(display_name=\"Key\", name=\"key\", method=\"get_key\"),\n    ]\n\n    def get_directory(self) -> Message:\n        if isinstance(self.message, Message):\n            directory = str(self.message.text).split(\",\")[0].split(\":\")[1]\n            #raise Exception(f\"{directory=}\")\n            return Message(text=directory)\n            \n\n        msg = \"Error converting Message to Data: Input must be a Message object\"\n        logger.opt(exception=True).debug(msg)\n        self.status = msg\n        return Data(data={\"error\": msg})\n        \n    def get_key(self) -> Message:\n        if isinstance(self.message, Message):\n            directory = str(self.message.text).split(\",\")[1].split(\":\")[1]\n            #raise Exception(f\"{directory=}\")\n            return Message(text=directory)\n            \n\n        msg = \"Error converting Message to Data: Input must be a Message object\"\n        logger.opt(exception=True).debug(msg)\n        self.status = msg\n        return Data(data={\"error\": msg})\n        \n\n"
+              },
+              "message": {
+                "_input_type": "MessageInput",
+                "advanced": false,
+                "display_name": "Message",
+                "dynamic": false,
+                "info": "The Message object to convert to a Data object",
+                "input_types": [
+                  "Message"
+                ],
+                "list": false,
+                "list_add_label": "Add More",
+                "load_from_db": false,
+                "name": "message",
+                "placeholder": "",
+                "required": false,
+                "show": true,
+                "title_case": false,
+                "tool_mode": false,
+                "trace_as_input": true,
+                "trace_as_metadata": true,
+                "type": "str",
+                "value": ""
+              }
+            },
+            "tool_mode": false
+          },
+          "showNode": true,
+          "type": "MessagetoData"
+        },
+        "dragging": false,
+        "id": "MessagetoData-5mYAF",
+        "measured": {
+          "height": 277,
+          "width": 320
+        },
+        "position": {
+          "x": -3174.483931342161,
+          "y": -49.368603425513726
+        },
+        "selected": true,
+        "type": "genericNode"
+      },
+      {
+        "data": {
+          "id": "DataToText-BI4S9",
+          "node": {
+            "base_classes": [
+              "Message"
+            ],
+            "beta": false,
+            "conditional_paths": [],
+            "custom_fields": {},
+            "description": "Converts data into text.",
+            "display_name": "Data To Text",
+            "documentation": "",
+            "edited": false,
+            "field_order": [
+              "dict_list"
+            ],
+            "frozen": false,
+            "icon": "braces",
+            "legacy": false,
+            "lf_version": "1.4.1",
+            "metadata": {},
+            "minimized": false,
+            "output_types": [],
+            "outputs": [
+              {
+                "allows_loop": false,
+                "cache": true,
+                "display_name": "Message",
+                "hidden": false,
+                "method": "build_output",
+                "name": "text",
+                "selected": "Message",
+                "tool_mode": true,
+                "types": [
+                  "Message"
+                ],
+                "value": "__UNDEFINED__"
+              }
+            ],
+            "pinned": false,
+            "template": {
+              "_type": "Component",
+              "code": {
+                "advanced": true,
+                "dynamic": true,
+                "fileTypes": [],
+                "file_path": "",
+                "info": "",
+                "list": false,
+                "load_from_db": false,
+                "multiline": true,
+                "name": "code",
+                "password": false,
+                "placeholder": "",
+                "required": true,
+                "show": true,
+                "title_case": false,
+                "type": "code",
+                "value": "from langflow.custom import Component\nfrom langflow.io import Output, DataInput\nfrom langflow.schema import Message\n\nclass DataToTextComponent(Component):\n    display_name = \"Data To Text\"\n    name = \"DataToText\"\n    icon = \"braces\"\n    description: str = \"Converts data into text.\"\n    inputs = [\n        DataInput(\n            name=\"dict_list\",\n            display_name=\"Data\",\n            info=\"List of dictionaries to process.\",\n            input_types=[\"Data\"],\n            required=True,\n        ),\n    ]\n    outputs = [\n        Output(display_name=\"Message\", name=\"text\", method=\"build_output\"),\n    ]\n\n    def get_text_from_processed_data(self, processed_data: list[str]) -> str:\n        \"\"\"Convert processed_data into a readable text format.\"\"\"\n        text_lines = []\n        for person in processed_data:\n            for key, record in person.items():\n                text_lines.append(f\"  {key}: {record}\")\n                text_lines.append(\"\")\n    \n        return \"\\n\".join(text_lines)\n         \n    def build_output(self) -> Message:\n        fields = self.dict_list.data[\"items\"]\n        text = f\"{self.get_text_from_processed_data(fields)}\"\n        message = Message(\n            text=text,\n        )\n        return message"
+              },
+              "dict_list": {
+                "_input_type": "DataInput",
+                "advanced": false,
+                "display_name": "Data",
+                "dynamic": false,
+                "info": "List of dictionaries to process.",
+                "input_types": [
+                  "Data"
+                ],
+                "list": false,
+                "list_add_label": "Add More",
+                "name": "dict_list",
+                "placeholder": "",
+                "required": true,
+                "show": true,
+                "title_case": false,
+                "tool_mode": false,
+                "trace_as_input": true,
+                "trace_as_metadata": true,
+                "type": "other",
+                "value": ""
+              }
+            },
+            "tool_mode": false
+          },
+          "showNode": true,
+          "type": "DataToText"
+        },
+        "dragging": false,
+        "id": "DataToText-BI4S9",
+        "measured": {
+          "height": 191,
+          "width": 320
+        },
+        "position": {
+          "x": -1129.8501046551069,
+          "y": 372.84902597878454
+        },
+        "selected": false,
+        "type": "genericNode"
+      },
+      {
+        "data": {
+          "id": "ChatOutput-Ru7U9",
+          "node": {
+            "base_classes": [
+              "Message"
+            ],
+            "beta": false,
+            "conditional_paths": [],
+            "custom_fields": {},
+            "description": "Display a chat message in the Playground.",
+            "display_name": "Chat Output",
+            "documentation": "",
+            "edited": false,
+            "field_order": [
+              "input_value",
+              "should_store_message",
+              "sender",
+              "sender_name",
+              "session_id",
+              "data_template",
+              "background_color",
+              "chat_icon",
+              "text_color",
+              "clean_data"
+            ],
+            "frozen": false,
+            "icon": "MessagesSquare",
+            "legacy": false,
+            "lf_version": "1.4.1",
+            "metadata": {},
+            "minimized": true,
+            "output_types": [],
+            "outputs": [
+              {
+                "allows_loop": false,
+                "cache": true,
+                "display_name": "Message",
+                "method": "message_response",
+                "name": "message",
+                "selected": "Message",
+                "tool_mode": true,
+                "types": [
+                  "Message"
+                ],
+                "value": "__UNDEFINED__"
+              }
+            ],
+            "pinned": false,
+            "template": {
+              "_type": "Component",
+              "background_color": {
+                "_input_type": "MessageTextInput",
+                "advanced": true,
+                "display_name": "Background Color",
+                "dynamic": false,
+                "info": "The background color of the icon.",
+                "input_types": [
+                  "Message"
+                ],
+                "list": false,
+                "list_add_label": "Add More",
+                "load_from_db": false,
+                "name": "background_color",
+                "placeholder": "",
+                "required": false,
+                "show": true,
+                "title_case": false,
+                "tool_mode": false,
+                "trace_as_input": true,
+                "trace_as_metadata": true,
+                "type": "str",
+                "value": ""
+              },
+              "chat_icon": {
+                "_input_type": "MessageTextInput",
+                "advanced": true,
+                "display_name": "Icon",
+                "dynamic": false,
+                "info": "The icon of the message.",
+                "input_types": [
+                  "Message"
+                ],
+                "list": false,
+                "list_add_label": "Add More",
+                "load_from_db": false,
+                "name": "chat_icon",
+                "placeholder": "",
+                "required": false,
+                "show": true,
+                "title_case": false,
+                "tool_mode": false,
+                "trace_as_input": true,
+                "trace_as_metadata": true,
+                "type": "str",
+                "value": ""
+              },
+              "clean_data": {
+                "_input_type": "BoolInput",
+                "advanced": true,
+                "display_name": "Basic Clean Data",
+                "dynamic": false,
+                "info": "Whether to clean the data",
+                "list": false,
+                "list_add_label": "Add More",
+                "name": "clean_data",
+                "placeholder": "",
+                "required": false,
+                "show": true,
+                "title_case": false,
+                "tool_mode": false,
+                "trace_as_metadata": true,
+                "type": "bool",
+                "value": true
+              },
+              "code": {
+                "advanced": true,
+                "dynamic": true,
+                "fileTypes": [],
+                "file_path": "",
+                "info": "",
+                "list": false,
+                "load_from_db": false,
+                "multiline": true,
+                "name": "code",
+                "password": false,
+                "placeholder": "",
+                "required": true,
+                "show": true,
+                "title_case": false,
+                "type": "code",
+                "value": "from collections.abc import Generator\nfrom typing import Any\n\nfrom langflow.base.io.chat import ChatComponent\nfrom langflow.inputs import BoolInput\nfrom langflow.inputs.inputs import HandleInput\nfrom langflow.io import DropdownInput, MessageTextInput, Output\nfrom langflow.schema.data import Data\nfrom langflow.schema.dataframe import DataFrame\nfrom langflow.schema.message import Message\nfrom langflow.schema.properties import Source\nfrom langflow.utils.constants import (\n    MESSAGE_SENDER_AI,\n    MESSAGE_SENDER_NAME_AI,\n    MESSAGE_SENDER_USER,\n)\n\n\nclass ChatOutput(ChatComponent):\n    display_name = \"Chat Output\"\n    description = \"Display a chat message in the Playground.\"\n    icon = \"MessagesSquare\"\n    name = \"ChatOutput\"\n    minimized = True\n\n    inputs = [\n        HandleInput(\n            name=\"input_value\",\n            display_name=\"Text\",\n            info=\"Message to be passed as output.\",\n            input_types=[\"Data\", \"DataFrame\", \"Message\"],\n            required=True,\n        ),\n        BoolInput(\n            name=\"should_store_message\",\n            display_name=\"Store Messages\",\n            info=\"Store the message in the history.\",\n            value=True,\n            advanced=True,\n        ),\n        DropdownInput(\n            name=\"sender\",\n            display_name=\"Sender Type\",\n            options=[MESSAGE_SENDER_AI, MESSAGE_SENDER_USER],\n            value=MESSAGE_SENDER_AI,\n            advanced=True,\n            info=\"Type of sender.\",\n        ),\n        MessageTextInput(\n            name=\"sender_name\",\n            display_name=\"Sender Name\",\n            info=\"Name of the sender.\",\n            value=MESSAGE_SENDER_NAME_AI,\n            advanced=True,\n        ),\n        MessageTextInput(\n            name=\"session_id\",\n            display_name=\"Session ID\",\n            info=\"The session ID of the chat. If empty, the current session ID parameter will be used.\",\n            advanced=True,\n        ),\n        MessageTextInput(\n            name=\"data_template\",\n            display_name=\"Data Template\",\n            value=\"{text}\",\n            advanced=True,\n            info=\"Template to convert Data to Text. If left empty, it will be dynamically set to the Data's text key.\",\n        ),\n        MessageTextInput(\n            name=\"background_color\",\n            display_name=\"Background Color\",\n            info=\"The background color of the icon.\",\n            advanced=True,\n        ),\n        MessageTextInput(\n            name=\"chat_icon\",\n            display_name=\"Icon\",\n            info=\"The icon of the message.\",\n            advanced=True,\n        ),\n        MessageTextInput(\n            name=\"text_color\",\n            display_name=\"Text Color\",\n            info=\"The text color of the name\",\n            advanced=True,\n        ),\n        BoolInput(\n            name=\"clean_data\",\n            display_name=\"Basic Clean Data\",\n            value=True,\n            info=\"Whether to clean the data\",\n            advanced=True,\n        ),\n    ]\n    outputs = [\n        Output(\n            display_name=\"Message\",\n            name=\"message\",\n            method=\"message_response\",\n        ),\n    ]\n\n    def _build_source(self, id_: str | None, display_name: str | None, source: str | None) -> Source:\n        source_dict = {}\n        if id_:\n            source_dict[\"id\"] = id_\n        if display_name:\n            source_dict[\"display_name\"] = display_name\n        if source:\n            # Handle case where source is a ChatOpenAI object\n            if hasattr(source, \"model_name\"):\n                source_dict[\"source\"] = source.model_name\n            elif hasattr(source, \"model\"):\n                source_dict[\"source\"] = str(source.model)\n            else:\n                source_dict[\"source\"] = str(source)\n        return Source(**source_dict)\n\n    async def message_response(self) -> Message:\n        # First convert the input to string if needed\n        text = self.convert_to_string()\n        # Get source properties\n        source, icon, display_name, source_id = self.get_properties_from_source_component()\n        background_color = self.background_color\n        text_color = self.text_color\n        if self.chat_icon:\n            icon = self.chat_icon\n\n        # Create or use existing Message object\n        if isinstance(self.input_value, Message):\n            message = self.input_value\n            # Update message properties\n            message.text = text\n        else:\n            message = Message(text=text)\n\n        # Set message properties\n        message.sender = self.sender\n        message.sender_name = self.sender_name\n        message.session_id = self.session_id\n        message.flow_id = self.graph.flow_id if hasattr(self, \"graph\") else None\n        message.properties.source = self._build_source(source_id, display_name, source)\n        message.properties.icon = icon\n        message.properties.background_color = background_color\n        message.properties.text_color = text_color\n\n        # Store message if needed\n        if self.session_id and self.should_store_message:\n            stored_message = await self.send_message(message)\n            self.message.value = stored_message\n            message = stored_message\n\n        self.status = message\n        return message\n\n    def _validate_input(self) -> None:\n        \"\"\"Validate the input data and raise ValueError if invalid.\"\"\"\n        if self.input_value is None:\n            msg = \"Input data cannot be None\"\n            raise ValueError(msg)\n        if isinstance(self.input_value, list) and not all(\n            isinstance(item, Message | Data | DataFrame | str) for item in self.input_value\n        ):\n            invalid_types = [\n                type(item).__name__\n                for item in self.input_value\n                if not isinstance(item, Message | Data | DataFrame | str)\n            ]\n            msg = f\"Expected Data or DataFrame or Message or str, got {invalid_types}\"\n            raise TypeError(msg)\n        if not isinstance(\n            self.input_value,\n            Message | Data | DataFrame | str | list | Generator | type(None),\n        ):\n            type_name = type(self.input_value).__name__\n            msg = f\"Expected Data or DataFrame or Message or str, Generator or None, got {type_name}\"\n            raise TypeError(msg)\n\n    def _safe_convert(self, data: Any) -> str:\n        \"\"\"Safely convert input data to string.\"\"\"\n        try:\n            if isinstance(data, str):\n                return data\n            if isinstance(data, Message):\n                return data.get_text()\n            if isinstance(data, Data):\n                if data.get_text() is None:\n                    msg = \"Empty Data object\"\n                    raise ValueError(msg)\n                return data.get_text()\n            if isinstance(data, DataFrame):\n                if self.clean_data:\n                    # Remove empty rows\n                    data = data.dropna(how=\"all\")\n                    # Remove empty lines in each cell\n                    data = data.replace(r\"^\\s*$\", \"\", regex=True)\n                    # Replace multiple newlines with a single newline\n                    data = data.replace(r\"\\n+\", \"\\n\", regex=True)\n\n                # Replace pipe characters to avoid markdown table issues\n                processed_data = data.replace(r\"\\|\", r\"\\\\|\", regex=True)\n\n                processed_data = processed_data.map(\n                    lambda x: str(x).replace(\"\\n\", \"<br/>\") if isinstance(x, str) else x\n                )\n\n                return processed_data.to_markdown(index=False)\n            return str(data)\n        except (ValueError, TypeError, AttributeError) as e:\n            msg = f\"Error converting data: {e!s}\"\n            raise ValueError(msg) from e\n\n    def convert_to_string(self) -> str | Generator[Any, None, None]:\n        \"\"\"Convert input data to string with proper error handling.\"\"\"\n        self._validate_input()\n        if isinstance(self.input_value, list):\n            return \"\\n\".join([self._safe_convert(item) for item in self.input_value])\n        if isinstance(self.input_value, Generator):\n            return self.input_value\n        return self._safe_convert(self.input_value)\n"
+              },
+              "data_template": {
+                "_input_type": "MessageTextInput",
+                "advanced": true,
+                "display_name": "Data Template",
+                "dynamic": false,
+                "info": "Template to convert Data to Text. If left empty, it will be dynamically set to the Data's text key.",
+                "input_types": [
+                  "Message"
+                ],
+                "list": false,
+                "list_add_label": "Add More",
+                "load_from_db": false,
+                "name": "data_template",
+                "placeholder": "",
+                "required": false,
+                "show": true,
+                "title_case": false,
+                "tool_mode": false,
+                "trace_as_input": true,
+                "trace_as_metadata": true,
+                "type": "str",
+                "value": "{text}"
+              },
+              "input_value": {
+                "_input_type": "HandleInput",
+                "advanced": false,
+                "display_name": "Text",
+                "dynamic": false,
+                "info": "Message to be passed as output.",
+                "input_types": [
+                  "Data",
+                  "DataFrame",
+                  "Message"
+                ],
+                "list": false,
+                "list_add_label": "Add More",
+                "name": "input_value",
+                "placeholder": "",
+                "required": true,
+                "show": true,
+                "title_case": false,
+                "trace_as_metadata": true,
+                "type": "other",
+                "value": ""
+              },
+              "sender": {
+                "_input_type": "DropdownInput",
+                "advanced": true,
+                "combobox": false,
+                "dialog_inputs": {},
+                "display_name": "Sender Type",
+                "dynamic": false,
+                "info": "Type of sender.",
+                "name": "sender",
+                "options": [
+                  "Machine",
+                  "User"
+                ],
+                "options_metadata": [],
+                "placeholder": "",
+                "required": false,
+                "show": true,
+                "title_case": false,
+                "toggle": false,
+                "tool_mode": false,
+                "trace_as_metadata": true,
+                "type": "str",
+                "value": "Machine"
+              },
+              "sender_name": {
+                "_input_type": "MessageTextInput",
+                "advanced": true,
+                "display_name": "Sender Name",
+                "dynamic": false,
+                "info": "Name of the sender.",
+                "input_types": [
+                  "Message"
+                ],
+                "list": false,
+                "list_add_label": "Add More",
+                "load_from_db": false,
+                "name": "sender_name",
+                "placeholder": "",
+                "required": false,
+                "show": true,
+                "title_case": false,
+                "tool_mode": false,
+                "trace_as_input": true,
+                "trace_as_metadata": true,
+                "type": "str",
+                "value": "AI"
+              },
+              "session_id": {
+                "_input_type": "MessageTextInput",
+                "advanced": true,
+                "display_name": "Session ID",
+                "dynamic": false,
+                "info": "The session ID of the chat. If empty, the current session ID parameter will be used.",
+                "input_types": [
+                  "Message"
+                ],
+                "list": false,
+                "list_add_label": "Add More",
+                "load_from_db": false,
+                "name": "session_id",
+                "placeholder": "",
+                "required": false,
+                "show": true,
+                "title_case": false,
+                "tool_mode": false,
+                "trace_as_input": true,
+                "trace_as_metadata": true,
+                "type": "str",
+                "value": ""
+              },
+              "should_store_message": {
+                "_input_type": "BoolInput",
+                "advanced": true,
+                "display_name": "Store Messages",
+                "dynamic": false,
+                "info": "Store the message in the history.",
+                "list": false,
+                "list_add_label": "Add More",
+                "name": "should_store_message",
+                "placeholder": "",
+                "required": false,
+                "show": true,
+                "title_case": false,
+                "tool_mode": false,
+                "trace_as_metadata": true,
+                "type": "bool",
+                "value": true
+              },
+              "text_color": {
+                "_input_type": "MessageTextInput",
+                "advanced": true,
+                "display_name": "Text Color",
+                "dynamic": false,
+                "info": "The text color of the name",
+                "input_types": [
+                  "Message"
+                ],
+                "list": false,
+                "list_add_label": "Add More",
+                "load_from_db": false,
+                "name": "text_color",
+                "placeholder": "",
+                "required": false,
+                "show": true,
+                "title_case": false,
+                "tool_mode": false,
+                "trace_as_input": true,
+                "trace_as_metadata": true,
+                "type": "str",
+                "value": ""
+              }
+            },
+            "tool_mode": false
+          },
+          "showNode": false,
+          "type": "ChatOutput"
+        },
+        "dragging": false,
+        "id": "ChatOutput-Ru7U9",
+        "measured": {
+          "height": 66,
+          "width": 192
+        },
+        "position": {
+          "x": -615.5928501963117,
+          "y": 491.5846893901526
+        },
+        "selected": false,
+        "type": "genericNode"
+      },
+      {
+        "data": {
+          "id": "ChatInput-8xAmM",
+          "node": {
+            "base_classes": [
+              "Message"
+            ],
+            "beta": false,
+            "conditional_paths": [],
+            "custom_fields": {},
+            "description": "Get chat inputs from the Playground.",
+            "display_name": "Chat Input",
+            "documentation": "",
+            "edited": false,
+            "field_order": [
+              "input_value",
+              "should_store_message",
+              "sender",
+              "sender_name",
+              "session_id",
+              "files",
+              "background_color",
+              "chat_icon",
+              "text_color"
+            ],
+            "frozen": false,
+            "icon": "MessagesSquare",
+            "legacy": false,
+            "metadata": {},
+            "minimized": true,
+            "output_types": [],
+            "outputs": [
+              {
+                "allows_loop": false,
+                "cache": true,
+                "display_name": "Message",
+                "method": "message_response",
+                "name": "message",
+                "selected": "Message",
+                "tool_mode": true,
+                "types": [
+                  "Message"
+                ],
+                "value": "__UNDEFINED__"
+              }
+            ],
+            "pinned": false,
+            "template": {
+              "_type": "Component",
+              "background_color": {
+                "_input_type": "MessageTextInput",
+                "advanced": true,
+                "display_name": "Background Color",
+                "dynamic": false,
+                "info": "The background color of the icon.",
+                "input_types": [
+                  "Message"
+                ],
+                "list": false,
+                "list_add_label": "Add More",
+                "load_from_db": false,
+                "name": "background_color",
+                "placeholder": "",
+                "required": false,
+                "show": true,
+                "title_case": false,
+                "tool_mode": false,
+                "trace_as_input": true,
+                "trace_as_metadata": true,
+                "type": "str",
+                "value": ""
+              },
+              "chat_icon": {
+                "_input_type": "MessageTextInput",
+                "advanced": true,
+                "display_name": "Icon",
+                "dynamic": false,
+                "info": "The icon of the message.",
+                "input_types": [
+                  "Message"
+                ],
+                "list": false,
+                "list_add_label": "Add More",
+                "load_from_db": false,
+                "name": "chat_icon",
+                "placeholder": "",
+                "required": false,
+                "show": true,
+                "title_case": false,
+                "tool_mode": false,
+                "trace_as_input": true,
+                "trace_as_metadata": true,
+                "type": "str",
+                "value": ""
+              },
+              "code": {
+                "advanced": true,
+                "dynamic": true,
+                "fileTypes": [],
+                "file_path": "",
+                "info": "",
+                "list": false,
+                "load_from_db": false,
+                "multiline": true,
+                "name": "code",
+                "password": false,
+                "placeholder": "",
+                "required": true,
+                "show": true,
+                "title_case": false,
+                "type": "code",
+                "value": "from langflow.base.data.utils import IMG_FILE_TYPES, TEXT_FILE_TYPES\nfrom langflow.base.io.chat import ChatComponent\nfrom langflow.inputs import BoolInput\nfrom langflow.io import (\n    DropdownInput,\n    FileInput,\n    MessageTextInput,\n    MultilineInput,\n    Output,\n)\nfrom langflow.schema.message import Message\nfrom langflow.utils.constants import (\n    MESSAGE_SENDER_AI,\n    MESSAGE_SENDER_NAME_USER,\n    MESSAGE_SENDER_USER,\n)\n\n\nclass ChatInput(ChatComponent):\n    display_name = \"Chat Input\"\n    description = \"Get chat inputs from the Playground.\"\n    icon = \"MessagesSquare\"\n    name = \"ChatInput\"\n    minimized = True\n\n    inputs = [\n        MultilineInput(\n            name=\"input_value\",\n            display_name=\"Text\",\n            value=\"\",\n            info=\"Message to be passed as input.\",\n            input_types=[],\n        ),\n        BoolInput(\n            name=\"should_store_message\",\n            display_name=\"Store Messages\",\n            info=\"Store the message in the history.\",\n            value=True,\n            advanced=True,\n        ),\n        DropdownInput(\n            name=\"sender\",\n            display_name=\"Sender Type\",\n            options=[MESSAGE_SENDER_AI, MESSAGE_SENDER_USER],\n            value=MESSAGE_SENDER_USER,\n            info=\"Type of sender.\",\n            advanced=True,\n        ),\n        MessageTextInput(\n            name=\"sender_name\",\n            display_name=\"Sender Name\",\n            info=\"Name of the sender.\",\n            value=MESSAGE_SENDER_NAME_USER,\n            advanced=True,\n        ),\n        MessageTextInput(\n            name=\"session_id\",\n            display_name=\"Session ID\",\n            info=\"The session ID of the chat. If empty, the current session ID parameter will be used.\",\n            advanced=True,\n        ),\n        FileInput(\n            name=\"files\",\n            display_name=\"Files\",\n            file_types=TEXT_FILE_TYPES + IMG_FILE_TYPES,\n            info=\"Files to be sent with the message.\",\n            advanced=True,\n            is_list=True,\n            temp_file=True,\n        ),\n        MessageTextInput(\n            name=\"background_color\",\n            display_name=\"Background Color\",\n            info=\"The background color of the icon.\",\n            advanced=True,\n        ),\n        MessageTextInput(\n            name=\"chat_icon\",\n            display_name=\"Icon\",\n            info=\"The icon of the message.\",\n            advanced=True,\n        ),\n        MessageTextInput(\n            name=\"text_color\",\n            display_name=\"Text Color\",\n            info=\"The text color of the name\",\n            advanced=True,\n        ),\n    ]\n    outputs = [\n        Output(display_name=\"Message\", name=\"message\", method=\"message_response\"),\n    ]\n\n    async def message_response(self) -> Message:\n        background_color = self.background_color\n        text_color = self.text_color\n        icon = self.chat_icon\n\n        message = await Message.create(\n            text=self.input_value,\n            sender=self.sender,\n            sender_name=self.sender_name,\n            session_id=self.session_id,\n            files=self.files,\n            properties={\n                \"background_color\": background_color,\n                \"text_color\": text_color,\n                \"icon\": icon,\n            },\n        )\n        if self.session_id and isinstance(message, Message) and self.should_store_message:\n            stored_message = await self.send_message(\n                message,\n            )\n            self.message.value = stored_message\n            message = stored_message\n\n        self.status = message\n        return message\n"
+              },
+              "files": {
+                "_input_type": "FileInput",
+                "advanced": true,
+                "display_name": "Files",
+                "dynamic": false,
+                "fileTypes": [
+                  "txt",
+                  "md",
+                  "mdx",
+                  "csv",
+                  "json",
+                  "yaml",
+                  "yml",
+                  "xml",
+                  "html",
+                  "htm",
+                  "pdf",
+                  "docx",
+                  "py",
+                  "sh",
+                  "sql",
+                  "js",
+                  "ts",
+                  "tsx",
+                  "jpg",
+                  "jpeg",
+                  "png",
+                  "bmp",
+                  "image"
+                ],
+                "file_path": "",
+                "info": "Files to be sent with the message.",
+                "list": true,
+                "list_add_label": "Add More",
+                "name": "files",
+                "placeholder": "",
+                "required": false,
+                "show": true,
+                "temp_file": true,
+                "title_case": false,
+                "trace_as_metadata": true,
+                "type": "file",
+                "value": ""
+              },
+              "input_value": {
+                "_input_type": "MultilineInput",
+                "advanced": false,
+                "copy_field": false,
+                "display_name": "Text",
+                "dynamic": false,
+                "info": "Message to be passed as input.",
+                "input_types": [],
+                "list": false,
+                "list_add_label": "Add More",
+                "load_from_db": false,
+                "multiline": true,
+                "name": "input_value",
+                "placeholder": "",
+                "required": false,
+                "show": true,
+                "title_case": false,
+                "tool_mode": false,
+                "trace_as_input": true,
+                "trace_as_metadata": true,
+                "type": "str",
+                "value": ""
+              },
+              "sender": {
+                "_input_type": "DropdownInput",
+                "advanced": true,
+                "combobox": false,
+                "dialog_inputs": {},
+                "display_name": "Sender Type",
+                "dynamic": false,
+                "info": "Type of sender.",
+                "name": "sender",
+                "options": [
+                  "Machine",
+                  "User"
+                ],
+                "options_metadata": [],
+                "placeholder": "",
+                "required": false,
+                "show": true,
+                "title_case": false,
+                "toggle": false,
+                "tool_mode": false,
+                "trace_as_metadata": true,
+                "type": "str",
+                "value": "User"
+              },
+              "sender_name": {
+                "_input_type": "MessageTextInput",
+                "advanced": true,
+                "display_name": "Sender Name",
+                "dynamic": false,
+                "info": "Name of the sender.",
+                "input_types": [
+                  "Message"
+                ],
+                "list": false,
+                "list_add_label": "Add More",
+                "load_from_db": false,
+                "name": "sender_name",
+                "placeholder": "",
+                "required": false,
+                "show": true,
+                "title_case": false,
+                "tool_mode": false,
+                "trace_as_input": true,
+                "trace_as_metadata": true,
+                "type": "str",
+                "value": "User"
+              },
+              "session_id": {
+                "_input_type": "MessageTextInput",
+                "advanced": true,
+                "display_name": "Session ID",
+                "dynamic": false,
+                "info": "The session ID of the chat. If empty, the current session ID parameter will be used.",
+                "input_types": [
+                  "Message"
+                ],
+                "list": false,
+                "list_add_label": "Add More",
+                "load_from_db": false,
+                "name": "session_id",
+                "placeholder": "",
+                "required": false,
+                "show": true,
+                "title_case": false,
+                "tool_mode": false,
+                "trace_as_input": true,
+                "trace_as_metadata": true,
+                "type": "str",
+                "value": ""
+              },
+              "should_store_message": {
+                "_input_type": "BoolInput",
+                "advanced": true,
+                "display_name": "Store Messages",
+                "dynamic": false,
+                "info": "Store the message in the history.",
+                "list": false,
+                "list_add_label": "Add More",
+                "name": "should_store_message",
+                "placeholder": "",
+                "required": false,
+                "show": true,
+                "title_case": false,
+                "tool_mode": false,
+                "trace_as_metadata": true,
+                "type": "bool",
+                "value": true
+              },
+              "text_color": {
+                "_input_type": "MessageTextInput",
+                "advanced": true,
+                "display_name": "Text Color",
+                "dynamic": false,
+                "info": "The text color of the name",
+                "input_types": [
+                  "Message"
+                ],
+                "list": false,
+                "list_add_label": "Add More",
+                "load_from_db": false,
+                "name": "text_color",
+                "placeholder": "",
+                "required": false,
+                "show": true,
+                "title_case": false,
+                "tool_mode": false,
+                "trace_as_input": true,
+                "trace_as_metadata": true,
+                "type": "str",
+                "value": ""
+              }
+            },
+            "tool_mode": false
+          },
+          "showNode": false,
+          "type": "ChatInput"
+        },
+        "dragging": false,
+        "id": "ChatInput-8xAmM",
+        "measured": {
+          "height": 66,
+          "width": 192
+        },
+        "position": {
+          "x": -3568.3518979798055,
+          "y": 106.81823699482945
+        },
+        "selected": false,
+        "type": "genericNode"
+      }
+    ],
+    "viewport": {
+      "x": 1218.826955453939,
+      "y": 302.3077899861104,
+      "zoom": 0.29781145639670137
+    }
+  },
+  "description": "Powerful Prompts, Perfectly Positioned.",
+  "endpoint_name": null,
+  "folder_id": "3ff9e0f6-f1b6-4c6d-8b6a-8fb1b864491a",
+  "fs_path": null,
+  "gradient": null,
+  "icon": null,
+  "icon_bg_color": null,
+  "id": "cd59e2ce-c355-4b05-adf1-a58a6a7aab6a",
+  "is_component": false,
+  "locked": false,
+  "mcp_enabled": true,
+  "name": "mcp_exist_form",
+  "tags": [],
+  "updated_at": "2025-05-13T14:18:23+00:00",
+  "user_id": "342acb18-c0ac-4d3e-8239-e941b4676372",
+  "webhook": false
+}
