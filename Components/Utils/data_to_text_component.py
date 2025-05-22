@@ -1,6 +1,7 @@
 from langflow.custom import Component
-from langflow.io import Output, DataInput
+from langflow.io import DataInput, Output
 from langflow.schema import Message
+
 
 class DataToTextComponent(Component):
     display_name = "Data To Text"
@@ -27,9 +28,9 @@ class DataToTextComponent(Component):
             for key, record in person.items():
                 text_lines.append(f"  {key}: {record}")
                 text_lines.append("")
-    
+
         return "\n".join(text_lines)
-         
+
     def build_output(self) -> Message:
         fields = self.dict_list.data["items"]
         text = f"{self.get_text_from_processed_data(fields)}"
