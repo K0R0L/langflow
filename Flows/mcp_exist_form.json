@@ -1,6 +1,6 @@
 {
   "access_type": "PRIVATE",
-  "action_description": "Powerful Prompts, Perfectly Positioned.",
+  "action_description": "args: input_value:str\ndescription of tool: Use this tool to search and filter forms in a specified directory. The input should be a structured string containing:\n1) Path to the directory with forms\n2) Filters to apply (supported types: \"exist\", \"checkbox\", \"date_field_filter\", \"text\")\n3) Output fields to display\n\nFormat example:\npath: /path/to/directory; filters: [ {\"type\": \"exist\", \"key\": \"field_name\", \"tag\":\"\"}, {\"type\": \"check_box\", \"key\": \"field_name\", \"tag\":\"\", \"value\":\"True\"}, {\"type\": \"date_field_filter\", \"key_1\": \"date_field\", \"tag_1\": \"\", \"field_1\":\"24/07/2024\", \"key_2\": \"end_date\", \"tag_2\": \"\", \"field_2\":\"24/08/2024\"} ]; output: [\"field1\", \"field2\"]\n\nEach filter has specific parameters:\n- exist: checks if a field exists (parameters: key, tag)\n- check_box: checks if a checkbox is selected (parameters: key, tag, value)\n- date_field_filter: filters by date range (parameters: key_1, tag_1, field_1, key_2, tag_2, field_2)\n- text: searches for specific text (parameters: key, tag, value)",
   "action_name": "mcp_exist_form",
   "data": {
     "edges": [
@@ -31,118 +31,6 @@
         "sourceHandle": "{œdataTypeœ:œDirectoryPathœ,œidœ:œDirectoryPath-0teKEœ,œnameœ:œdataœ,œoutput_typesœ:[œDataœ]}",
         "target": "FormFilter-l4kl0",
         "targetHandle": "{œfieldNameœ:œpathsœ,œidœ:œFormFilter-l4kl0œ,œinputTypesœ:[œDataœ],œtypeœ:œotherœ}"
-      },
-      {
-        "animated": false,
-        "className": "",
-        "data": {
-          "sourceHandle": {
-            "dataType": "Exist",
-            "id": "Exist-tiDF8",
-            "name": "output",
-            "output_types": [
-              "Component"
-            ]
-          },
-          "targetHandle": {
-            "fieldName": "fields",
-            "id": "FormFilter-l4kl0",
-            "inputTypes": [
-              "Component"
-            ],
-            "type": "str"
-          }
-        },
-        "id": "xy-edge__Exist-tiDF8{œdataTypeœ:œExistœ,œidœ:œExist-tiDF8œ,œnameœ:œoutputœ,œoutput_typesœ:[œComponentœ]}-FormFilter-l4kl0{œfieldNameœ:œfieldsœ,œidœ:œFormFilter-l4kl0œ,œinputTypesœ:[œComponentœ],œtypeœ:œstrœ}",
-        "selected": false,
-        "source": "Exist-tiDF8",
-        "sourceHandle": "{œdataTypeœ:œExistœ,œidœ:œExist-tiDF8œ,œnameœ:œoutputœ,œoutput_typesœ:[œComponentœ]}",
-        "target": "FormFilter-l4kl0",
-        "targetHandle": "{œfieldNameœ:œfieldsœ,œidœ:œFormFilter-l4kl0œ,œinputTypesœ:[œComponentœ],œtypeœ:œstrœ}"
-      },
-      {
-        "animated": false,
-        "className": "",
-        "data": {
-          "sourceHandle": {
-            "dataType": "output",
-            "id": "output-ZzGYZ",
-            "name": "output",
-            "output_types": [
-              "Data"
-            ]
-          },
-          "targetHandle": {
-            "fieldName": "output_keys",
-            "id": "FormFilter-l4kl0",
-            "inputTypes": [
-              "Data"
-            ],
-            "type": "other"
-          }
-        },
-        "id": "xy-edge__output-ZzGYZ{œdataTypeœ:œoutputœ,œidœ:œoutput-ZzGYZœ,œnameœ:œoutputœ,œoutput_typesœ:[œDataœ]}-FormFilter-l4kl0{œfieldNameœ:œoutput_keysœ,œidœ:œFormFilter-l4kl0œ,œinputTypesœ:[œDataœ],œtypeœ:œotherœ}",
-        "selected": false,
-        "source": "output-ZzGYZ",
-        "sourceHandle": "{œdataTypeœ:œoutputœ,œidœ:œoutput-ZzGYZœ,œnameœ:œoutputœ,œoutput_typesœ:[œDataœ]}",
-        "target": "FormFilter-l4kl0",
-        "targetHandle": "{œfieldNameœ:œoutput_keysœ,œidœ:œFormFilter-l4kl0œ,œinputTypesœ:[œDataœ],œtypeœ:œotherœ}"
-      },
-      {
-        "animated": false,
-        "className": "",
-        "data": {
-          "sourceHandle": {
-            "dataType": "MessagetoData",
-            "id": "MessagetoData-5mYAF",
-            "name": "key",
-            "output_types": [
-              "Message"
-            ]
-          },
-          "targetHandle": {
-            "fieldName": "key",
-            "id": "Exist-tiDF8",
-            "inputTypes": [
-              "Message"
-            ],
-            "type": "str"
-          }
-        },
-        "id": "xy-edge__MessagetoData-5mYAF{œdataTypeœ:œMessagetoDataœ,œidœ:œMessagetoData-5mYAFœ,œnameœ:œkeyœ,œoutput_typesœ:[œMessageœ]}-Exist-tiDF8{œfieldNameœ:œkeyœ,œidœ:œExist-tiDF8œ,œinputTypesœ:[œMessageœ],œtypeœ:œstrœ}",
-        "selected": false,
-        "source": "MessagetoData-5mYAF",
-        "sourceHandle": "{œdataTypeœ:œMessagetoDataœ,œidœ:œMessagetoData-5mYAFœ,œnameœ:œkeyœ,œoutput_typesœ:[œMessageœ]}",
-        "target": "Exist-tiDF8",
-        "targetHandle": "{œfieldNameœ:œkeyœ,œidœ:œExist-tiDF8œ,œinputTypesœ:[œMessageœ],œtypeœ:œstrœ}"
-      },
-      {
-        "animated": false,
-        "className": "",
-        "data": {
-          "sourceHandle": {
-            "dataType": "MessagetoData",
-            "id": "MessagetoData-5mYAF",
-            "name": "directory",
-            "output_types": [
-              "Message"
-            ]
-          },
-          "targetHandle": {
-            "fieldName": "path",
-            "id": "DirectoryPath-0teKE",
-            "inputTypes": [
-              "Message"
-            ],
-            "type": "str"
-          }
-        },
-        "id": "xy-edge__MessagetoData-5mYAF{œdataTypeœ:œMessagetoDataœ,œidœ:œMessagetoData-5mYAFœ,œnameœ:œdirectoryœ,œoutput_typesœ:[œMessageœ]}-DirectoryPath-0teKE{œfieldNameœ:œpathœ,œidœ:œDirectoryPath-0teKEœ,œinputTypesœ:[œMessageœ],œtypeœ:œstrœ}",
-        "selected": false,
-        "source": "MessagetoData-5mYAF",
-        "sourceHandle": "{œdataTypeœ:œMessagetoDataœ,œidœ:œMessagetoData-5mYAFœ,œnameœ:œdirectoryœ,œoutput_typesœ:[œMessageœ]}",
-        "target": "DirectoryPath-0teKE",
-        "targetHandle": "{œfieldNameœ:œpathœ,œidœ:œDirectoryPath-0teKEœ,œinputTypesœ:[œMessageœ],œtypeœ:œstrœ}"
       },
       {
         "animated": false,
@@ -207,28 +95,224 @@
         "className": "",
         "data": {
           "sourceHandle": {
-            "dataType": "MessagetoData",
-            "id": "MessagetoData-5mYAF",
-            "name": "key",
+            "dataType": "ParsePathKey",
+            "id": "CustomComponent-cjOAX",
+            "name": "directory",
             "output_types": [
               "Message"
             ]
           },
           "targetHandle": {
-            "fieldName": "field_1_name",
-            "id": "output-ZzGYZ",
+            "fieldName": "path",
+            "id": "DirectoryPath-0teKE",
             "inputTypes": [
               "Message"
             ],
             "type": "str"
           }
         },
-        "id": "xy-edge__MessagetoData-5mYAF{œdataTypeœ:œMessagetoDataœ,œidœ:œMessagetoData-5mYAFœ,œnameœ:œkeyœ,œoutput_typesœ:[œMessageœ]}-output-ZzGYZ{œfieldNameœ:œfield_1_nameœ,œidœ:œoutput-ZzGYZœ,œinputTypesœ:[œMessageœ],œtypeœ:œstrœ}",
+        "id": "xy-edge__CustomComponent-cjOAX{œdataTypeœ:œParsePathKeyœ,œidœ:œCustomComponent-cjOAXœ,œnameœ:œdirectoryœ,œoutput_typesœ:[œMessageœ]}-DirectoryPath-0teKE{œfieldNameœ:œpathœ,œidœ:œDirectoryPath-0teKEœ,œinputTypesœ:[œMessageœ],œtypeœ:œstrœ}",
         "selected": false,
-        "source": "MessagetoData-5mYAF",
-        "sourceHandle": "{œdataTypeœ:œMessagetoDataœ,œidœ:œMessagetoData-5mYAFœ,œnameœ:œkeyœ,œoutput_typesœ:[œMessageœ]}",
-        "target": "output-ZzGYZ",
-        "targetHandle": "{œfieldNameœ:œfield_1_nameœ,œidœ:œoutput-ZzGYZœ,œinputTypesœ:[œMessageœ],œtypeœ:œstrœ}"
+        "source": "CustomComponent-cjOAX",
+        "sourceHandle": "{œdataTypeœ:œParsePathKeyœ,œidœ:œCustomComponent-cjOAXœ,œnameœ:œdirectoryœ,œoutput_typesœ:[œMessageœ]}",
+        "target": "DirectoryPath-0teKE",
+        "targetHandle": "{œfieldNameœ:œpathœ,œidœ:œDirectoryPath-0teKEœ,œinputTypesœ:[œMessageœ],œtypeœ:œstrœ}"
+      },
+      {
+        "animated": false,
+        "className": "",
+        "data": {
+          "sourceHandle": {
+            "dataType": "ParsePathKey",
+            "id": "CustomComponent-cjOAX",
+            "name": "output_key",
+            "output_types": [
+              "Data"
+            ]
+          },
+          "targetHandle": {
+            "fieldName": "output_keys",
+            "id": "FormFilter-l4kl0",
+            "inputTypes": [
+              "Data"
+            ],
+            "type": "other"
+          }
+        },
+        "id": "xy-edge__CustomComponent-cjOAX{œdataTypeœ:œParsePathKeyœ,œidœ:œCustomComponent-cjOAXœ,œnameœ:œoutput_keyœ,œoutput_typesœ:[œDataœ]}-FormFilter-l4kl0{œfieldNameœ:œoutput_keysœ,œidœ:œFormFilter-l4kl0œ,œinputTypesœ:[œDataœ],œtypeœ:œotherœ}",
+        "selected": false,
+        "source": "CustomComponent-cjOAX",
+        "sourceHandle": "{œdataTypeœ:œParsePathKeyœ,œidœ:œCustomComponent-cjOAXœ,œnameœ:œoutput_keyœ,œoutput_typesœ:[œDataœ]}",
+        "target": "FormFilter-l4kl0",
+        "targetHandle": "{œfieldNameœ:œoutput_keysœ,œidœ:œFormFilter-l4kl0œ,œinputTypesœ:[œDataœ],œtypeœ:œotherœ}"
+      },
+      {
+        "animated": false,
+        "className": "",
+        "data": {
+          "sourceHandle": {
+            "dataType": "ParsePathKey",
+            "id": "CustomComponent-cjOAX",
+            "name": "key",
+            "output_types": [
+              "Data"
+            ]
+          },
+          "targetHandle": {
+            "fieldName": "data_input",
+            "id": "CustomComponent-Rurny",
+            "inputTypes": [
+              "Data"
+            ],
+            "type": "other"
+          }
+        },
+        "id": "xy-edge__CustomComponent-cjOAX{œdataTypeœ:œParsePathKeyœ,œidœ:œCustomComponent-cjOAXœ,œnameœ:œkeyœ,œoutput_typesœ:[œDataœ]}-CustomComponent-Rurny{œfieldNameœ:œdata_inputœ,œidœ:œCustomComponent-Rurnyœ,œinputTypesœ:[œDataœ],œtypeœ:œotherœ}",
+        "selected": false,
+        "source": "CustomComponent-cjOAX",
+        "sourceHandle": "{œdataTypeœ:œParsePathKeyœ,œidœ:œCustomComponent-cjOAXœ,œnameœ:œkeyœ,œoutput_typesœ:[œDataœ]}",
+        "target": "CustomComponent-Rurny",
+        "targetHandle": "{œfieldNameœ:œdata_inputœ,œidœ:œCustomComponent-Rurnyœ,œinputTypesœ:[œDataœ],œtypeœ:œotherœ}"
+      },
+      {
+        "animated": false,
+        "className": "",
+        "data": {
+          "sourceHandle": {
+            "dataType": "ToolsExecutor",
+            "id": "CustomComponent-Rurny",
+            "name": "exist_output",
+            "output_types": [
+              "Component"
+            ]
+          },
+          "targetHandle": {
+            "fieldName": "fields",
+            "id": "FormFilter-l4kl0",
+            "inputTypes": [
+              "Component"
+            ],
+            "type": "str"
+          }
+        },
+        "id": "xy-edge__CustomComponent-Rurny{œdataTypeœ:œToolsExecutorœ,œidœ:œCustomComponent-Rurnyœ,œnameœ:œexist_outputœ,œoutput_typesœ:[œComponentœ]}-FormFilter-l4kl0{œfieldNameœ:œfieldsœ,œidœ:œFormFilter-l4kl0œ,œinputTypesœ:[œComponentœ],œtypeœ:œstrœ}",
+        "selected": false,
+        "source": "CustomComponent-Rurny",
+        "sourceHandle": "{œdataTypeœ:œToolsExecutorœ,œidœ:œCustomComponent-Rurnyœ,œnameœ:œexist_outputœ,œoutput_typesœ:[œComponentœ]}",
+        "target": "FormFilter-l4kl0",
+        "targetHandle": "{œfieldNameœ:œfieldsœ,œidœ:œFormFilter-l4kl0œ,œinputTypesœ:[œComponentœ],œtypeœ:œstrœ}"
+      },
+      {
+        "animated": false,
+        "className": "",
+        "data": {
+          "sourceHandle": {
+            "dataType": "exist",
+            "id": "Exist-PUM8R",
+            "name": "result",
+            "output_types": [
+              "Component"
+            ]
+          },
+          "targetHandle": {
+            "fieldName": "fields",
+            "id": "CustomComponent-Rurny",
+            "inputTypes": [
+              "Component"
+            ],
+            "type": "str"
+          }
+        },
+        "id": "xy-edge__Exist-PUM8R{œdataTypeœ:œexistœ,œidœ:œExist-PUM8Rœ,œnameœ:œresultœ,œoutput_typesœ:[œComponentœ]}-CustomComponent-Rurny{œfieldNameœ:œfieldsœ,œidœ:œCustomComponent-Rurnyœ,œinputTypesœ:[œComponentœ],œtypeœ:œstrœ}",
+        "selected": false,
+        "source": "Exist-PUM8R",
+        "sourceHandle": "{œdataTypeœ:œexistœ,œidœ:œExist-PUM8Rœ,œnameœ:œresultœ,œoutput_typesœ:[œComponentœ]}",
+        "target": "CustomComponent-Rurny",
+        "targetHandle": "{œfieldNameœ:œfieldsœ,œidœ:œCustomComponent-Rurnyœ,œinputTypesœ:[œComponentœ],œtypeœ:œstrœ}"
+      },
+      {
+        "animated": false,
+        "className": "",
+        "data": {
+          "sourceHandle": {
+            "dataType": "check_box",
+            "id": "check_box-rO2zv",
+            "name": "factory",
+            "output_types": [
+              "Component"
+            ]
+          },
+          "targetHandle": {
+            "fieldName": "fields",
+            "id": "CustomComponent-Rurny",
+            "inputTypes": [
+              "Component"
+            ],
+            "type": "str"
+          }
+        },
+        "id": "xy-edge__check_box-rO2zv{œdataTypeœ:œcheck_boxœ,œidœ:œcheck_box-rO2zvœ,œnameœ:œfactoryœ,œoutput_typesœ:[œComponentœ]}-CustomComponent-Rurny{œfieldNameœ:œfieldsœ,œidœ:œCustomComponent-Rurnyœ,œinputTypesœ:[œComponentœ],œtypeœ:œstrœ}",
+        "selected": false,
+        "source": "check_box-rO2zv",
+        "sourceHandle": "{œdataTypeœ:œcheck_boxœ,œidœ:œcheck_box-rO2zvœ,œnameœ:œfactoryœ,œoutput_typesœ:[œComponentœ]}",
+        "target": "CustomComponent-Rurny",
+        "targetHandle": "{œfieldNameœ:œfieldsœ,œidœ:œCustomComponent-Rurnyœ,œinputTypesœ:[œComponentœ],œtypeœ:œstrœ}"
+      },
+      {
+        "animated": false,
+        "className": "",
+        "data": {
+          "sourceHandle": {
+            "dataType": "date_field_filter",
+            "id": "date_field_filter-MZjp2",
+            "name": "data",
+            "output_types": [
+              "Component"
+            ]
+          },
+          "targetHandle": {
+            "fieldName": "fields",
+            "id": "CustomComponent-Rurny",
+            "inputTypes": [
+              "Component"
+            ],
+            "type": "str"
+          }
+        },
+        "id": "xy-edge__date_field_filter-MZjp2{œdataTypeœ:œdate_field_filterœ,œidœ:œdate_field_filter-MZjp2œ,œnameœ:œdataœ,œoutput_typesœ:[œComponentœ]}-CustomComponent-Rurny{œfieldNameœ:œfieldsœ,œidœ:œCustomComponent-Rurnyœ,œinputTypesœ:[œComponentœ],œtypeœ:œstrœ}",
+        "selected": false,
+        "source": "date_field_filter-MZjp2",
+        "sourceHandle": "{œdataTypeœ:œdate_field_filterœ,œidœ:œdate_field_filter-MZjp2œ,œnameœ:œdataœ,œoutput_typesœ:[œComponentœ]}",
+        "target": "CustomComponent-Rurny",
+        "targetHandle": "{œfieldNameœ:œfieldsœ,œidœ:œCustomComponent-Rurnyœ,œinputTypesœ:[œComponentœ],œtypeœ:œstrœ}"
+      },
+      {
+        "animated": false,
+        "className": "",
+        "data": {
+          "sourceHandle": {
+            "dataType": "Text",
+            "id": "Text-KFevp",
+            "name": "factory",
+            "output_types": [
+              "Component"
+            ]
+          },
+          "targetHandle": {
+            "fieldName": "fields",
+            "id": "CustomComponent-Rurny",
+            "inputTypes": [
+              "Component"
+            ],
+            "type": "str"
+          }
+        },
+        "id": "xy-edge__Text-KFevp{œdataTypeœ:œTextœ,œidœ:œText-KFevpœ,œnameœ:œfactoryœ,œoutput_typesœ:[œComponentœ]}-CustomComponent-Rurny{œfieldNameœ:œfieldsœ,œidœ:œCustomComponent-Rurnyœ,œinputTypesœ:[œComponentœ],œtypeœ:œstrœ}",
+        "selected": false,
+        "source": "Text-KFevp",
+        "sourceHandle": "{œdataTypeœ:œTextœ,œidœ:œText-KFevpœ,œnameœ:œfactoryœ,œoutput_typesœ:[œComponentœ]}",
+        "target": "CustomComponent-Rurny",
+        "targetHandle": "{œfieldNameœ:œfieldsœ,œidœ:œCustomComponent-Rurnyœ,œinputTypesœ:[œComponentœ],œtypeœ:œstrœ}"
       },
       {
         "animated": false,
@@ -236,7 +320,7 @@
         "data": {
           "sourceHandle": {
             "dataType": "ChatInput",
-            "id": "ChatInput-8xAmM",
+            "id": "ChatInput-3PSlD",
             "name": "message",
             "output_types": [
               "Message"
@@ -244,19 +328,19 @@
           },
           "targetHandle": {
             "fieldName": "message",
-            "id": "MessagetoData-5mYAF",
+            "id": "CustomComponent-cjOAX",
             "inputTypes": [
               "Message"
             ],
             "type": "str"
           }
         },
-        "id": "xy-edge__ChatInput-8xAmM{œdataTypeœ:œChatInputœ,œidœ:œChatInput-8xAmMœ,œnameœ:œmessageœ,œoutput_typesœ:[œMessageœ]}-MessagetoData-5mYAF{œfieldNameœ:œmessageœ,œidœ:œMessagetoData-5mYAFœ,œinputTypesœ:[œMessageœ],œtypeœ:œstrœ}",
+        "id": "xy-edge__ChatInput-3PSlD{œdataTypeœ:œChatInputœ,œidœ:œChatInput-3PSlDœ,œnameœ:œmessageœ,œoutput_typesœ:[œMessageœ]}-CustomComponent-cjOAX{œfieldNameœ:œmessageœ,œidœ:œCustomComponent-cjOAXœ,œinputTypesœ:[œMessageœ],œtypeœ:œstrœ}",
         "selected": false,
-        "source": "ChatInput-8xAmM",
-        "sourceHandle": "{œdataTypeœ:œChatInputœ,œidœ:œChatInput-8xAmMœ,œnameœ:œmessageœ,œoutput_typesœ:[œMessageœ]}",
-        "target": "MessagetoData-5mYAF",
-        "targetHandle": "{œfieldNameœ:œmessageœ,œidœ:œMessagetoData-5mYAFœ,œinputTypesœ:[œMessageœ],œtypeœ:œstrœ}"
+        "source": "ChatInput-3PSlD",
+        "sourceHandle": "{œdataTypeœ:œChatInputœ,œidœ:œChatInput-3PSlDœ,œnameœ:œmessageœ,œoutput_typesœ:[œMessageœ]}",
+        "target": "CustomComponent-cjOAX",
+        "targetHandle": "{œfieldNameœ:œmessageœ,œidœ:œCustomComponent-cjOAXœ,œinputTypesœ:[œMessageœ],œtypeœ:œstrœ}"
       }
     ],
     "nodes": [
@@ -481,8 +565,8 @@
           "width": 320
         },
         "position": {
-          "x": -2434.8348419941367,
-          "y": -28.72224518199538
+          "x": -4738.056100813796,
+          "y": -212.68421987698196
         },
         "selected": false,
         "type": "genericNode"
@@ -646,392 +730,16 @@
           "width": 320
         },
         "position": {
-          "x": -1832.0793346044738,
-          "y": 262.2242027134522
+          "x": -4117.471000427817,
+          "y": -146.7807082757529
         },
         "selected": false,
         "type": "genericNode"
       },
       {
         "data": {
-          "id": "Exist-tiDF8",
-          "node": {
-            "base_classes": [
-              "Component"
-            ],
-            "beta": false,
-            "conditional_paths": [],
-            "custom_fields": {},
-            "description": "This defines the keys that will be checked for availability.",
-            "display_name": "Exist Key Filter",
-            "documentation": "",
-            "edited": true,
-            "field_order": [
-              "key",
-              "tag"
-            ],
-            "frozen": false,
-            "icon": "table",
-            "legacy": false,
-            "lf_version": "1.4.1",
-            "metadata": {},
-            "minimized": false,
-            "output_types": [],
-            "outputs": [
-              {
-                "allows_loop": false,
-                "cache": true,
-                "display_name": "Filtered Data",
-                "hidden": false,
-                "method": "build_output",
-                "name": "output",
-                "options": null,
-                "required_inputs": null,
-                "selected": "Component",
-                "tool_mode": true,
-                "types": [
-                  "Component"
-                ],
-                "value": "__UNDEFINED__"
-              }
-            ],
-            "pinned": false,
-            "template": {
-              "_type": "Component",
-              "code": {
-                "advanced": true,
-                "dynamic": true,
-                "fileTypes": [],
-                "file_path": "",
-                "info": "",
-                "list": false,
-                "load_from_db": false,
-                "multiline": true,
-                "name": "code",
-                "password": false,
-                "placeholder": "",
-                "required": true,
-                "show": true,
-                "title_case": false,
-                "type": "code",
-                "value": "from langflow.custom import Component\nfrom langflow.inputs.inputs import MessageTextInput\nfrom langflow.io import Output\n\n\nclass ExistComponent(Component):\n    display_name = \"Exist Key Filter\"\n    name = \"Exist\"\n    icon = \"table\"\n    description: str = \"This defines the keys that will be checked for availability.\"\n    inputs = [\n        MessageTextInput(\n            name=\"key\",\n            display_name=\"Key\",\n            input_types=[\"Message\"],\n            info=\"Key.\",\n        ),\n        MessageTextInput(\n            name=\"tag\",\n            display_name=\"Tag\",\n            input_types=[],\n            info=\"Tag.\",\n            advanced=True,\n        ),\n    ]\n    outputs = [\n        Output(display_name=\"Filtered Data\", name=\"output\", method=\"build_output\")\n    ]\n\n    def build_output(self) -> Component:\n        return self\n\n    def process(self, file) -> bool:\n        #raise Exception(f\"{self.key}\")\n        forms = file.getFormsByKeyTag(self.key, self.tag)\n        return len(forms) > 0\n"
-              },
-              "key": {
-                "_input_type": "MessageTextInput",
-                "advanced": false,
-                "display_name": "Key",
-                "dynamic": false,
-                "info": "Key.",
-                "input_types": [
-                  "Message"
-                ],
-                "list": false,
-                "list_add_label": "Add More",
-                "load_from_db": false,
-                "name": "key",
-                "placeholder": "",
-                "required": false,
-                "show": true,
-                "title_case": false,
-                "tool_mode": false,
-                "trace_as_input": true,
-                "trace_as_metadata": true,
-                "type": "str",
-                "value": ""
-              },
-              "tag": {
-                "_input_type": "MessageTextInput",
-                "advanced": true,
-                "display_name": "Tag",
-                "dynamic": false,
-                "info": "Tag.",
-                "input_types": [],
-                "list": false,
-                "list_add_label": "Add More",
-                "load_from_db": false,
-                "name": "tag",
-                "placeholder": "",
-                "required": false,
-                "show": true,
-                "title_case": false,
-                "tool_mode": false,
-                "trace_as_input": true,
-                "trace_as_metadata": true,
-                "type": "str",
-                "value": ""
-              }
-            },
-            "tool_mode": false
-          },
-          "showNode": true,
-          "type": "Exist"
-        },
-        "dragging": false,
-        "id": "Exist-tiDF8",
-        "measured": {
-          "height": 249,
-          "width": 320
-        },
-        "position": {
-          "x": -2438.705444299406,
-          "y": 383.6662583104753
-        },
-        "selected": false,
-        "type": "genericNode"
-      },
-      {
-        "data": {
-          "id": "output-ZzGYZ",
-          "node": {
-            "base_classes": [
-              "Data"
-            ],
-            "beta": false,
-            "conditional_paths": [],
-            "custom_fields": {},
-            "description": "Specifies the keys to be displayed.",
-            "display_name": "Output Keys",
-            "documentation": "",
-            "edited": true,
-            "field_order": [
-              "number_of_fields"
-            ],
-            "frozen": false,
-            "icon": "table",
-            "legacy": false,
-            "lf_version": "1.4.1",
-            "metadata": {},
-            "minimized": false,
-            "output_types": [],
-            "outputs": [
-              {
-                "allows_loop": false,
-                "cache": true,
-                "display_name": "Filtered Data",
-                "hidden": null,
-                "method": "build_output",
-                "name": "output",
-                "options": null,
-                "required_inputs": null,
-                "selected": "Data",
-                "tool_mode": true,
-                "types": [
-                  "Data"
-                ],
-                "value": "__UNDEFINED__"
-              }
-            ],
-            "pinned": false,
-            "template": {
-              "_type": "Component",
-              "code": {
-                "advanced": true,
-                "dynamic": true,
-                "fileTypes": [],
-                "file_path": "",
-                "info": "",
-                "list": false,
-                "load_from_db": false,
-                "multiline": true,
-                "name": "code",
-                "password": false,
-                "placeholder": "",
-                "required": true,
-                "show": true,
-                "title_case": false,
-                "type": "code",
-                "value": "from langflow.custom import Component\nfrom langflow.field_typing.range_spec import RangeSpec\nfrom langflow.inputs.inputs import IntInput, MessageTextInput\nfrom langflow.io import Output\nfrom langflow.schema import Data\nfrom langflow.schema.dotdict import dotdict\n\n\nclass OutputKeysComponent(Component):\n    display_name = \"Output Keys\"\n    name = \"output\"\n    MAX_FIELDS = 15\n    description: str = \"Specifies the keys to be displayed.\"\n    icon = \"table\"\n    inputs = [\n        IntInput(\n            name=\"number_of_fields\",\n            display_name=\"Number of Keys\",\n            info=\"Number of Keys to be added to the record.\",\n            real_time_refresh=True,\n            value=2,\n            input_types=[],\n            range_spec=RangeSpec(min=1, max=MAX_FIELDS, step=1, step_type=\"int\"),\n        ),\n    ]\n    outputs = [\n        Output(display_name=\"Filtered Data\", name=\"output\", method=\"build_output\")\n    ]\n\n    def update_build_config(\n        self, build_config: dotdict, field_value, field_name=None\n    ) -> dotdict:\n        if field_name == \"number_of_fields\":\n            default_keys = {\"code\", \"_type\", \"number_of_fields\", \"data\"}\n            try:\n                field_value_int = int(field_value)\n            except ValueError:\n                return build_config\n            if field_value_int > self.MAX_FIELDS:\n                build_config[\"number_of_fields\"][\"value\"] = self.MAX_FIELDS\n                raise ValueError(f\"Number of fields cannot exceed {self.MAX_FIELDS}.\")\n\n            existing_fields = {}\n            for key in list(build_config.keys()):\n                if key not in default_keys:\n                    existing_fields[key] = build_config.pop(key)\n\n            for i in range(1, field_value_int + 1):\n                key = f\"field_{i}_name\"\n                if key in existing_fields:\n                    field = existing_fields[key]\n                    build_config[key] = field\n                else:\n                    field = MessageTextInput(\n                        display_name=f\"Key {i} Name\",\n                        name=key,\n                        input_types=[\"Message\"],\n                        info=f\"Name of key {i} that you want to output.\",\n                    )\n                    build_config[field.name] = field.to_dict()\n            build_config[\"number_of_fields\"][\"value\"] = field_value_int\n        return build_config\n\n    def get_field_names(self):\n        field_names = []\n        for i in range(1, getattr(self, \"number_of_fields\", 0) + 1):\n            field_name = getattr(self, f\"field_{i}_name\", None)\n            if field_name:\n                field_names.append(field_name.text)\n        return field_names\n\n    def build_output(self) -> Data:\n        field_names = self.get_field_names()\n        #raise Exception(f\"{field_names=}\")\n        return Data(data={\"output_keys\": field_names})\n"
-              },
-              "field_1_name": {
-                "_input_type": "MessageTextInput",
-                "advanced": false,
-                "display_name": "Key 1 Name",
-                "dynamic": false,
-                "info": "Name of key 1 that you want to output.",
-                "input_types": [
-                  "Message"
-                ],
-                "list": false,
-                "list_add_label": "Add More",
-                "load_from_db": false,
-                "name": "field_1_name",
-                "placeholder": "",
-                "required": false,
-                "show": true,
-                "title_case": false,
-                "tool_mode": false,
-                "trace_as_input": true,
-                "trace_as_metadata": true,
-                "type": "str",
-                "value": ""
-              },
-              "number_of_fields": {
-                "_input_type": "IntInput",
-                "advanced": false,
-                "display_name": "Number of Keys",
-                "dynamic": false,
-                "info": "Number of Keys to be added to the record.",
-                "input_types": [],
-                "list": false,
-                "list_add_label": "Add More",
-                "name": "number_of_fields",
-                "placeholder": "",
-                "range_spec": {
-                  "max": 15,
-                  "min": 1,
-                  "step": 1,
-                  "step_type": "int"
-                },
-                "real_time_refresh": true,
-                "required": false,
-                "show": true,
-                "title_case": false,
-                "tool_mode": false,
-                "trace_as_metadata": true,
-                "type": "int",
-                "value": 1
-              }
-            },
-            "tool_mode": false
-          },
-          "showNode": true,
-          "type": "output"
-        },
-        "dragging": false,
-        "id": "output-ZzGYZ",
-        "measured": {
-          "height": 311,
-          "width": 320
-        },
-        "position": {
-          "x": -2416.8057741364355,
-          "y": 722.8790952365165
-        },
-        "selected": false,
-        "type": "genericNode"
-      },
-      {
-        "data": {
-          "id": "MessagetoData-5mYAF",
-          "node": {
-            "base_classes": [
-              "Message"
-            ],
-            "beta": true,
-            "conditional_paths": [],
-            "custom_fields": {},
-            "description": "Split message to path and key.",
-            "display_name": "ParsePathKey",
-            "documentation": "",
-            "edited": true,
-            "field_order": [
-              "message"
-            ],
-            "frozen": false,
-            "icon": "message-square-share",
-            "legacy": false,
-            "metadata": {},
-            "minimized": false,
-            "output_types": [],
-            "outputs": [
-              {
-                "allows_loop": false,
-                "cache": true,
-                "display_name": "Directory",
-                "hidden": null,
-                "method": "get_directory",
-                "name": "directory",
-                "options": null,
-                "required_inputs": null,
-                "selected": "Message",
-                "tool_mode": true,
-                "types": [
-                  "Message"
-                ],
-                "value": "__UNDEFINED__"
-              },
-              {
-                "allows_loop": false,
-                "cache": true,
-                "display_name": "Key",
-                "hidden": null,
-                "method": "get_key",
-                "name": "key",
-                "options": null,
-                "required_inputs": null,
-                "selected": "Message",
-                "tool_mode": true,
-                "types": [
-                  "Message"
-                ],
-                "value": "__UNDEFINED__"
-              }
-            ],
-            "pinned": false,
-            "template": {
-              "_type": "Component",
-              "code": {
-                "advanced": true,
-                "dynamic": true,
-                "fileTypes": [],
-                "file_path": "",
-                "info": "",
-                "list": false,
-                "load_from_db": false,
-                "multiline": true,
-                "name": "code",
-                "password": false,
-                "placeholder": "",
-                "required": true,
-                "show": true,
-                "title_case": false,
-                "type": "code",
-                "value": "from loguru import logger\n\nfrom langflow.custom import Component\nfrom langflow.io import MessageInput, Output\nfrom langflow.schema import Data\nfrom langflow.schema.message import Message\n\n\nclass ParsePathKeyComponent(Component):\n    display_name = \"ParsePathKey\"\n    description = \"Split message to path and key.\"\n    icon = \"message-square-share\"\n    beta = True\n    name = \"MessagetoData\"\n\n    inputs = [\n        MessageInput(\n            name=\"message\",\n            display_name=\"Message\",\n            info=\"The Message object to convert to a Data object\",\n        ),\n    ]\n\n    outputs = [\n        Output(display_name=\"Directory\", name=\"directory\", method=\"get_directory\"),\n        Output(display_name=\"Key\", name=\"key\", method=\"get_key\"),\n    ]\n\n    def get_directory(self) -> Message:\n        if isinstance(self.message, Message):\n            directory = str(self.message.text).split(\",\")[0].split(\":\")[1]\n            #raise Exception(f\"{directory=}\")\n            return Message(text=directory)\n            \n\n        msg = \"Error converting Message to Data: Input must be a Message object\"\n        logger.opt(exception=True).debug(msg)\n        self.status = msg\n        return Data(data={\"error\": msg})\n        \n    def get_key(self) -> Message:\n        if isinstance(self.message, Message):\n            directory = str(self.message.text).split(\",\")[1].split(\":\")[1]\n            #raise Exception(f\"{directory=}\")\n            return Message(text=directory)\n            \n\n        msg = \"Error converting Message to Data: Input must be a Message object\"\n        logger.opt(exception=True).debug(msg)\n        self.status = msg\n        return Data(data={\"error\": msg})\n        \n\n"
-              },
-              "message": {
-                "_input_type": "MessageInput",
-                "advanced": false,
-                "display_name": "Message",
-                "dynamic": false,
-                "info": "The Message object to convert to a Data object",
-                "input_types": [
-                  "Message"
-                ],
-                "list": false,
-                "list_add_label": "Add More",
-                "load_from_db": false,
-                "name": "message",
-                "placeholder": "",
-                "required": false,
-                "show": true,
-                "title_case": false,
-                "tool_mode": false,
-                "trace_as_input": true,
-                "trace_as_metadata": true,
-                "type": "str",
-                "value": ""
-              }
-            },
-            "tool_mode": false
-          },
-          "showNode": true,
-          "type": "MessagetoData"
-        },
-        "dragging": false,
-        "id": "MessagetoData-5mYAF",
-        "measured": {
-          "height": 277,
-          "width": 320
-        },
-        "position": {
-          "x": -3174.483931342161,
-          "y": -49.368603425513726
-        },
-        "selected": true,
-        "type": "genericNode"
-      },
-      {
-        "data": {
+          "description": "Converts data into text.",
+          "display_name": "Data To Text",
           "id": "DataToText-BI4S9",
           "node": {
             "base_classes": [
@@ -1050,7 +758,6 @@
             "frozen": false,
             "icon": "braces",
             "legacy": false,
-            "lf_version": "1.4.1",
             "metadata": {},
             "minimized": false,
             "output_types": [],
@@ -1062,6 +769,8 @@
                 "hidden": false,
                 "method": "build_output",
                 "name": "text",
+                "options": null,
+                "required_inputs": null,
                 "selected": "Message",
                 "tool_mode": true,
                 "types": [
@@ -1089,7 +798,7 @@
                 "show": true,
                 "title_case": false,
                 "type": "code",
-                "value": "from langflow.custom import Component\nfrom langflow.io import Output, DataInput\nfrom langflow.schema import Message\n\nclass DataToTextComponent(Component):\n    display_name = \"Data To Text\"\n    name = \"DataToText\"\n    icon = \"braces\"\n    description: str = \"Converts data into text.\"\n    inputs = [\n        DataInput(\n            name=\"dict_list\",\n            display_name=\"Data\",\n            info=\"List of dictionaries to process.\",\n            input_types=[\"Data\"],\n            required=True,\n        ),\n    ]\n    outputs = [\n        Output(display_name=\"Message\", name=\"text\", method=\"build_output\"),\n    ]\n\n    def get_text_from_processed_data(self, processed_data: list[str]) -> str:\n        \"\"\"Convert processed_data into a readable text format.\"\"\"\n        text_lines = []\n        for person in processed_data:\n            for key, record in person.items():\n                text_lines.append(f\"  {key}: {record}\")\n                text_lines.append(\"\")\n    \n        return \"\\n\".join(text_lines)\n         \n    def build_output(self) -> Message:\n        fields = self.dict_list.data[\"items\"]\n        text = f\"{self.get_text_from_processed_data(fields)}\"\n        message = Message(\n            text=text,\n        )\n        return message"
+                "value": "from langflow.custom import Component\nfrom langflow.io import DataInput, Output\nfrom langflow.schema import Message\n\n\nclass DataToTextComponent(Component):\n    display_name = \"Data To Text\"\n    name = \"DataToText\"\n    icon = \"braces\"\n    description: str = \"Converts data into text.\"\n    inputs = [\n        DataInput(\n            name=\"dict_list\",\n            display_name=\"Data\",\n            info=\"List of dictionaries to process.\",\n            input_types=[\"Data\"],\n            required=True,\n        ),\n    ]\n    outputs = [\n        Output(display_name=\"Message\", name=\"text\", method=\"build_output\"),\n    ]\n\n    def get_text_from_processed_data(self, processed_data: list[str]) -> str:\n        \"\"\"Convert processed_data into a readable text format.\"\"\"\n        text_lines = []\n        for person in processed_data:\n            for key, record in person.items():\n                text_lines.append(f\"  {key}: {record}\")\n                text_lines.append(\"\")\n\n        return \"\\n\".join(text_lines)\n\n    def build_output(self) -> Message:\n        fields = self.dict_list.data[\"items\"]\n        text = f\"{self.get_text_from_processed_data(fields)}\"\n        message = Message(\n            text=text,\n        )\n        return message\n"
               },
               "dict_list": {
                 "_input_type": "DataInput",
@@ -1126,8 +835,8 @@
           "width": 320
         },
         "position": {
-          "x": -1129.8501046551069,
-          "y": 372.84902597878454
+          "x": -3576.114796602196,
+          "y": 65.22078611188815
         },
         "selected": false,
         "type": "genericNode"
@@ -1434,15 +1143,601 @@
           "width": 192
         },
         "position": {
-          "x": -615.5928501963117,
-          "y": 491.5846893901526
+          "x": -3093.5646334650583,
+          "y": 162.4132960866415
         },
         "selected": false,
         "type": "genericNode"
       },
       {
         "data": {
-          "id": "ChatInput-8xAmM",
+          "id": "Exist-PUM8R",
+          "node": {
+            "base_classes": [
+              "Component"
+            ],
+            "beta": false,
+            "conditional_paths": [],
+            "custom_fields": {},
+            "description": "Check if key-tag pair exists in file",
+            "display_name": "Exist Key Filter",
+            "documentation": "",
+            "edited": true,
+            "field_order": [],
+            "frozen": false,
+            "icon": "table",
+            "legacy": false,
+            "lf_version": "1.4.1",
+            "metadata": {},
+            "minimized": false,
+            "output_types": [],
+            "outputs": [
+              {
+                "allows_loop": false,
+                "cache": true,
+                "display_name": "Result",
+                "hidden": false,
+                "method": "build_output",
+                "name": "result",
+                "options": null,
+                "required_inputs": null,
+                "selected": "Component",
+                "tool_mode": true,
+                "types": [
+                  "Component"
+                ],
+                "value": "__UNDEFINED__"
+              }
+            ],
+            "pinned": false,
+            "template": {
+              "_type": "Component",
+              "code": {
+                "advanced": true,
+                "dynamic": true,
+                "fileTypes": [],
+                "file_path": "",
+                "info": "",
+                "list": false,
+                "load_from_db": false,
+                "multiline": true,
+                "name": "code",
+                "password": false,
+                "placeholder": "",
+                "required": true,
+                "show": true,
+                "title_case": false,
+                "type": "code",
+                "value": "from langflow.custom import Component\nfrom langflow.inputs.inputs import MessageTextInput\nfrom langflow.io import Output\n\nclass ExistComponent(Component):\n    display_name = \"Exist Key Filter\"\n    name = \"exist\"\n    icon = \"table\"\n    description: str = \"Check if key-tag pair exists in file\"\n    \n\n    def __init__(self, key: str = None, tag: str = None, **kwargs):\n        super().__init__(**kwargs)\n        self.key = key\n        self.tag = tag\n    \n    outputs = [\n        Output(display_name=\"Result\", name=\"result\", method=\"build_output\")\n    ]\n\n    def process(self, file) -> bool:\n        forms = file.getFormsByKeyTag(self.key, self.tag)\n        return len(forms) > 0\n\n    @classmethod\n    def create_instance(cls, key: str, tag: str) -> 'ExistComponent':\n        return cls(key=key, tag=tag)\n        \n    def build_output(self) -> Component:\n        return {\"name\":self.name,\"Factory Method\":self.create_instance}"
+              }
+            },
+            "tool_mode": false
+          },
+          "showNode": true,
+          "type": "exist"
+        },
+        "dragging": false,
+        "id": "Exist-PUM8R",
+        "measured": {
+          "height": 147,
+          "width": 320
+        },
+        "position": {
+          "x": -5589.978124414795,
+          "y": 210.97687440397067
+        },
+        "selected": false,
+        "type": "genericNode"
+      },
+      {
+        "data": {
+          "id": "check_box-rO2zv",
+          "node": {
+            "base_classes": [
+              "Component"
+            ],
+            "beta": false,
+            "conditional_paths": [],
+            "custom_fields": {},
+            "description": "Determines which checkboxes from the list have been checked",
+            "display_name": "Checkbox Filter",
+            "documentation": "",
+            "edited": true,
+            "field_order": [],
+            "frozen": false,
+            "icon": "check-square",
+            "legacy": false,
+            "lf_version": "1.4.1",
+            "metadata": {},
+            "minimized": false,
+            "output_types": [],
+            "outputs": [
+              {
+                "allows_loop": false,
+                "cache": true,
+                "display_name": "Factory",
+                "hidden": false,
+                "method": "build_output",
+                "name": "factory",
+                "options": null,
+                "required_inputs": null,
+                "selected": "Component",
+                "tool_mode": true,
+                "types": [
+                  "Component"
+                ],
+                "value": "__UNDEFINED__"
+              }
+            ],
+            "pinned": false,
+            "template": {
+              "_type": "Component",
+              "code": {
+                "advanced": true,
+                "dynamic": true,
+                "fileTypes": [],
+                "file_path": "",
+                "info": "",
+                "list": false,
+                "load_from_db": false,
+                "multiline": true,
+                "name": "code",
+                "password": false,
+                "placeholder": "",
+                "required": true,
+                "show": true,
+                "title_case": false,
+                "type": "code",
+                "value": "from langflow.custom import Component\nfrom langflow.inputs.inputs import BoolInput, MessageTextInput\nfrom langflow.io import Output\n\nclass CheckBoxComponent(Component):\n    display_name = \"Checkbox Filter\"\n    name = \"check_box\"\n    icon = \"check-square\"\n    description: str = \"Determines which checkboxes from the list have been checked\"\n    \n\n    def __init__(\n        self,\n        key: str = None,\n        tag: str = None,\n        checked: bool = True,\n        **kwargs\n    ):\n        super().__init__(**kwargs)\n        self.key = key\n        self.tag = tag\n        self.checked = checked\n\n    outputs = [\n        Output(display_name=\"Factory\", name=\"factory\", method=\"build_output\")\n    ]\n\n    def process(self, file) -> bool:\n        #raise Exception(f\"{self.checked=},{self.key=},{self.tag=},{file.getFormValueByKey(self.key, self.tag)=}\")\n        return self.checked == file.getFormValueByKey(self.key, self.tag)\n\n    @classmethod\n    def create_instance(\n        cls,\n        key: str,\n        tag: str = None,\n        checked: bool = True\n    ) -> 'CheckBoxComponent':\n        return cls(\n            key=key,\n            tag=tag,\n            checked=checked\n        )\n\n    def build_output(self) -> Component:\n        return {\n            \"name\": self.name,\n            \"Factory Method\": self.create_instance,\n        }"
+              }
+            },
+            "tool_mode": false
+          },
+          "showNode": true,
+          "type": "check_box"
+        },
+        "dragging": false,
+        "id": "check_box-rO2zv",
+        "measured": {
+          "height": 167,
+          "width": 320
+        },
+        "position": {
+          "x": -5646.5026891875505,
+          "y": 409.1900350070824
+        },
+        "selected": false,
+        "type": "genericNode"
+      },
+      {
+        "data": {
+          "id": "date_field_filter-MZjp2",
+          "node": {
+            "base_classes": [
+              "Component"
+            ],
+            "beta": false,
+            "conditional_paths": [],
+            "custom_fields": {},
+            "description": "Returns the date range, along with the corresponding keys.",
+            "display_name": "Date Filter",
+            "documentation": "",
+            "edited": true,
+            "field_order": [],
+            "frozen": false,
+            "icon": "clock",
+            "legacy": false,
+            "lf_version": "1.4.1",
+            "metadata": {},
+            "minimized": false,
+            "output_types": [],
+            "outputs": [
+              {
+                "allows_loop": false,
+                "cache": true,
+                "display_name": "Data",
+                "hidden": false,
+                "method": "build_output",
+                "name": "data",
+                "options": null,
+                "required_inputs": null,
+                "selected": "Component",
+                "tool_mode": true,
+                "types": [
+                  "Component"
+                ],
+                "value": "__UNDEFINED__"
+              }
+            ],
+            "pinned": false,
+            "template": {
+              "_type": "Component",
+              "code": {
+                "advanced": true,
+                "dynamic": true,
+                "fileTypes": [],
+                "file_path": "",
+                "info": "",
+                "list": false,
+                "load_from_db": false,
+                "multiline": true,
+                "name": "code",
+                "password": false,
+                "placeholder": "",
+                "required": true,
+                "show": true,
+                "title_case": false,
+                "type": "code",
+                "value": "from datetime import datetime\nfrom typing import Optional\nfrom langflow.custom import Component\nfrom langflow.inputs.inputs import MessageTextInput\nfrom langflow.io import Output\n\n\nclass DateKeyComponent(Component):\n    display_name: str = \"Date Filter\"\n    description: str = \"Returns the date range, along with the corresponding keys.\"\n    name: str = \"date_field_filter\"\n    icon = \"clock\"\n\n    def __init__(self,key_1:str=None,tag_1:str=None,field_1:str=None,key_2:str=None,tag_2:str=None,field_2:str=None, **kwargs):\n        super().__init__(**kwargs)\n        self.key_1: str = key_1\n        self.tag_1: str = tag_1\n        self.field_1: str = field_1\n        self.key_2: str = key_2\n        self.tag_2: str = tag_2\n        self.field_2: str = field_2\n        \n    outputs = [\n        Output(\n            display_name=\"Data\",\n            name=\"data\",\n            method=\"build_output\",\n        ),\n    ]\n    def parse_date(self, date_str) -> int:\n        if not date_str:\n            return None\n        try:\n            dt = datetime.strptime(str(date_str), \"%d/%m/%Y\")\n            return float(dt.timestamp()) * 1000\n        except (TypeError, ValueError) as e:\n            msg = f\"Can't parse '{date_str}' as date: {e!s}\"\n            raise ValueError(msg) from e\n\n    def get_field_names(self) -> list[str | None]:\n        return [\n            self.key_1,\n            self.tag_1,\n            self.field_1,\n            self.key_2,\n            self.tag_2,\n            self.field_2\n        ]\n\n    def process(self, file) -> bool:\n        config_values: list[str] = self.get_field_names()\n        key1, tag1, from_date_str, key2, tag2, to_date_str = config_values\n\n        if not key1 and not key2:\n            return False\n\n        input_from_date: int | None = self.parse_date(from_date_str)\n        input_to_date: int | None = self.parse_date(to_date_str)\n        file_to_date: int | None = file.getFormValueByKey(key2, tag2)\n        file_from_date: int | None = file.getFormValueByKey(key1, tag1)\n        \n        if all([input_to_date, input_from_date, file_from_date, file_to_date]):\n            return (input_from_date < file_from_date) and (file_to_date < input_to_date)\n        elif input_from_date and file_from_date:\n            return input_from_date < file_from_date\n        elif input_to_date and file_to_date:\n            return file_to_date < input_to_date\n        else:\n            return False\n\n    @classmethod\n    def create_instance(\n        cls,\n        key_1: str,\n        tag_1: str = None,\n        field_1: str = None,\n        key_2: str = None,\n        tag_2: str = None,\n        field_2: str = None\n    ) -> 'DateKeyComponent':\n        return cls(\n            key_1=key_1,\n            tag_1=tag_1,\n            field_1=field_1,\n            key_2=key_2,\n            tag_2=tag_2,\n            field_2=field_2\n        )\n        \n    def build_output(self) -> Component:\n        return {\n            \"name\": self.name,\n            \"Factory Method\": self.create_instance,\n        }\n\n"
+              }
+            },
+            "tool_mode": false
+          },
+          "showNode": true,
+          "type": "date_field_filter"
+        },
+        "dragging": false,
+        "id": "date_field_filter-MZjp2",
+        "measured": {
+          "height": 167,
+          "width": 320
+        },
+        "position": {
+          "x": -5579.442191872809,
+          "y": 650.2238022362296
+        },
+        "selected": false,
+        "type": "genericNode"
+      },
+      {
+        "data": {
+          "id": "Text-KFevp",
+          "node": {
+            "base_classes": [
+              "Component"
+            ],
+            "beta": false,
+            "conditional_paths": [],
+            "custom_fields": {},
+            "description": "Check if text value matches form data",
+            "display_name": "Text Key Filter",
+            "documentation": "",
+            "edited": true,
+            "field_order": [],
+            "frozen": false,
+            "icon": "table",
+            "legacy": false,
+            "lf_version": "1.4.1",
+            "metadata": {},
+            "minimized": false,
+            "output_types": [],
+            "outputs": [
+              {
+                "allows_loop": false,
+                "cache": true,
+                "display_name": "Factory",
+                "hidden": false,
+                "method": "build_output",
+                "name": "factory",
+                "options": null,
+                "required_inputs": null,
+                "selected": "Component",
+                "tool_mode": true,
+                "types": [
+                  "Component"
+                ],
+                "value": "__UNDEFINED__"
+              }
+            ],
+            "pinned": false,
+            "template": {
+              "_type": "Component",
+              "code": {
+                "advanced": true,
+                "dynamic": true,
+                "fileTypes": [],
+                "file_path": "",
+                "info": "",
+                "list": false,
+                "load_from_db": false,
+                "multiline": true,
+                "name": "code",
+                "password": false,
+                "placeholder": "",
+                "required": true,
+                "show": true,
+                "title_case": false,
+                "type": "code",
+                "value": "from langflow.custom import Component\nfrom langflow.inputs.inputs import MessageTextInput\nfrom langflow.io import Output\n\nclass ExistComponent(Component):\n    display_name = \"Text Key Filter\"\n    name = \"Text\"\n    icon = \"table\"\n    description: str = \"Check if text value matches form data\"\n    \n\n    def __init__(\n        self,\n        key: str = None,\n        tag: str = None,\n        value: str = None,\n        **kwargs\n    ):\n        super().__init__(**kwargs)\n        self.key = key\n        self.tag = tag\n        self.value = value\n\n    \n    outputs = [\n        Output(display_name=\"Factory\", name=\"factory\", method=\"build_output\")\n    ]\n\n    def process(self, file) -> bool:\n        return str(self.value) == str(file.getFormValueByKey(self.key, self.tag))\n\n    @classmethod\n    def create_instance(\n        cls,\n        key: str,\n        tag: str = None,\n        value: str = None\n    ) -> 'ExistComponent':\n        return cls(\n            key=key,\n            tag=tag,\n            value=value\n        )\n\n    def build_output(self) -> Component:\n        return {\n            \"name\": self.name,\n            \"Factory Method\": self.create_instance,\n        }"
+              }
+            },
+            "tool_mode": false
+          },
+          "showNode": true,
+          "type": "Text"
+        },
+        "dragging": false,
+        "id": "Text-KFevp",
+        "measured": {
+          "height": 147,
+          "width": 320
+        },
+        "position": {
+          "x": -5581.247946684718,
+          "y": 898.016552864318
+        },
+        "selected": false,
+        "type": "genericNode"
+      },
+      {
+        "data": {
+          "id": "CustomComponent-cjOAX",
+          "node": {
+            "base_classes": [
+              "Data",
+              "Message"
+            ],
+            "beta": false,
+            "conditional_paths": [],
+            "custom_fields": {},
+            "description": "Split message to path, filters and output fields.",
+            "display_name": "ParsePathKey",
+            "documentation": "",
+            "edited": true,
+            "field_order": [
+              "message"
+            ],
+            "frozen": false,
+            "icon": "message-square-share",
+            "legacy": false,
+            "lf_version": "1.4.1",
+            "metadata": {},
+            "minimized": false,
+            "output_types": [],
+            "outputs": [
+              {
+                "allows_loop": false,
+                "cache": true,
+                "display_name": "Directory",
+                "hidden": false,
+                "method": "get_directory",
+                "name": "directory",
+                "options": null,
+                "required_inputs": null,
+                "selected": "Message",
+                "tool_mode": true,
+                "types": [
+                  "Message"
+                ],
+                "value": "__UNDEFINED__"
+              },
+              {
+                "allows_loop": false,
+                "cache": true,
+                "display_name": "Key",
+                "hidden": false,
+                "method": "get_key",
+                "name": "key",
+                "options": null,
+                "required_inputs": null,
+                "selected": "Data",
+                "tool_mode": true,
+                "types": [
+                  "Data"
+                ],
+                "value": "__UNDEFINED__"
+              },
+              {
+                "allows_loop": false,
+                "cache": true,
+                "display_name": "Output_key",
+                "hidden": false,
+                "method": "get_output_key",
+                "name": "output_key",
+                "options": null,
+                "required_inputs": null,
+                "selected": "Data",
+                "tool_mode": true,
+                "types": [
+                  "Data"
+                ],
+                "value": "__UNDEFINED__"
+              }
+            ],
+            "pinned": false,
+            "template": {
+              "_type": "Component",
+              "code": {
+                "advanced": true,
+                "dynamic": true,
+                "fileTypes": [],
+                "file_path": "",
+                "info": "",
+                "list": false,
+                "load_from_db": false,
+                "multiline": true,
+                "name": "code",
+                "password": false,
+                "placeholder": "",
+                "required": true,
+                "show": true,
+                "title_case": false,
+                "type": "code",
+                "value": "import json\nimport re\n\nfrom langflow.custom import Component\nfrom langflow.io import MessageInput, Output\nfrom langflow.schema import Data\nfrom langflow.schema.message import Message\nfrom loguru import logger\n\n\nclass ParsePathKeyComponent(Component):\n    display_name = \"ParsePathKey\"\n    description = \"Split message to path, filters and output fields.\"\n    icon = \"message-square-share\"\n    name = \"ParsePathKey\"\n\n    inputs = [\n        MessageInput(\n            name=\"message\",\n            display_name=\"Message\",\n            info=\"The Message object containing structured text with path, filters and output fields\",\n        ),\n    ]\n\n    outputs = [\n        Output(display_name=\"Directory\", name=\"directory\", method=\"get_directory\"),\n        Output(display_name=\"Key\", name=\"key\", method=\"get_key\"),\n        Output(display_name=\"Output_key\", name=\"output_key\", method=\"get_output_key\"),\n    ]\n\n    def _parse_message(self):\n        \"\"\"Parse message into components: path, filters, and output fields\"\"\"\n        if not hasattr(self, 'message') or self.message is None:\n            logger.error(\"No message provided\")\n            return None, None, None\n\n        if isinstance(self.message, Message):\n            message_text = str(self.message.text).strip()\n            #raise Exception(f\"{message_text=}\")\n            try:\n                path_match = re.search(r'path:\\s*([^;]+)', message_text)\n                path = path_match.group(1).strip() if path_match else \"\"\n                \n                filters_match = re.search(r'filters:\\s*(\\[.+?\\])', message_text, re.DOTALL)\n                filters_str = filters_match.group(1) if filters_match else \"[]\"\n                \n                filters_str = filters_str.replace(\"'\", '\"')\n                filters_str = re.sub(r'(\\w+):', r'\"\\1\":', filters_str)\n                filters = json.loads(filters_str)\n                \n                output_match = re.search(r'output:\\s*(\\[.+?\\])', message_text, re.DOTALL)\n                output_str = output_match.group(1) if output_match else \"[]\"\n                output_str = output_str.replace(\"'\", '\"')\n                output_str = re.sub(r'(\\w+)', r'\"\\1\"', output_str.replace('\"', ''))\n                output_fields = json.loads(output_str)\n                #raise Exception(f\"{path_match=},{filters_str=},{output_str=}\")\n                return path, filters, output_fields\n            \n            except Exception as e:\n                raise Exception(f\"Error parsing message: {str(e)}\")\n                logger.error(f\"Message text: {message_text}\")\n                return \"\", [], []\n                \n        return \"\", [], []\n\n    def get_directory(self) -> Message:\n        \"\"\"Return the directory path\"\"\"\n        path, _, _ = self._parse_message()\n        return Message(text=path)\n        \n    def get_key(self) -> Data:\n        \"\"\"Return filters configuration\"\"\"\n        _, filters, _ = self._parse_message()\n        return Data(data={\"filters\":filters})\n        \n    def get_output_key(self) -> Data:\n        \"\"\"Return output fields\"\"\"\n        _, _, output_fields = self._parse_message()\n        return Data(data={\"output_keys\":output_fields})"
+              },
+              "message": {
+                "_input_type": "MessageInput",
+                "advanced": false,
+                "display_name": "Message",
+                "dynamic": false,
+                "info": "The Message object containing structured text with path, filters and output fields",
+                "input_types": [
+                  "Message"
+                ],
+                "list": false,
+                "list_add_label": "Add More",
+                "load_from_db": false,
+                "name": "message",
+                "placeholder": "",
+                "required": false,
+                "show": true,
+                "title_case": false,
+                "tool_mode": false,
+                "trace_as_input": true,
+                "trace_as_metadata": true,
+                "type": "str",
+                "value": ""
+              }
+            },
+            "tool_mode": false
+          },
+          "showNode": true,
+          "type": "ParsePathKey"
+        },
+        "dragging": false,
+        "id": "CustomComponent-cjOAX",
+        "measured": {
+          "height": 325,
+          "width": 320
+        },
+        "position": {
+          "x": -5610.851164238248,
+          "y": -217.7262946662668
+        },
+        "selected": true,
+        "type": "genericNode"
+      },
+      {
+        "data": {
+          "id": "CustomComponent-Rurny",
+          "node": {
+            "base_classes": [
+              "Component"
+            ],
+            "beta": false,
+            "conditional_paths": [],
+            "custom_fields": {},
+            "description": "Creates filter objects from filter configurations and component factory methods",
+            "display_name": "Tools executor",
+            "documentation": "",
+            "edited": true,
+            "field_order": [
+              "data_input",
+              "fields"
+            ],
+            "frozen": false,
+            "icon": "code",
+            "legacy": false,
+            "lf_version": "1.4.1",
+            "metadata": {},
+            "minimized": false,
+            "output_types": [],
+            "outputs": [
+              {
+                "allows_loop": false,
+                "cache": true,
+                "display_name": "Exit",
+                "hidden": false,
+                "method": "exist_output",
+                "name": "exist_output",
+                "options": null,
+                "required_inputs": null,
+                "selected": "Component",
+                "tool_mode": true,
+                "types": [
+                  "Component"
+                ],
+                "value": "__UNDEFINED__"
+              }
+            ],
+            "pinned": false,
+            "template": {
+              "_type": "Component",
+              "code": {
+                "advanced": true,
+                "dynamic": true,
+                "fileTypes": [],
+                "file_path": "",
+                "info": "",
+                "list": false,
+                "load_from_db": false,
+                "multiline": true,
+                "name": "code",
+                "password": false,
+                "placeholder": "",
+                "required": true,
+                "show": true,
+                "title_case": false,
+                "type": "code",
+                "value": "from langflow.custom import Component\nfrom langflow.inputs import Input\nfrom langflow.io import DataInput, Output\n\n\nclass ToolsExecutorComponent(Component):\n    display_name = \"Tools executor\"\n    description = \"Creates filter objects from filter configurations and component factory methods\"\n    icon = \"code\"\n    name = \"ToolsExecutor\"\n\n    inputs = [\n        DataInput(\n            name=\"data_input\",\n            display_name=\"Data\",\n            info=\"Filter configurations\",\n        ),\n        Input(\n            name=\"fields\",\n            display_name=\"Criteria\",\n            input_types=[\"Component\"],\n            component=Component,\n            is_list=True,\n            info=\"List of filter components with factory methods\",\n        ),\n    ]\n\n    outputs = [\n        Output(display_name=\"Exit\", name=\"exist_output\", method=\"exist_output\"),\n    ]\n\n    def exist_output(self) -> Component:\n        filter_configs = []\n        filter_configs = self.data_input.data\n        \n        factory_methods = {}\n        for component in self.fields:\n            if isinstance(component, dict) and \"name\" in component and \"Factory Method\" in component:\n                component_name = component[\"name\"]\n                factory_method = component[\"Factory Method\"]\n                factory_methods[component_name] = factory_method\n        filters = []\n        \n        for config in filter_configs[\"filters\"]:\n            if not isinstance(config, dict):\n                raise Exception(f\"Invalid filter config: {config}\")\n            \n            filter_type = config[\"type\"]\n\n            \n            factory = None\n            if filter_type in factory_methods:\n                factory = factory_methods[filter_type]\n            \n            if not factory:\n                raise Exception(f\"Factory method not found for filter type: {filter_type}\")\n            \n            try:\n                if filter_type == \"exist\":\n                    key = config[\"key\"]\n                    tag = config[\"tag\"]\n                    filter_obj = factory(key=key, tag=tag)\n                elif filter_type == \"check_box\":\n                    key = config[\"key\"]\n                    tag = config[\"tag\"]\n                    value = config[\"value\"]\n                    bool_value = value.lower() == \"true\"\n                    filter_obj = factory(key=key, tag=tag, checked=bool_value)\n                \n                elif filter_type == \"date_field_filter\":\n                    key_1 = config[\"key_1\"]\n                    tag_1 = config[\"tag_1\"]\n                    field_1 = config[\"field_1\"]\n                    key_2 = config[\"key_2\"]\n                    tag_2 = config[\"tag_2\"]\n                    field_2=config[\"field_2\"]\n                    filter_obj = factory(\n                        key_1=key_1,\n                        tag_1=tag_1,\n                        field_1=field_1,\n                        key_2=key_2,\n                        tag_2=tag_2,\n                        field_2=field_2\n                    )\n                \n                elif filter_type == \"text\":\n                    key = config[\"key\"]\n                    tag = config[\"tag\"]\n                    text_value = config[\"text\"]\n                    filter_obj = factory(key=key, tag=tag, value=text_value)\n                \n                else:\n                    raise Exception(f\"Unknown filter type: {filter_type}\")\n                    \n                filters.append(filter_obj)\n                \n                \n            except Exception as e:\n                raise Exception(f\"Error creating filter object: {str(e)}\")\n        \n        return filters\n"
+              },
+              "data_input": {
+                "_input_type": "DataInput",
+                "advanced": false,
+                "display_name": "Data",
+                "dynamic": false,
+                "info": "Filter configurations",
+                "input_types": [
+                  "Data"
+                ],
+                "list": false,
+                "list_add_label": "Add More",
+                "name": "data_input",
+                "placeholder": "",
+                "required": false,
+                "show": true,
+                "title_case": false,
+                "tool_mode": false,
+                "trace_as_input": true,
+                "trace_as_metadata": true,
+                "type": "other",
+                "value": ""
+              },
+              "fields": {
+                "advanced": false,
+                "display_name": "Criteria",
+                "dynamic": false,
+                "fileTypes": [],
+                "file_path": "",
+                "info": "List of filter components with factory methods",
+                "input_types": [
+                  "Component"
+                ],
+                "list": true,
+                "load_from_db": false,
+                "multiline": false,
+                "name": "fields",
+                "placeholder": "",
+                "required": false,
+                "show": true,
+                "title_case": false,
+                "type": "str",
+                "value": [
+                  ""
+                ]
+              }
+            },
+            "tool_mode": false
+          },
+          "showNode": true,
+          "type": "ToolsExecutor"
+        },
+        "dragging": false,
+        "id": "CustomComponent-Rurny",
+        "measured": {
+          "height": 301,
+          "width": 320
+        },
+        "position": {
+          "x": -4755.826925871059,
+          "y": 242.70977938355009
+        },
+        "selected": false,
+        "type": "genericNode"
+      },
+      {
+        "data": {
+          "id": "ChatInput-3PSlD",
           "node": {
             "base_classes": [
               "Message"
@@ -1738,23 +2033,23 @@
           "type": "ChatInput"
         },
         "dragging": false,
-        "id": "ChatInput-8xAmM",
+        "id": "ChatInput-3PSlD",
         "measured": {
           "height": 66,
           "width": 192
         },
         "position": {
-          "x": -3568.3518979798055,
-          "y": 106.81823699482945
+          "x": -6087.062930524178,
+          "y": -121.50518827121844
         },
         "selected": false,
         "type": "genericNode"
       }
     ],
     "viewport": {
-      "x": 1218.826955453939,
-      "y": 302.3077899861104,
-      "zoom": 0.29781145639670137
+      "x": 2222.9229487854627,
+      "y": 240.7471897155469,
+      "zoom": 0.3559882612547364
     }
   },
   "description": "Powerful Prompts, Perfectly Positioned.",
@@ -1770,7 +2065,7 @@
   "mcp_enabled": true,
   "name": "mcp_exist_form",
   "tags": [],
-  "updated_at": "2025-05-13T14:18:23+00:00",
+  "updated_at": "2025-05-23T14:10:59+00:00",
   "user_id": "342acb18-c0ac-4d3e-8239-e941b4676372",
   "webhook": false
 }

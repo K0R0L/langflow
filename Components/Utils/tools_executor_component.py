@@ -32,60 +32,74 @@ class ToolsExecutorComponent(Component):
     def exist_output(self) -> Component:
         filter_configs = []
         filter_configs = self.data_input.data
-        
+
         factory_methods = {}
         for component in self.fields:
-            if isinstance(component, dict) and "name" in component and "Factory Method" in component:
+            if (
+                isinstance(component, dict)
+                and "name" in component
+                and "Factory Method" in component
+            ):
                 component_name = component["name"]
                 factory_method = component["Factory Method"]
                 factory_methods[component_name] = factory_method
-        
         filters = []
-        
+
         for config in filter_configs["filters"]:
             if not isinstance(config, dict):
                 raise Exception(f"Invalid filter config: {config}")
-                continue
-            
+
             filter_type = config["type"]
-            key = config["key"]
-            tag = config["tag"]
-            
-            if not key:
-                raise Exception(f"No field specified for filter: {config}")
-            
+
             factory = None
-            if filter_type == "exist" and "exist" in factory_methods:
-                factory = factory_methods["exist"]
-            elif filter_type == "checkbox" and "check_box" in factory_methods:
-                factory = factory_methods["check_box"]
-            elif filter_type == "date" and "date_field_filter" in factory_methods:
-                factory = factory_methods["date_field_filter"]
-            elif filter_type == "text" and "text" in factory_methods:
-                factory = factory_methods["text"]
-            
+            if filter_type in factory_methods:
+                factory = factory_methods[filter_type]
+
             if not factory:
-                raise Exception(f"Factory method not found for filter type: {filter_type}")
-            
+                raise Exception(
+                    f"Factory method not found for filter type: {filter_type}"
+                )
+
             try:
                 if filter_type == "exist":
-                    filter_obj = factory(key=key,tag=tag)
-                elif filter_type == "checkbox":
-                    value = config.get("value", False)
-                    filter_obj = factory(key=key,tag=tag, value=value)
-                elif filter_type == "date":
-                    from_date = config.get("from", None)
-                    to_date = config.get("to", None)
-                    filter_obj = factory(key=key, from_date=from_date, to_date=to_date)
+                    key = config["key"]
+                    tag = config["tag"]
+                    filter_obj = factory(key=key, tag=tag)
+                elif filter_type == "check_box":
+                    key = config["key"]
+                    tag = config["tag"]
+                    value = config["value"]
+                    bool_value = value.lower() == "true"
+                    filter_obj = factory(key=key, tag=tag, checked=bool_value)
+
+                elif filter_type == "date_field_filter":
+                    key_1 = config["key_1"]
+                    tag_1 = config["tag_1"]
+                    field_1 = config["field_1"]
+                    key_2 = config["key_2"]
+                    tag_2 = config["tag_2"]
+                    field_2 = config["field_2"]
+                    filter_obj = factory(
+                        key_1=key_1,
+                        tag_1=tag_1,
+                        field_1=field_1,
+                        key_2=key_2,
+                        tag_2=tag_2,
+                        field_2=field_2,
+                    )
+
                 elif filter_type == "text":
-                    text = config.get("text", "")
-                    filter_obj = factory(field=key, text=text)
+                    key = config["key"]
+                    tag = config["tag"]
+                    text_value = config["text"]
+                    filter_obj = factory(key=key, tag=tag, value=text_value)
+
                 else:
                     raise Exception(f"Unknown filter type: {filter_type}")
-                    
+
                 filters.append(filter_obj)
-                
+
             except Exception as e:
                 raise Exception(f"Error creating filter object: {str(e)}")
-        
+
         return filters
